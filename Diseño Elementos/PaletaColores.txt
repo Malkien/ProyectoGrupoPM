@@ -1,0 +1,6 @@
+Cabecera -> BADAF6
+Fondo -> F0F0F0
+Boton -> 2BD0D6
+Bordes y detalles -> 0D2687
+
+
