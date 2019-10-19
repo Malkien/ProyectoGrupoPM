@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondo"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/selectorAndres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectorAndres"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/selectorKevin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectorJose" />
+
+    <TextView
+        android:id="@+id/selectorJose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectorJose"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/selectorAndres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/selectorKevin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectorKevin"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/selectorIvan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectorAndres" />
+
+    <TextView
+        android:id="@+id/selectorIvan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectorIvan"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectorKevin" />
+
+    <Button
+        android:id="@+id/botonCreador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonCreador"
+        app:layout_constraintEnd_toStartOf="@+id/botonModoDiseño"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectorAndres" />
+
+    <Button
+        android:id="@+id/botonModoDiseño"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonModoDiseño"
+        android:text="@string/botonModoDiseño"
+        app:layout_constraintEnd_toStartOf="@+id/botonMenuDesplegable"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonCreador"
+        app:layout_constraintTop_toBottomOf="@+id/selectorAndres" />
+
+    <Button
+        android:id="@+id/botonMenuDesplegable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonMenuDesplegable"
+        android:text="@string/botonMenuDesplegable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonModoDiseño"
+        app:layout_constraintTop_toBottomOf="@+id/selectorAndres" />
+
+    <Button
+        android:id="@+id/botonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonLogin"
+        android:text="@string/botonLogin"
+        app:layout_constraintEnd_toStartOf="@+id/botonCliente"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectorIvan" />
+
+    <Button
+        android:id="@+id/botonGaleria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonGaleria"
+        android:text="@string/botonGaleria"
+        app:layout_constraintEnd_toStartOf="@+id/botonEstadisticas"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonCliente"
+        app:layout_constraintTop_toBottomOf="@+id/selectorIvan" />
+
+    <Button
+        android:id="@+id/botonCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonCliente"
+        android:text="@string/botonCliente"
+        app:layout_constraintEnd_toStartOf="@+id/botonGaleria"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/selectorIvan" />
+
+    <Button
+        android:id="@+id/botonEstadisticas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonEstadisticas"
+        android:text="@string/botonEstadisticas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonGaleria"
+        app:layout_constraintTop_toBottomOf="@+id/selectorIvan" />
+
+    <Button
+        android:id="@+id/botonRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonRegistro"
+        android:text="@string/botonRegistro"
+        app:layout_constraintEnd_toStartOf="@+id/botonAjustes"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectorJose" />
+
+    <Button
+        android:id="@+id/botonAjustes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonAjustes"
+        android:text="@string/botonAjustes"
+        app:layout_constraintEnd_toStartOf="@+id/botonFiltrar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonRegistro"
+        app:layout_constraintTop_toBottomOf="@+id/selectorJose" />
+
+    <Button
+        android:id="@+id/botonFiltrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonFiltar"
+        android:text="@string/botonFiltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonAjustes"
+        app:layout_constraintTop_toBottomOf="@+id/selectorJose" />
+
+    <Button
+        android:id="@+id/botonInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonInicio"
+        android:text="@string/botonInicio"
+        app:layout_constraintEnd_toStartOf="@+id/botonCreacionPost"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectorKevin" />
+
+    <Button
+        android:id="@+id/botonVisualizacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonVisualizacion"
+        android:text="@string/botonVisualizacionPost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonCreacionPost"
+        app:layout_constraintTop_toBottomOf="@+id/selectorKevin" />
+
+    <Button
+        android:id="@+id/botonCreacionPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonCreacionPost"
+        android:text="@string/botonCreacionPost"
+        app:layout_constraintEnd_toStartOf="@+id/botonVisualizacion"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/botonInicio"
+        app:layout_constraintTop_toBottomOf="@+id/selectorKevin" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="1dp"
+        android:background="@color/colorBordes"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

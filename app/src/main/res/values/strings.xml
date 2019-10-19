@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DrawCoco</string>
+
+    <string name="selectorIvan">Pantallas Ivan</string>
+    <string name="selectorKevin">Pantallas Kevin</string>
+    <string name="selectorJose">Pantallas Jose</string>
+    <string name="selectorAndres">Pantallas Andres</string>
+    <string name="botonLogin">Login</string>
+    <string name="botonCliente">Cliente</string>
+    <string name="botonGaleria">Galeria</string>
+    <string name="botonEstadisticas">Estadisticas</string>
+    <string name="botonRegistro">Registro</string>
+    <string name="botonAjustes">Ajustes</string>
+    <string name="botonFiltar">Filtrar</string>
+    <string name="botonInicio">Inicio</string>
+    <string name="botonCreacionPost">Creacion Post</string>
+    <string name="botonVisualizacionPost">Visualizacion Post</string>
+    <string name="botonCreador">Creador</string>
+    <string name="botonModoDiseño">Modo Diseño</string>
+    <string name="botonMenuDesplegable">Menu Desplegable</string>
+
+</resources>
