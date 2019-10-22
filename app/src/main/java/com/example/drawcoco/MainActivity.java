@@ -6,31 +6,46 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.drawcoco.clases.Creador;
+
+import static com.example.drawcoco.clases.Personas.Genero.MUJER;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Creador artista1;
+    private Intent pantallaLogin, pantallaGaleria, pantallaCliente, pantallaEstadisticas;
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Bundle bundle = new Bundle();
+
+        artista1 = new Creador("Mystra77", "Ana","Belen","mystra77@gmail.com","xxxx", MUJER,50f,23);
+        bundle.putSerializable("artista1", artista1);
     }
 
     public void botonLogin(View view) {
-        Intent pantallaLogin = new Intent(this, Login.class);
+        pantallaLogin = new Intent(this, Login.class);
         this.startActivity(pantallaLogin);
     }
 
     public void botonGaleria(View view) {
-        Intent pantallaGaleria = new Intent(this, Galeria.class);
+        pantallaGaleria = new Intent(this, Galeria.class);
         this.startActivity(pantallaGaleria);
     }
 
     public void botonCliente(View view) {
-        Intent pantallaCliente = new Intent(this, Cliente.class);
+        pantallaCliente = new Intent(this, Cliente.class);
         this.startActivity(pantallaCliente);
     }
 
     public void botonEstadisticas(View view) {
-        Intent pantallaEstadisticas= new Intent(this, Estadisticas.class);
+        pantallaEstadisticas= new Intent(this, Estadisticas.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("artista1", artista1);
+        pantallaEstadisticas.putExtras(bundle);
         this.startActivity(pantallaEstadisticas);
     }
 

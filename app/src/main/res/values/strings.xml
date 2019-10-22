@@ -19,4 +19,20 @@
     <string name="botonModoDiseño">Modo Diseño</string>
     <string name="botonMenuDesplegable">Menu Desplegable</string>
 
+
+
+    //String de la Activity Estadisticas
+    <string name="cabeceraEstadisticas">Estadisticas de</string>
+    <string name="textoDineroGanado">Dinero obtenido mensual</string>
+    <string name="textoNumeroUsuarios">Usuarios suscritos</string>
+
+    //String de la Activity Login
+    <string name="mail">Email</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="recordarCuenta">Recordar cuenta</string>
+    <string name="Login">Login</string>
+    <string name="noTienesCuenta">¿Aun no tienes cuenta?</string>
+    <string name="Registrate">Registrate</string>
+    <string name="olvidadoCuenta">¿Has olvidado tu cuenta?</string>
+    <string name="Recuperar">Recuperar</string>
 </resources>
