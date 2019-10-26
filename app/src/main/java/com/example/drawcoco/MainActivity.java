@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void botonCliente(View view) {
         pantallaCliente = new Intent(this, Cliente.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("artista1", artista1);
+        pantallaCliente.putExtras(bundle);
         this.startActivity(pantallaCliente);
     }
 

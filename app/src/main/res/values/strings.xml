@@ -37,5 +37,6 @@
 
     //String de la Activity Cliente
     <string name="PostRecientes">Post recientes de </string>
+    <string name="PostRecientesGratuitos">Post recientes gratuitos</string>
 
 </resources>
