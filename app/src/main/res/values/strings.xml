@@ -34,4 +34,8 @@
     <string name="Registrate">Registrate</string>
     <string name="olvidadoCuenta">¿Has olvidado tu cuenta?</string>
     <string name="Recuperar">Recuperar</string>
+
+    //String de la Activity Cliente
+    <string name="PostRecientes">Post recientes de </string>
+
 </resources>
