@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".PerfilCreador"></activity>
+        <activity android:name=".Filtrar"></activity>
+        <activity android:name=".Ajustes" />
+        <activity android:name=".Registro" />
+        <activity android:name=".PerfilCreador" />
         <activity android:name=".Estadisticas" />
         <activity android:name=".Galeria" />
         <activity android:name=".Cliente" />
