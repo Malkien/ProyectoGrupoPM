@@ -191,7 +191,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textoPassword" />
 
     <Spinner
-        android:id="@+id/desplegable"
+        android:id="@+id/eligegenero"
         android:layout_width="213dp"
         android:layout_height="27dp"
         android:layout_marginTop="35dp"
@@ -209,7 +209,7 @@
         android:background="@drawable/caja_texto"
         android:text="¿Eres creador?"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genero" />
+        app:layout_constraintTop_toBottomOf="@+id/eligegenero" />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -220,7 +220,7 @@
         android:background="@drawable/caja_texto"
         android:text="Aceptar términos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desplegable" />
+        app:layout_constraintTop_toBottomOf="@+id/eligegenero" />
 
     <Button
         android:id="@+id/button2"
