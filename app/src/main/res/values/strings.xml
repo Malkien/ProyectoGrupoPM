@@ -39,4 +39,43 @@
     <string name="PostRecientes">Post recientes de </string>
     <string name="PostRecientesGratuitos">Post recientes gratuitos</string>
 
+    //String de la Activity Registro
+    <string name="nombreAplicacion">DRAWCOCO</string>
+    <string name="nickname">NickName</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="email">E-mail</string>
+    <string name="password">Contraseña</string>
+    <string name="password2">Repetir Contraseña</string>
+    <string name="genero">Género</string>
+    <string name="textoNickName"></string>
+    <string name="textoNombre"></string>
+    <string name="textoApellidos"></string>
+    <string name="textoEmail"></string>
+    <string name="textoPassword"></string>
+    <string name="textoPassword2"></string>
+    <string name="eligegenero"></string>
+    <string name="creadorcheck">¿Eres creador?</string>
+    <string name="terminos">Aceptar términos</string>
+    <string name="registrarse">Registrarse</string>
+
+    //String de la Activity Filtrar
+    <string name="textoordenar">Ordenar por:</string>
+    <string name="ultimas">Últimas publicaciones</string>
+    <string name="menorprecio">Menor precio</string>
+    <string name="mayorprecio">Mayor precio</string>
+    <string name="valoradas">Mejor valoradas</string>
+    <string name="gratuitas">Gratuitas</string>
+    <string name="textocategorias">Categorias:</string>
+    <string name="eligecategoria"></string>
+
+    //String de la Activity Ajustes
+    <string name="textoidioma">Idioma</string>
+    <string name="eligeidioma"></string>
+    <string name="textofuente">Cambiar fuente</string>
+    <string name="eligefuente"></string>
+    <string name="textotamano">Tamaño fuente</string>
+    <string name="eligetamano"></string>
+    <string name="tituloajustes">Ajustes</string>
+
 </resources>
