@@ -48,13 +48,6 @@
     <string name="password">Contraseña</string>
     <string name="password2">Repetir Contraseña</string>
     <string name="genero">Género</string>
-    <string name="textoNickName"></string>
-    <string name="textoNombre"></string>
-    <string name="textoApellidos"></string>
-    <string name="textoEmail"></string>
-    <string name="textoPassword"></string>
-    <string name="textoPassword2"></string>
-    <string name="eligegenero"></string>
     <string name="creadorcheck">¿Eres creador?</string>
     <string name="terminos">Aceptar términos</string>
     <string name="registrarse">Registrarse</string>
