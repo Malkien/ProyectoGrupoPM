@@ -59,6 +59,7 @@
         app:layout_constraintEnd_toStartOf="@+id/botonModoDiseño"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        android:onClick="botonCreador"
         app:layout_constraintTop_toBottomOf="@+id/selectorAndres" />
 
     <Button

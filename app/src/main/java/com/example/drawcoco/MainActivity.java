@@ -13,7 +13,7 @@ import static com.example.drawcoco.clases.Personas.Genero.MUJER;
 public class MainActivity extends AppCompatActivity {
 
     private Creador artista1;
-    private Intent pantallaLogin, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar;
+    private Intent pantallaLogin, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar, pantallaCreador;
     private Bundle bundle;
 
     @Override
@@ -83,5 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonCreador(View view) {
+        pantallaCreador = new Intent(this, PerfilCreador.class);
+        this.startActivity(pantallaCreador);
     }
 }
