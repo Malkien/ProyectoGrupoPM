@@ -8,15 +8,20 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 
 public class Filtrar extends AppCompatActivity {
-    Spinner eligecategoria = (Spinner) findViewById(R.id.eligecategoria);
-    CheckBox gratuitas=(CheckBox)findViewById(R.id.gratuitas);
-    CheckBox menor=(CheckBox)findViewById(R.id.menorprecio);
-    CheckBox mayor=(CheckBox)findViewById(R.id.mayorprecio);
+    Spinner eligecategoria ;
+    CheckBox gratuitas;
+    CheckBox menor;
+    CheckBox mayor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filtrar);
+        eligecategoria=findViewById(R.id.eligecategoria);
+        gratuitas=findViewById(R.id.gratuitas);
+        menor=findViewById(R.id.menorprecio);
+        mayor=findViewById(R.id.mayorprecio);
+
         String[] datos = new String[] {"Paisajes", "Animales", "Personas"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, datos);

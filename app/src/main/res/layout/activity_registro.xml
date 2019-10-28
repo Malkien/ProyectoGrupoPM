@@ -125,6 +125,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/caja_texto"
+        android:hint="NickName"
+        android:textAlignment="center"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
