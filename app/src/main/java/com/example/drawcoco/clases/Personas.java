@@ -1,12 +1,14 @@
 package com.example.drawcoco.clases;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Personas implements Serializable {
     private String nickname;
     private String nombre;
     private String apellidos;
     private String mail;
+    private String descripcion;
     private String contraseña;
     private Genero genero;
     private float dinero;
@@ -17,6 +19,17 @@ public class Personas implements Serializable {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.mail = mail;
+        this.contraseña = contraseña;
+        this.genero = genero;
+        this.dinero = dinero;
+    }
+
+    public Personas(String nickname, String nombre, String apellidos, String mail, String descripcion, String contraseña, Genero genero, float dinero) {
+        this.nickname = nickname;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.mail = mail;
+        this.descripcion = descripcion;
         this.contraseña = contraseña;
         this.genero = genero;
         this.dinero = dinero;
@@ -49,6 +62,14 @@ public class Personas implements Serializable {
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getMail() {

@@ -3,16 +3,26 @@ package com.example.drawcoco;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.drawcoco.clases.Creador;
+import com.example.drawcoco.clases.Cliente;
+import com.example.drawcoco.clases.Imagenes;
 
+import java.util.ArrayList;
+
+import static com.example.drawcoco.clases.Personas.Genero.HOMBRE;
 import static com.example.drawcoco.clases.Personas.Genero.MUJER;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Creador artista1;
+    private Creador artista1, artista2;
+    private Cliente cliente1;
+    private ArrayList<Imagenes> galeria1, galeria2;
+    private Imagenes imagen1, imagen2, imagen3, imagen4;
+
     private Intent pantallaLogin, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar, pantallaCreador;
     private Bundle bundle;
 
@@ -22,8 +32,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Bundle bundle = new Bundle();
 
-        artista1 = new Creador("Mystra77", "Ana","Belen","mystra77@gmail.com","xxxx", MUJER,50f,23);
+        cliente1 = new Cliente("Furro","Jose","Feliz","jaja@gmail.com","Me encanta el furry","xxxx",HOMBRE,200);
+
+        ArrayList<Imagenes> galeria1= new ArrayList<Imagenes>();
+        galeria1.add(imagen1 = new Imagenes("Pollo Dorado", "Un pollo doradito", 20, "android.resource://" + getPackageName() + "/" + R.drawable.pollodorado));
+        galeria1.add(imagen2 = new Imagenes("Poring", "QUE BLANDITOOO", 10, "android.resource://" + getPackageName() + "/" + R.drawable.poi));
+
+        artista1 = new Creador("Mystra77", "Ana","Belen","mystra77@gmail.com", "Estoy cansada de dibujar Futanari",
+                "xxxx", MUJER,50f,23, galeria1);
+
+        ArrayList<Imagenes> galeria2= new ArrayList<Imagenes>();
+        galeria2.add(imagen1 = new Imagenes("Pollo Blanco", "Es blanco", 5, "android.resource://" + getPackageName() + "/" + R.drawable.polloblanco));
+        galeria2.add(imagen2 = new Imagenes("Tomberi", "Soy un tomberi especial", 50, "android.resource://" + getPackageName() + "/" + R.drawable.tomberi));
+
+        artista2 = new Creador("Malito", "Ivan","Diaz","idvera77@gmail.com", "Que bien me lo paso en clase",
+                "xxxx", HOMBRE,120f,50, galeria2);
+
         bundle.putSerializable("artista1", artista1);
+        bundle.putSerializable("artista2", artista2);
+        bundle.putSerializable("cliente1", cliente1);
+
     }
 
     public void botonLogin(View view) {
@@ -37,9 +65,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonCliente(View view) {
-        pantallaCliente = new Intent(this, Cliente.class);
+        pantallaCliente = new Intent(this, PerfilCliente.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("artista1", artista1);
+        bundle.putSerializable("artista2", artista2);
+        bundle.putSerializable("cliente1", cliente1);
         pantallaCliente.putExtras(bundle);
         this.startActivity(pantallaCliente);
     }

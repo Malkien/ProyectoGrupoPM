@@ -1,0 +1,109 @@
+package com.example.drawcoco;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.drawcoco.clases.Creador;
+import com.example.drawcoco.clases.Cliente;
+
+import java.util.ArrayList;
+
+public class PerfilCliente extends AppCompatActivity {
+    TextView nombreCliente, descripcionCliente, tituloDibujo, tituloDibujo2;
+    Spinner spinnerArtista;
+    ImageView dibujo1, dibujo2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_perfil_cliente);
+
+        nombreCliente = this.findViewById(R.id.nombreCliente);
+        descripcionCliente = this.findViewById(R.id.descripcionCliente);
+        tituloDibujo = this.findViewById(R.id.tituloDibujo);
+        tituloDibujo2 = this.findViewById(R.id.titulodibujo2);
+        dibujo1 = this.findViewById(R.id.dibujo1);
+        dibujo2 = this.findViewById(R.id.dibujo2);
+
+        spinnerArtista = this.findViewById(R.id.spinnerArtista);
+
+        Creador artista1 = (Creador) getIntent().getExtras().getSerializable("artista1");
+        Creador artista2 = (Creador) getIntent().getExtras().getSerializable("artista2");
+        Cliente cliente1  = (Cliente) getIntent().getExtras().getSerializable("cliente1");
+
+        nombreCliente.setText(cliente1.getNickname());
+        descripcionCliente.setText(cliente1.getDescripcion());
+
+        final ArrayList<Creador> arrayCreadores = new ArrayList<>();
+        arrayCreadores.add(artista1);
+        arrayCreadores.add(artista2);
+
+        final ArrayList<String> arrayListNombres = new ArrayList<>();
+        for (int i = 0; i < arrayCreadores.size(); i++){
+            arrayListNombres.add(arrayCreadores.get(i).getNickname());
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrayListNombres);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerArtista.setAdapter(arrayAdapter);
+
+        spinnerArtista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String aux = parent.getItemAtPosition(position).toString();
+
+                for (int i = 0; i < arrayListNombres.size(); i++){
+                    if(arrayListNombres.get(i).equals(aux)){
+
+                        String comparador = arrayListNombres.get(i).toString();
+
+                        for (int j = 0; j < arrayCreadores.size(); j++){
+                            if(arrayCreadores.get(j).getNickname().equals(comparador)){
+                                tituloDibujo.setText(arrayCreadores.get(j).getImagenesArrayList().get(0).getNombre());
+                                tituloDibujo2.setText(arrayCreadores.get(j).getImagenesArrayList().get(1).getNombre());
+                                dibujo1.setImageURI(Uri.parse(arrayCreadores.get(j).getImagenesArrayList().get(0).getRuta()));
+                                dibujo2.setImageURI(Uri.parse(arrayCreadores.get(j).getImagenesArrayList().get(1).getRuta()));
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView <?> parent) {
+            }
+        });
+
+
+        /**
+         * spinnerArtista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+         *             @Override
+         *             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+         *                 nombreCliente.setText(parent.getItemAtPosition(position).toString());
+         *                 if(nombreCliente.getText().equals("Mystra77")){
+         *                     descripcionCliente.setText("No paro de dibujar tias con polla ^_^");
+         *
+         *                 }else if(nombreCliente.getText().equals("Andres")){
+         *                     descripcionCliente.setText("Me encanta generalizar");
+         *                 }
+         *             }
+         *             @Override
+         *             public void onNothingSelected(AdapterView <?> parent) {
+         *             }
+         *         });
+         */
+
+    }
+
+}

@@ -15,7 +15,7 @@
         <activity android:name=".PerfilCreador" />
         <activity android:name=".Estadisticas" />
         <activity android:name=".Galeria" />
-        <activity android:name=".Cliente" />
+        <activity android:name=".PerfilCliente" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorFondo"
-    tools:context=".Cliente">
+    tools:context=".PerfilCliente">
 
     <ScrollView
         android:layout_width="0dp"
@@ -87,7 +87,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
             </TableRow>
@@ -96,24 +97,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1">
 
 
-                <TextView
-                    android:id="@+id/seleccionPorArtista"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/PostRecientes"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <Spinner
-                    android:id="@+id/spinnerArtista"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/seleccionPorArtista"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/PostRecientes"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerArtista"
+                        android:textSize="20sp"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
             </TableRow>
 
             <TableRow
@@ -144,9 +156,10 @@
                             android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/dibujo1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
                             app:srcCompat="@drawable/polloazul" />
                     </LinearLayout>
 
@@ -157,7 +170,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView"
+                            android:id="@+id/titulodibujo2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/caja_texto"
@@ -167,9 +180,10 @@
                             android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/imageView4"
+                            android:id="@+id/dibujo2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
                             app:srcCompat="@drawable/pollodorado" />
                     </LinearLayout>
 
