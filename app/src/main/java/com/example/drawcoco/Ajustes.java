@@ -8,14 +8,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class Ajustes extends AppCompatActivity {
-    Spinner fuente = (Spinner) findViewById(R.id.eligefuente);
-    Spinner idioma = (Spinner) findViewById(R.id.eligeidioma);
-    Spinner tamanoFuente=(Spinner)findViewById(R.id.eligetamano);
+    Spinner fuente ;
+    Spinner idioma ;
+    Spinner tamanoFuente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
 
+        fuente= findViewById(R.id.eligefuente);
+        idioma=findViewById(R.id.eligeidioma);
+        tamanoFuente=findViewById(R.id.eligetamano);
+        
         String[] letras = new String[] {"Courier", "SanSerif", "TimesNewRoman"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, letras);
