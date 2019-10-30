@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Scroll vertical para toda la pantalla-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-
+<!--LinearLayout para apilar los layout hijos en vertical-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context=".PerfilCreador">
-
+        tools:context=".PerfilCreador"
+        android:background="@color/colorFondo">
+<!--ConstraintLayout para delimitar el espacio de la imagen de cabecera-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="150dp">
-
+<!--Imagen de la cabecera del perfil del creador-->
             <ImageView
                 android:id="@+id/imageViewCabecera"
                 android:layout_width="0dp"
@@ -25,13 +27,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@color/colorCabecera" />
-
+<!--RelativeLayout con el espacio para la imagen de perfil del creador-->
             <RelativeLayout
                 android:layout_width="130dp"
                 android:layout_height="105dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
-
+<!--Imagen de perfil del creador-->
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imagenPerfil"
                     android:layout_width="match_parent"
@@ -52,11 +54,11 @@
             </RelativeLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
+<!--ConstraintLayout para delimitar el espacio para la presentación breve del Usuario-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="200dp">
-
+<!--TextView con el nombre del Usuario-->
             <TextView
                 android:id="@+id/textViewNombrePerfil"
                 android:layout_width="0dp"
@@ -70,7 +72,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
+<!--TextView con la descripción breve del usuario-->
             <TextView
                 android:id="@+id/textViewDescripcionBreve"
                 android:layout_width="0dp"
@@ -85,11 +87,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewNombrePerfil" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
+<!--ConstraintLayout para delimitar el espacio de la presentación completa del usuario-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="400dp">
-
+<!--TextView con el titulo del apartado de la presentación completa-->
             <TextView
                 android:id="@+id/textViewTituloSobreMi"
                 android:layout_width="0dp"
@@ -103,7 +105,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
+<!--TextView con la descripción completa del usuario-->
             <TextView
                 android:id="@+id/textViewDescripcionCompleta"
                 android:layout_width="0dp"
@@ -119,16 +121,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewTituloSobreMi" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
+<!--Scroll horizontal para visualizar los tipos de suscripción que establece el usuario-->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true">
-
+<!--ConstraintLayout para delimitar el espacio de los tipos de suscripción-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp">
-
+<!--LinearLayout horizontal con los elementos de cada tipo de suscripción-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -168,7 +170,8 @@
                             android:id="@+id/buttonSuscribirse1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Button"
+                            android:background="@drawable/forma_boton"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -204,7 +207,8 @@
                             android:id="@+id/buttonSuscribirse2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Button"
+                            android:background="@drawable/forma_boton"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -239,9 +243,9 @@
                             android:id="@+id/buttonSuscribirse3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="Button"
+                            android:background="@drawable/forma_boton"/>
                     </LinearLayout>
-
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </HorizontalScrollView>
@@ -268,6 +272,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button"
+                android:background="@drawable/forma_boton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
