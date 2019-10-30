@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Ajustes">
+
     <LinearLayout
         android:id="@+id/barradenavegacion"
-        android:layout_width="416dp"
+        android:layout_width="0dp"
         android:layout_height="80dp"
-        android:orientation="horizontal"
         android:background="@color/colorBordes"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></LinearLayout>
@@ -19,7 +20,7 @@
         android:id="@+id/linearLayout4"
         android:layout_width="400dp"
         android:layout_height="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="180dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
