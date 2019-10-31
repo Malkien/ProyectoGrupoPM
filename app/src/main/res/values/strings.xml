@@ -20,12 +20,12 @@
     <string name="botonMenuDesplegable">Menu Desplegable</string>
 
 
-    //String de la Activity Estadisticas
+<!--String de la Activity Estadisticas-->
     <string name="cabeceraEstadisticas">Estadisticas de</string>
     <string name="textoDineroGanado">Dinero obtenido mensual</string>
     <string name="textoNumeroUsuarios">Usuarios suscritos</string>
 
-    //String de la Activity Login
+<!--String de la Activity Login-->
     <string name="mail">Email</string>
     <string name="contraseña">Contraseña</string>
     <string name="recordarCuenta">Recordar cuenta</string>
@@ -35,11 +35,11 @@
     <string name="olvidadoCuenta">¿Has olvidado tu cuenta?</string>
     <string name="Recuperar">Recuperar</string>
 
-    //String de la Activity Cliente
+<!--String de la Activity Cliente-->
     <string name="PostRecientes">Post recientes de </string>
     <string name="PostRecientesGratuitos">Post recientes gratuitos</string>
 
-    //String de la Activity Registro
+<!--String de la Activity Registro-->
     <string name="nombreAplicacion">DRAWCOCO</string>
     <string name="nickname">NickName</string>
     <string name="nombre">Nombre</string>
@@ -52,7 +52,7 @@
     <string name="terminos">Aceptar términos</string>
     <string name="registrarse">Registrarse</string>
 
-    //String de la Activity Filtrar
+<!--String de la Activity Filtrar-->
     <string name="textoordenar">Ordenar por:</string>
     <string name="ultimas">Últimas publicaciones</string>
     <string name="menorprecio">Menor precio</string>
@@ -62,7 +62,7 @@
     <string name="textocategorias">Categorias:</string>
     <string name="eligecategoria"></string>
 
-    //String de la Activity Ajustes
+<!--String de la Activity Ajustes-->
     <string name="textoidioma">Idioma</string>
     <string name="eligeidioma"></string>
     <string name="textofuente">Cambiar fuente</string>
@@ -70,5 +70,24 @@
     <string name="textotamano">Tamaño fuente</string>
     <string name="eligetamano"></string>
     <string name="tituloajustes">Ajustes</string>
+
+<!--String de la Activity Perfil Creador-->
+    <string name="nombrePerfilCreador">Andrés</string>
+    <string name="descripcionBreveCreador">Descripción Breve</string>
+    <string name="sobreMiCreador">Sobre Mi</string>
+    <string name="descripcionCompletaCreador">Descripción completa</string>
+    <string name="tituloSuscripcion1Creador">Suscripción 1</string>
+    <string name="tituloSuscripcion2Creador">Suscripción 2</string>
+    <string name="tituloSuscripcion3Creador">Suscripción 3</string>
+    <string name="precioSuscripcion1Creador">1€</string>
+    <string name="precioSuscripcion2Creador">2€</string>
+    <string name="precioSuscripcion3Creador">3€</string>
+    <string name="descripcionSuscripcion1Creador">Descripción de la suscripción 1</string>
+    <string name="descripcionSuscripcion2Creador">Descripción de la suscripción 2</string>
+    <string name="descripcionSuscripcion3Creador">Descripción de la suscripción 3</string>
+    <string name="botonSuscribirseCreador">Suscribirse</string>
+    <string name="tituloPostRecientesCreador">Post Recientes</string>
+    <string name="tituloPostCreador">Post 1</string>
+    <string name="botonVerMas">Ver más</string>
 
 </resources>
