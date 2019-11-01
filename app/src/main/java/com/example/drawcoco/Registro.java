@@ -35,13 +35,13 @@ public class Registro extends AppCompatActivity {
 
         sexo=findViewById(R.id.eligegenero);
 
-        String[] gen = new String[] {"Mujer", "Hombre", "Otros"};
+        String[] gen = new String[] {"Mujer", "Hombre"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, gen);
         sexo.setAdapter(adapter);
 
 
-        txtnickname=this.findViewById(R.id.textoNickName);
+        /*txtnickname=this.findViewById(R.id.textoNickName);
         txtnombre=this.findViewById(R.id.textoNombre);
         txtapellidos=this.findViewById(R.id.textoApellidos);
         txtmail=this.findViewById(R.id.textoEmail);
@@ -53,10 +53,11 @@ public class Registro extends AppCompatActivity {
         apellidos=(String)txtapellidos.getText();
         mail=(String)txtmail.getText();
         contraseña=(String)txtcontraseña.getText();
-        
 
-        //Captamos los datos a través de la clase persona, creando una nueva persona con esos datos que
+
+
+        //Captamos los datos a través de la clase persona, creando una nueva persona que
         //posteriormente almacenaremos en la base de datos.
-        Personas persona=new Personas(nickname,nombre,apellidos,mail,contraseña,genero,dinero);
+        //Personas persona=new Personas(nickname,nombre,apellidos,mail,contraseña,genero,dinero);*/
     }
 }
