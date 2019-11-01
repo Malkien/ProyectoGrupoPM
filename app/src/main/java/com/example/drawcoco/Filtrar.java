@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 
+//En este Activity filtraremos las busquedas de nuestros usuarios, por categoria y precio.
 public class Filtrar extends AppCompatActivity {
     Spinner eligecategoria ;
     CheckBox gratuitas;
@@ -17,20 +18,25 @@ public class Filtrar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filtrar);
+
         eligecategoria=findViewById(R.id.eligecategoria);
         gratuitas=findViewById(R.id.gratuitas);
         menor=findViewById(R.id.menorprecio);
         mayor=findViewById(R.id.mayorprecio);
 
+
+        if(gratuitas.isChecked()){
+            menor.setEnabled(false);
+            mayor.setEnabled(false);
+        }
+
         String[] datos = new String[] {"Paisajes", "Animales", "Personas"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, datos);
         eligecategoria.setAdapter(adapter);
-         if(gratuitas.isChecked()){
-            menor.setEnabled(false);
-            mayor.setEnabled(false);
-         }
+
 
     }
+
 
 }
