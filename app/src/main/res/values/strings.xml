@@ -38,6 +38,7 @@
 <!--String de la Activity Cliente-->
     <string name="PostRecientes">Post recientes de </string>
     <string name="PostRecientesGratuitos">Post recientes gratuitos</string>
+    <string name="botonEditar">Editar Perfil</string>
 
 <!--String de la Activity Registro-->
     <string name="nombreAplicacion">DRAWCOCO</string>

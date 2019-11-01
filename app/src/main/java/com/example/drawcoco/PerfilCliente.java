@@ -75,35 +75,13 @@ public class PerfilCliente extends AppCompatActivity {
                                 dibujo2.setImageURI(Uri.parse(arrayCreadores.get(j).getImagenesArrayList().get(1).getRuta()));
                             }
                         }
-
                     }
-
                 }
             }
             @Override
             public void onNothingSelected(AdapterView <?> parent) {
             }
         });
-
-
-        /**
-         * spinnerArtista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-         *             @Override
-         *             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-         *                 nombreCliente.setText(parent.getItemAtPosition(position).toString());
-         *                 if(nombreCliente.getText().equals("Mystra77")){
-         *                     descripcionCliente.setText("No paro de dibujar tias con polla ^_^");
-         *
-         *                 }else if(nombreCliente.getText().equals("Andres")){
-         *                     descripcionCliente.setText("Me encanta generalizar");
-         *                 }
-         *             }
-         *             @Override
-         *             public void onNothingSelected(AdapterView <?> parent) {
-         *             }
-         *         });
-         */
-
     }
 
 }

@@ -6,5 +6,5 @@
     <color name="colorFondo">#F0F0F0</color>
     <color name="colorBordes">#0D2687</color>
     <color name="colorCabecera">#BADAF6</color>
-
+    <color name="negro">#000000</color>
 </resources>
