@@ -19,6 +19,8 @@
     <string name="botonModoDiseño">Modo Diseño</string>
     <string name="botonMenuDesplegable">Menu Desplegable</string>
 
+<!--String de la Activity Galeria-->
+    <string name="busqueda">Busqueda...</string>
 
 <!--String de la Activity Estadisticas-->
     <string name="cabeceraEstadisticas">Estadisticas de</string>

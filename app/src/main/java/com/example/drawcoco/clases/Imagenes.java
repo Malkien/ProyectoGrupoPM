@@ -6,12 +6,14 @@ public class Imagenes implements Serializable {
     private String nombre;
     private String descripcion;
     private int precio;
+    private String categoria;
     private String ruta;
 
-    public Imagenes(String nombre, String descripcion, int precio, String ruta) {
+    public Imagenes(String nombre, String descripcion, int precio, String categoria, String ruta) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.categoria = categoria;
         this.ruta = ruta;
     }
 
@@ -37,6 +39,14 @@ public class Imagenes implements Serializable {
 
     public void setPrecio(int precio) {
         this.precio = precio;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public String getRuta() {
