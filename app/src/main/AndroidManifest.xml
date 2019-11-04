@@ -9,6 +9,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
         <activity android:name=".VisualizarPost"></activity>
         <activity android:name=".Filtrar" />
         <activity android:name=".Ajustes" />
