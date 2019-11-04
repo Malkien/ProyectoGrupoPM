@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Imagenes> galeria1, galeria2;
     private Imagenes imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
 
-    private Intent pantallaLogin, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar, pantallaCreador;
+    private Intent pantallaLogin, pantallaVisualizacion, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar, pantallaCreador;
     private Bundle bundle;
 
     @Override
@@ -93,6 +93,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonVisualizacion(View view) {
+        pantallaVisualizacion = new Intent(this, VisualizarPost.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("cliente1", cliente1);
+        pantallaVisualizacion .putExtras(bundle);
+        this.startActivity(pantallaVisualizacion);
+
     }
 
     public void botonInicio(View view) {
