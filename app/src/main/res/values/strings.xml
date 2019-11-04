@@ -51,28 +51,28 @@
     <string name="password">Contraseña</string>
     <string name="password2">Repetir Contraseña</string>
     <string name="genero">Género</string>
-    <string name="creadorcheck">¿Eres creador?</string>
+    <string name="creadorCheck">¿Eres creador?</string>
     <string name="terminos">Aceptar términos</string>
     <string name="registrarse">Registrarse</string>
 
 <!--String de la Activity Filtrar-->
-    <string name="textoordenar">Ordenar por:</string>
+    <string name="textoOrdenar">Ordenar por:</string>
     <string name="ultimas">Últimas publicaciones</string>
-    <string name="menorprecio">Menor precio</string>
-    <string name="mayorprecio">Mayor precio</string>
+    <string name="menorPrecio">Menor precio</string>
+    <string name="mayorPrecio">Mayor precio</string>
     <string name="valoradas">Mejor valoradas</string>
     <string name="gratuitas">Gratuitas</string>
-    <string name="textocategorias">Categorias:</string>
-    <string name="eligecategoria"></string>
+    <string name="textoCategorias">Categorias:</string>
+    <string name="eligeCategoria"></string>
 
 <!--String de la Activity Ajustes-->
-    <string name="textoidioma">Idioma</string>
-    <string name="eligeidioma"></string>
-    <string name="textofuente">Cambiar fuente</string>
-    <string name="eligefuente"></string>
-    <string name="textotamano">Tamaño fuente</string>
-    <string name="eligetamano"></string>
-    <string name="tituloajustes">Ajustes</string>
+    <string name="textoIdioma">Idioma</string>
+    <string name="eligeIdioma"></string>
+    <string name="textoFuente">Cambiar fuente</string>
+    <string name="eligeFuente"></string>
+    <string name="textoTamano">Tamaño fuente</string>
+    <string name="eligeTamano"></string>
+    <string name="tituloAjustes">Ajustes</string>
 
 <!--String de la Activity Perfil Creador-->
     <string name="nombrePerfilCreador">Andrés</string>
