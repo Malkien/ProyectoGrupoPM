@@ -19,15 +19,15 @@
     <string name="botonModoDiseño">Modo Diseño</string>
     <string name="botonMenuDesplegable">Menu Desplegable</string>
 
-<!--String de la Activity Galeria-->
+    <!--String de la Activity Galeria-->
     <string name="busqueda">Busqueda...</string>
 
-<!--String de la Activity Estadisticas-->
+    <!--String de la Activity Estadisticas-->
     <string name="cabeceraEstadisticas">Estadisticas de</string>
     <string name="textoDineroGanado">Dinero obtenido mensual</string>
     <string name="textoNumeroUsuarios">Usuarios suscritos</string>
 
-<!--String de la Activity Login-->
+    <!--String de la Activity Login-->
     <string name="mail">Email</string>
     <string name="contraseña">Contraseña</string>
     <string name="recordarCuenta">Recordar cuenta</string>
@@ -37,12 +37,12 @@
     <string name="olvidadoCuenta">¿Has olvidado tu cuenta?</string>
     <string name="Recuperar">Recuperar</string>
 
-<!--String de la Activity Cliente-->
+    <!--String de la Activity Cliente-->
     <string name="PostRecientes">Post recientes de </string>
     <string name="PostRecientesGratuitos">Post recientes gratuitos</string>
     <string name="botonEditar">Editar Perfil</string>
 
-<!--String de la Activity Registro-->
+    <!--String de la Activity Registro-->
     <string name="nombreAplicacion">DRAWCOCO</string>
     <string name="nickname">NickName</string>
     <string name="nombre">Nombre</string>
@@ -74,7 +74,7 @@
     <string name="eligeTamano"></string>
     <string name="tituloAjustes">Ajustes</string>
 
-<!--String de la Activity Perfil Creador-->
+    <!--String de la Activity Perfil Creador-->
     <string name="nombrePerfilCreador">Andrés</string>
     <string name="descripcionBreveCreador">Descripción Breve</string>
     <string name="sobreMiCreador">Sobre Mi</string>
