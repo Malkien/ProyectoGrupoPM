@@ -1,4 +1,4 @@
-package com.example.drawcoco;
+package com.example.drawcoco.perfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.drawcoco.R;
 import com.example.drawcoco.clases.Creador;
 import com.example.drawcoco.clases.Cliente;
 

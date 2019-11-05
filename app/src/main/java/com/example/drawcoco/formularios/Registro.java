@@ -1,4 +1,4 @@
-package com.example.drawcoco;
+package com.example.drawcoco.formularios;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.drawcoco.R;
 import com.example.drawcoco.clases.Personas;
 
 //Este Activity recopilará los datos de nuestros nuevos clientes y los alojará en una base de datos.

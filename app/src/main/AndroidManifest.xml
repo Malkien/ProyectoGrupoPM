@@ -13,8 +13,8 @@
         <activity android:name=".VisualizarPost"></activity>
         <activity android:name=".Filtrar" />
         <activity android:name=".Ajustes" />
-        <activity android:name=".Registro" />
-        <activity android:name=".PerfilCreador" />
+        <activity android:name=".formularios.Registro" />
+        <activity android:name=".perfiles.PerfilCreador" />
         <activity
             android:name=".Estadisticas"
             android:screenOrientation="portrait" />
@@ -22,10 +22,10 @@
             android:name=".Galeria"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PerfilCliente"
+            android:name=".perfiles.PerfilCliente"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Login"
+            android:name=".formularios.Login"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

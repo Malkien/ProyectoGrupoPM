@@ -6,9 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.drawcoco.formularios.Login;
+import com.example.drawcoco.formularios.Registro;
+import com.example.drawcoco.perfiles.PerfilCliente;
 import com.example.drawcoco.clases.Creador;
 import com.example.drawcoco.clases.Cliente;
 import com.example.drawcoco.clases.Imagenes;
+import com.example.drawcoco.perfiles.PerfilCreador;
 
 import java.util.ArrayList;
 

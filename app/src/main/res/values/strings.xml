@@ -96,5 +96,6 @@
     <string name="modoNocturno">Modo Nocturno</string>
     <string name="ajustes">Ajustes</string>
     <string name="cerrarSesion">Cerrar Sesión</string>
+    <string name="iniciarSesion">Iniciar Sesión</string>
 
 </resources>
