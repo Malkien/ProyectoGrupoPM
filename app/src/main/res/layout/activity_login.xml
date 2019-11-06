@@ -8,181 +8,148 @@
     tools:context=".formularios.Login">
 
     <!--Contenedor donde se introducen todos los elementos menos el menu inferior-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/colorFondo"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+    <EditText
+        android:id="@+id/cajaContraseña"
+        android:layout_width="222dp"
+        android:layout_height="31dp"
+        android:background="@drawable/caja_texto"
+        android:ems="10"
+        android:hint="@string/contraseña"
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/checkRecordarCuenta"
+        app:layout_constraintEnd_toEndOf="@+id/cajaMail"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/cajaMail"
+        app:layout_constraintTop_toBottomOf="@+id/cajaMail" />
+
+    <EditText
+        android:id="@+id/cajaMail"
+        android:layout_width="222dp"
+        android:layout_height="31dp"
+        android:background="@drawable/caja_texto"
+        android:ems="10"
+        android:hint="@string/mail"
+        android:inputType="textPersonName"
+        android:maxLength="20"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/cajaContraseña"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textoMail"
+        app:layout_constraintTop_toBottomOf="@+id/imagenLogoApp" />
+
+    <TextView
+        android:id="@+id/textoTienesCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="@string/noTienesCuenta"
+        app:layout_constraintBottom_toTopOf="@+id/textoOlvidoCuenta"
+        app:layout_constraintEnd_toStartOf="@+id/textoRegistrate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonLogin" />
+
+    <ImageView
+        android:id="@+id/imagenLogoApp"
+        android:layout_width="218dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/cajaMail"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:srcCompat="@mipmap/logoconletras" />
 
-        <!--Imagen del logotipo de la app-->
-        <ImageView
-            android:id="@+id/imagenLogoApp"
-            android:layout_width="218dp"
-            android:layout_height="91dp"
-            android:layout_marginTop="40dp"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toTopOf="@+id/cajaMail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/logoconletras" />
+    <TextView
+        android:id="@+id/textoOlvidoCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/olvidadoCuenta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textoRecuperar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoTienesCuenta" />
 
-        <!--TextView de la etiqueta Mail-->
-        <TextView
-            android:id="@+id/textoMail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mail"
-            app:layout_constraintBottom_toBottomOf="@+id/cajaMail"
-            app:layout_constraintEnd_toStartOf="@+id/cajaMail"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cajaMail" />
+    <CheckBox
+        android:id="@+id/checkRecordarCuenta"
+        android:layout_width="147dp"
+        android:layout_height="28dp"
+        android:background="@drawable/caja_texto"
+        android:text="@string/recordarCuenta"
+        app:layout_constraintBottom_toTopOf="@+id/botonLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cajaContraseña" />
 
-        <!--TextView de la etiqueta Contraseña-->
-        <TextView
-            android:id="@+id/textoContraseña"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/contraseña"
-            app:layout_constraintBottom_toBottomOf="@+id/cajaContraseña"
-            app:layout_constraintEnd_toStartOf="@+id/cajaContraseña"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cajaContraseña" />
+    <TextView
+        android:id="@+id/textoContraseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contraseña"
+        app:layout_constraintBottom_toBottomOf="@+id/cajaContraseña"
+        app:layout_constraintEnd_toStartOf="@+id/cajaContraseña"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cajaContraseña" />
 
-        <!--EditText para añadir el Email-->
-        <EditText
-            android:id="@+id/cajaMail"
-            android:layout_width="222dp"
-            android:layout_height="31dp"
-            android:background="@drawable/caja_texto"
-            android:ems="10"
-            android:hint="@string/mail"
-            android:inputType="textPersonName"
-            android:maxLength="20"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/cajaContraseña"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textoMail"
-            app:layout_constraintTop_toBottomOf="@+id/imagenLogoApp" />
+    <TextView
+        android:id="@+id/textoMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mail"
+        app:layout_constraintBottom_toBottomOf="@+id/cajaMail"
+        app:layout_constraintEnd_toStartOf="@+id/cajaMail"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cajaMail" />
 
-        <!--EditText para añadir la contraseña-->
-        <EditText
-            android:id="@+id/cajaContraseña"
-            android:layout_width="222dp"
-            android:layout_height="31dp"
-            android:background="@drawable/caja_texto"
-            android:ems="10"
-            android:hint="@string/contraseña"
-            android:inputType="textPassword"
-            android:maxLength="20"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/checkRecordarCuenta"
-            app:layout_constraintEnd_toEndOf="@+id/cajaMail"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/cajaMail"
-            app:layout_constraintTop_toBottomOf="@+id/cajaMail" />
+    <Button
+        android:id="@+id/botonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/forma_boton"
+        android:text="@string/Login"
+        app:layout_constraintBottom_toTopOf="@+id/textoTienesCuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkRecordarCuenta" />
 
-        <!--CheckBox que nos permite indicar si queremos guardar los valores de Mail y Contraseña para futuros inicios de session-->
-        <CheckBox
-            android:id="@+id/checkRecordarCuenta"
-            android:layout_width="147dp"
-            android:layout_height="28dp"
-            android:background="@drawable/caja_texto"
-            android:text="@string/recordarCuenta"
-            app:layout_constraintBottom_toTopOf="@+id/botonLogin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cajaContraseña" />
+    <TextView
+        android:id="@+id/textoRegistrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:text="@string/Registrate"
+        android:textColor="@color/colorBordes"
+        app:layout_constraintBottom_toBottomOf="@+id/textoTienesCuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textoTienesCuenta"
+        app:layout_constraintTop_toTopOf="@+id/textoTienesCuenta"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <!--Boton de Login para entrar en la app-->
-        <Button
-            android:id="@+id/botonLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/forma_boton"
-            android:text="@string/Login"
-            app:layout_constraintBottom_toTopOf="@+id/textoTienesCuenta"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkRecordarCuenta" />
-
-        <!--TextView para indicar la pregunta ¿tienes cuenta?-->
-        <TextView
-            android:id="@+id/textoTienesCuenta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:text="@string/noTienesCuenta"
-            app:layout_constraintBottom_toTopOf="@+id/textoOlvidoCuenta"
-            app:layout_constraintEnd_toStartOf="@+id/textoRegistrate"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/botonLogin" />
-
-        <!--TextView indicar la pregunta ¿Has olvidado la cuenta?-->
-        <TextView
-            android:id="@+id/textoOlvidoCuenta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginBottom="40dp"
-            android:text="@string/olvidadoCuenta"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textoRecuperar"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textoTienesCuenta" />
-
-        <!--TextView con enlace a la Activity Registro-->
-        <TextView
-            android:id="@+id/textoRegistrate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="60dp"
-            android:text="@string/Registrate"
-            android:textColor="@color/colorBordes"
-            app:layout_constraintBottom_toBottomOf="@+id/textoTienesCuenta"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textoTienesCuenta"
-            app:layout_constraintTop_toTopOf="@+id/textoTienesCuenta"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <!--TextView con enlace para recuperar cuenta-->
-        <TextView
-            android:id="@+id/textoRecuperar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="60dp"
-            android:text="@string/Recuperar"
-            android:textColor="@color/colorBordes"
-            app:layout_constraintBottom_toBottomOf="@+id/textoOlvidoCuenta"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textoOlvidoCuenta"
-            app:layout_constraintTop_toTopOf="@+id/textoOlvidoCuenta" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textoRecuperar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:text="@string/Recuperar"
+        android:textColor="@color/colorBordes"
+        app:layout_constraintBottom_toBottomOf="@+id/textoOlvidoCuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textoOlvidoCuenta"
+        app:layout_constraintTop_toTopOf="@+id/textoOlvidoCuenta" />
 
     <!--Espacio reservado para el menu con botones-->
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/colorBordes"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

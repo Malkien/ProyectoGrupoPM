@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Contenedor donde se introducen todos los elementos del Activity Perfil CLiente-->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,276 +8,173 @@
     android:background="@color/colorFondo"
     tools:context=".perfiles.PerfilCliente">
 
-    <!--Scroll vertical para toda la pantalla-->
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <!--TableLayout para insertar por filas/columnas todos los componentes menos el menu inferior-->
-        <TableLayout
+        <!--TableRow para la cabecera-->
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <!--TableRow para la cabecera-->
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <!--ConstraintLayour donde almacenar los elementos de la cabecera-->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/relativeLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <!--Imagen del logotipo de cabecera-->
-                    <ImageView
-                        android:id="@+id/imagenClienteCabecera"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:cropToPadding="true"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@color/colorCabecera" />
-
-                    <!--Imagen circular del avatar del cliente-->
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/imagenPerfil"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
-                        android:layout_marginLeft="32dp"
-                        android:layout_marginTop="32dp"
-                        android:layout_marginBottom="32dp"
-                        android:src="@drawable/tomberi"
-                        app:civ_border_color="#0D2687"
-                        app:civ_border_width="2dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <!--Boton de edicion del Perfil-->
-                    <Button
-                        android:id="@+id/botonEditar"
-                        android:layout_width="119dp"
-                        android:layout_height="44dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:background="@drawable/forma_boton"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/imagenClienteCabecera"
-                        android:text="@string/botonEditar" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </TableRow>
-
-            <!--TableRow para el nombre y la descripcion del cliente-->
-            <TableRow
+            <!--ConstraintLayour donde almacenar los elementos de la cabecera-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
-
-                <!--LinearLayout para separar el nombre y la descripcion-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <!--TextView con el nombre del Cliente-->
-                    <TextView
-                        android:id="@+id/nombreCliente"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textAlignment="center"
-                        android:textColor="@color/negro"
-                        android:textSize="30sp"
-                        android:textStyle="bold" />
-
-                    <!--TextView con la descripcion del Cliente-->
-                    <TextView
-                        android:id="@+id/descripcionCliente"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <!--LinearLayout que crea una linea separadora-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/darker_gray" />
-                </LinearLayout>
-            </TableRow>
-
-            <!--TableRow para almacenar el spinner de seleccion-->
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
                 android:layout_weight="1">
 
-                <!--LinearLayout separador-->
-                <LinearLayout
+                <!--Imagen del logotipo de cabecera-->
+                <ImageView
+                    android:id="@+id/imagenClienteCabecera"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@color/colorCabecera" />
 
-                    <!--TextView que precede al Spinner-->
-                    <TextView
-                        android:id="@+id/seleccionPorArtista"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/PostRecientes"
-                        android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                <!--Imagen circular del avatar del cliente-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imagenPerfil"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:src="@drawable/tomberi"
+                    app:civ_border_color="#0D2687"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <!--Spinner seleccionador-->
-                    <Spinner
-                        android:id="@+id/spinnerArtista"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/spinnerperfil"
-                        android:textAlignment="center"
-                        android:textSize="20sp" />
+                <!--Boton de edicion del Perfil-->
+                <Button
+                    android:id="@+id/botonEditar"
+                    android:layout_width="119dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/forma_boton"
+                    android:text="@string/botonEditar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imagenClienteCabecera" />
 
-                </LinearLayout>
-            </TableRow>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </TableRow>
 
-            <!--TableRow para el titulo y las imagenes de los artistas seguidos-->
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <!--TableRow para el nombre y la descripcion del cliente-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
 
-                <!--LinearLayout que contiene todos los siguientes Layout de titulos e imagenes-->
-                <LinearLayout
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <!--LinearLayout separador de Titulo e imagen-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/caja_texto"
-                        android:orientation="vertical">
-
-                        <!--TextView con el nombre del Dibujo-->
-                        <TextView
-                            android:id="@+id/tituloDibujo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/caja_texto"
-                            android:padding="3dp"
-                            android:text="TextView"
-                            android:textAlignment="center"
-                            android:textColor="@color/negro"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                        <!--ImageView con la imagen a mostrar-->
-                        <ImageView
-                            android:id="@+id/dibujo1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:onClick="botonImagen"
-                            android:layout_margin="20dp"
-                            android:adjustViewBounds="true"
-                            android:clickable="true" />
-                    </LinearLayout>
-
-                    <!--LinearLayout separador de Titulo e imagen-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/caja_texto"
-                        android:orientation="vertical">
-
-                        <!--TextView con el nombre del Dibujo-->
-                        <TextView
-                            android:id="@+id/titulodibujo2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/caja_texto"
-                            android:padding="3dp"
-                            android:text="TextView"
-                            android:textAlignment="center"
-                            android:textColor="@color/negro"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-                        <!--ImageView con la imagen a mostrar-->
-                        <ImageView
-                            android:id="@+id/dibujo2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:adjustViewBounds="true" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </TableRow>
-
-            <!--TableRow para contener el TextView de post recientes gratuitos-->
-            <TableRow
+            <!--LinearLayout para separar el nombre y la descripcion-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <!--ImageView con la etiqueta postRecientesGratuitos-->
+                <!--TextView con el nombre del Cliente-->
                 <TextView
-                    android:id="@+id/postRecientesGratuitos"
+                    android:id="@+id/nombreCliente"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/borde_layout"
-                    android:text="@string/PostRecientesGratuitos"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
                     android:textAlignment="center"
                     android:textColor="@color/negro"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <!--TextView con la descripcion del Cliente-->
+                <TextView
+                    android:id="@+id/descripcionCliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <!--LinearLayout que crea una linea separadora-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+        </TableRow>
+
+        <!--TableRow para almacenar el spinner de seleccion-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1">
+
+            <!--LinearLayout separador-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--TextView que precede al Spinner-->
+                <TextView
+                    android:id="@+id/seleccionPorArtista"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/PostRecientes"
+                    android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
-            </TableRow>
 
-            <!--TableRow para el titulo y las imagenes de los post recientes gratuitos-->
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                <!--Spinner seleccionador-->
+                <Spinner
+                    android:id="@+id/spinnerArtista"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinnerperfil"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
+            </LinearLayout>
+        </TableRow>
 
+        <!--TableRow para el titulo y las imagenes de los artistas seguidos-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--LinearLayout que contiene todos los siguientes Layout de titulos e imagenes-->
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!--LinearLayout separador de Titulo e imagen-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
                     android:background="@drawable/caja_texto"
                     android:orientation="vertical">
 
                     <!--TextView con el nombre del Dibujo-->
                     <TextView
-                        android:id="@+id/tituloDibujoGratuito"
+                        android:id="@+id/tituloDibujo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/caja_texto"
@@ -290,28 +187,107 @@
 
                     <!--ImageView con la imagen a mostrar-->
                     <ImageView
-                        android:id="@+id/dibujo1Gratuito"
+                        android:id="@+id/dibujo1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:adjustViewBounds="true"
+                        android:clickable="true"
+                        android:cropToPadding="false"
+                        android:onClick="botonImagen" />
+                </LinearLayout>
+
+                <!--LinearLayout separador de Titulo e imagen-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/caja_texto"
+                    android:orientation="vertical">
+
+                    <!--TextView con el nombre del Dibujo-->
+                    <TextView
+                        android:id="@+id/titulodibujo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/caja_texto"
+                        android:padding="3dp"
+                        android:text="TextView"
+                        android:textAlignment="center"
+                        android:textColor="@color/negro"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                    <!--ImageView con la imagen a mostrar-->
+                    <ImageView
+                        android:id="@+id/dibujo2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="20dp"
                         android:adjustViewBounds="true" />
                 </LinearLayout>
 
-            </TableRow>
-        </TableLayout>
-    </ScrollView>
+            </LinearLayout>
+        </TableRow>
 
-    <!--Espacio reservado para el menu con botones-->
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@color/colorBordes"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        <!--TableRow para contener el TextView de post recientes gratuitos-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
 
-    </LinearLayout>
+            <!--ImageView con la etiqueta postRecientesGratuitos-->
+            <TextView
+                android:id="@+id/postRecientesGratuitos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/borde_layout"
+                android:text="@string/PostRecientesGratuitos"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </TableRow>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--TableRow para el titulo y las imagenes de los post recientes gratuitos-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/caja_texto"
+                android:orientation="vertical">
+
+                <!--TextView con el nombre del Dibujo-->
+                <TextView
+                    android:id="@+id/tituloDibujoGratuito"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/caja_texto"
+                    android:padding="3dp"
+                    android:text="TextView"
+                    android:textAlignment="center"
+                    android:textColor="@color/negro"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!--ImageView con la imagen a mostrar-->
+                <ImageView
+                    android:id="@+id/dibujo1Gratuito"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true" />
+            </LinearLayout>
+
+        </TableRow>
+    </TableLayout>
+</ScrollView>
