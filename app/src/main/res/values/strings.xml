@@ -97,5 +97,11 @@
     <string name="ajustes">Ajustes</string>
     <string name="cerrarSesion">Cerrar Sesión</string>
     <string name="iniciarSesion">Iniciar Sesión</string>
+    
+    <!--Creación post-->
+    <string name="hintTitulo">Título</string>
+    <string name="hintDescripcion">Descripción</string>
+    <string name="hintEtiquetas">Etiquetas</string>
+    <string name="hintPrecio">Precio</string>
 
 </resources>
