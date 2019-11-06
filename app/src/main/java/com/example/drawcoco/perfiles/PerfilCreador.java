@@ -1,8 +1,10 @@
-package com.example.drawcoco;
+package com.example.drawcoco.perfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.drawcoco.R;
 
 public class PerfilCreador extends AppCompatActivity {
 
