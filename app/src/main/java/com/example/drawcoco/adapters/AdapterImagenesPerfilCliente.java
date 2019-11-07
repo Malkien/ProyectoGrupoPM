@@ -15,11 +15,11 @@ import com.example.drawcoco.clases.Imagenes;
 
 import java.util.ArrayList;
 
-public class AdapterImagenGaleria extends BaseAdapter {
+public class AdapterImagenesPerfilCliente extends BaseAdapter {
     private Context contexto;
     private ArrayList<Imagenes> arrayListaImagenes;
 
-    public AdapterImagenGaleria (Context contexto, ArrayList<Imagenes> arrayListaImagenes) {
+    public AdapterImagenesPerfilCliente (Context contexto, ArrayList<Imagenes> arrayListaImagenes) {
         this.contexto = contexto;
         this.arrayListaImagenes= arrayListaImagenes;
     }
@@ -39,14 +39,12 @@ public class AdapterImagenGaleria extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater=((Activity) contexto).getLayoutInflater();
         if(convertView==null){
-            convertView = inflater.inflate(R.layout.activity_adapter_galeria, null);
+            convertView = inflater.inflate(R.layout.activity_adapter_perfil_cliente, null);
         }
 
-        TextView titulo = convertView.findViewById(R.id.tituloGaleriaDibujo);
+        TextView titulo = convertView.findViewById(R.id.tituloDibujoPerfilCliente);
         titulo.setText(arrayListaImagenes.get(position).getNombre());
-        TextView tag = convertView.findViewById(R.id.categoriaGaleriaDibujo);
-        tag.setText(arrayListaImagenes.get(position).getCategoria());
-        ImageView imagen = convertView.findViewById(R.id.dibujoGaleria);
+        ImageView imagen = convertView.findViewById(R.id.dibujoPerfilCliente);
         imagen.setImageURI(Uri.parse(arrayListaImagenes.get(position).getRuta()));
 
         return convertView;

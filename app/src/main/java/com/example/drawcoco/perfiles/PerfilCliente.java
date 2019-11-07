@@ -2,17 +2,22 @@ package com.example.drawcoco.perfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.drawcoco.R;
+import com.example.drawcoco.adapters.AdapterImagenGaleria;
+import com.example.drawcoco.adapters.AdapterImagenesPerfilCliente;
 import com.example.drawcoco.clases.Creador;
 import com.example.drawcoco.clases.Cliente;
 
@@ -30,12 +35,8 @@ public class PerfilCliente extends AppCompatActivity {
 
         nombreCliente = this.findViewById(R.id.nombreCliente);
         descripcionCliente = this.findViewById(R.id.descripcionCliente);
-        tituloDibujo = this.findViewById(R.id.tituloDibujo);
-        tituloDibujo2 = this.findViewById(R.id.titulodibujo2);
-        tituloDibujoGratuito = this.findViewById(R.id.tituloDibujoGratuito);
-        dibujo1 = this.findViewById(R.id.dibujo1);
-        dibujo2 = this.findViewById(R.id.dibujo2);
-        dibujo1Gratuito = this.findViewById(R.id.dibujo1Gratuito);
+        tituloDibujo = this.findViewById(R.id.tituloDibujoPerfilCliente);
+        dibujo1 = this.findViewById(R.id.dibujoPerfilCliente);
 
         spinnerArtista = this.findViewById(R.id.spinnerArtista);
 
@@ -72,12 +73,9 @@ public class PerfilCliente extends AppCompatActivity {
 
                         for (int j = 0; j < arrayCreadores.size(); j++){
                             if(arrayCreadores.get(j).getNickname().equals(comparador)){
-                                tituloDibujo.setText(arrayCreadores.get(j).getImagenesArrayList().get(0).getNombre());
-                                tituloDibujo2.setText(arrayCreadores.get(j).getImagenesArrayList().get(1).getNombre());
-                                tituloDibujoGratuito.setText(arrayCreadores.get(j).getImagenesArrayList().get(2).getNombre());
-                                dibujo1.setImageURI(Uri.parse(arrayCreadores.get(j).getImagenesArrayList().get(0).getRuta()));
-                                dibujo2.setImageURI(Uri.parse(arrayCreadores.get(j).getImagenesArrayList().get(1).getRuta()));
-                                dibujo1Gratuito.setImageURI(Uri.parse(arrayCreadores.get(j).getImagenesArrayList().get(2).getRuta()));
+                                AdapterImagenesPerfilCliente adapterImagenesPerfilCliente = new AdapterImagenesPerfilCliente(PerfilCliente.this, arrayCreadores.get(j).getImagenesArrayList());
+                                ListView listViewPago = findViewById(R.id.contedorAdapterPerfilCliente);
+                                listViewPago.setAdapter(adapterImagenesPerfilCliente);
                             }
                         }
                     }
