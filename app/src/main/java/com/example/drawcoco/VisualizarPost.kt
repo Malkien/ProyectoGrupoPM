@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
+import android.widget.GridView
 import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.cardview.widget.CardView
@@ -17,7 +18,7 @@ class VisualizarPost : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_visualizar_post)
-        var ponerComentario:ListView=this.findViewById(R.id.contenidoComentarios)
+        var ponerComentario:GridView=this.findViewById(R.id.contenidoComentarios)
         ponerComentario.isNestedScrollingEnabled=false
         var comentarios=ArrayList<Comentario>()
         for(i in 0..5){
