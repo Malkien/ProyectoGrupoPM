@@ -18,6 +18,7 @@ class VisualizarPost : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_visualizar_post)
         var ponerComentario:ListView=this.findViewById(R.id.contenidoComentarios)
+        ponerComentario.isNestedScrollingEnabled=false
         var comentarios=ArrayList<Comentario>()
         for(i in 0..5){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

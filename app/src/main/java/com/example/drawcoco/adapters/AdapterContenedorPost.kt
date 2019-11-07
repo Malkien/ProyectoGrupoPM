@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.RatingBar
 import android.widget.TextView
+import android.widget.Toast
 import com.example.drawcoco.R
 import com.example.drawcoco.clases.Comentario
 import de.hdodenhof.circleimageview.CircleImageView
@@ -26,14 +27,13 @@ class AdapterContenedorPost(val contexto:Context,val datos: ArrayList<Comentario
         var fecha:TextView=convertView.findViewById(R.id.fecha)
         var estrellas:RatingBar=convertView.findViewById(R.id.estrellas)
 
-        for(item in datos){
-            nombre.text=item.nombre
-            //Aprender como poner ImageView de database
-            //icono.setImageResource()
-            comentario.text=item.comentario
-            fecha.text=item.fecha.toString()
-            estrellas.numStars=item.estrellas
-        }
+        Toast.makeText(contexto,"posicion: "+position,Toast.LENGTH_LONG).show()
+        nombre.text=datos.get(position).nombre
+        //Aprender como poner ImageView de database
+        //icono.setImageResource()
+        comentario.text=datos.get(position).comentario
+        fecha.text=datos.get(position).fecha.toString()
+        estrellas.numStars=datos.get(position).estrellas
         return convertView
 
     }
@@ -43,9 +43,11 @@ class AdapterContenedorPost(val contexto:Context,val datos: ArrayList<Comentario
     }
 
     override fun getItemId(position: Int): Long {
-        return 0
+        return position as Long
     }
 
-    override fun getCount(): Int = datos.size
+    override fun getCount(): Int{
+      return datos.size
+    }
 
 }
