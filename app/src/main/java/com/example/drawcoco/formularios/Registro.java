@@ -40,25 +40,6 @@ public class Registro extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, gen);
         sexo.setAdapter(adapter);
-
-
-        /*txtnickname=this.findViewById(R.id.textoNickName);
-        txtnombre=this.findViewById(R.id.textoNombre);
-        txtapellidos=this.findViewById(R.id.textoApellidos);
-        txtmail=this.findViewById(R.id.textoEmail);
-        txtcontraseña=this.findViewById(R.id.textoPassword);
-        txtgenero=this.findViewById(R.id.eligegenero);
-
-        nickname= (String)txtnickname.getText();
-        nombre=(String)txtnombre.getText();
-        apellidos=(String)txtapellidos.getText();
-        mail=(String)txtmail.getText();
-        contraseña=(String)txtcontraseña.getText();
-
-
-
-        //Captamos los datos a través de la clase persona, creando una nueva persona que
-        //posteriormente almacenaremos en la base de datos.
-        //Personas persona=new Personas(nickname,nombre,apellidos,mail,contraseña,genero,dinero);*/
+        
     }
 }
