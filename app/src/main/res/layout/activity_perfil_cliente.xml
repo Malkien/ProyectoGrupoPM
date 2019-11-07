@@ -67,14 +67,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </TableRow>
 
-        <!--TableRow para el nombre y la descripcion del cliente-->
+        <!--TableRow para el nombre y la descripcionCompleta del cliente-->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp">
 
-            <!--LinearLayout para separar el nombre y la descripcion-->
+            <!--LinearLayout para separar el nombre y la descripcionCompleta-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -92,7 +92,7 @@
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
-                <!--TextView con la descripcion del Cliente-->
+                <!--TextView con la descripcionCompleta del Cliente-->
                 <TextView
                     android:id="@+id/descripcionCliente"
                     android:layout_width="match_parent"

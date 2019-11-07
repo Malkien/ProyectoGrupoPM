@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Imagenes> galeria1, galeria2;
     private Imagenes imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
 
-    private Intent pantallaLogin, pantallaVisualizacion, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar, pantallaCreador;
-    private Bundle bundle;
+    private Intent pantallaLogin, pantallaVisualizacion, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar, pantallaCreador, menuDesplegable;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         pantallaVisualizacion = new Intent(this, VisualizarPost.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("cliente1", cliente1);
-        pantallaVisualizacion .putExtras(bundle);
+        pantallaVisualizacion.putExtras(bundle);
         this.startActivity(pantallaVisualizacion);
 
     }
@@ -123,13 +123,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonMenuDesplegable(View view) {
+        menuDesplegable=new Intent(this, Desplegable.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("artista1", artista1);
+        menuDesplegable.putExtras(bundle);
+        this.startActivity(menuDesplegable);
     }
 
     public void botonModoDiseño(View view) {
+        pantallaCreador = new Intent(this, PerfilCreador.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("artista1", artista1);
+        pantallaCreador.putExtras(bundle);
+        this.startActivity(pantallaCreador);
     }
 
     public void botonCreador(View view) {
         pantallaCreador = new Intent(this, PerfilCreador.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("artista1", artista1);
+        pantallaCreador.putExtras(bundle);
         this.startActivity(pantallaCreador);
     }
 }

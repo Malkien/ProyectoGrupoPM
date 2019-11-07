@@ -16,6 +16,7 @@
         <activity android:name=".Ajustes" />
         <activity android:name=".formularios.Registro" />
         <activity android:name=".perfiles.PerfilCreador" />
+        <activity android:name=".Desplegable"/>
         <activity
             android:name=".Estadisticas"
             android:screenOrientation="portrait" />
