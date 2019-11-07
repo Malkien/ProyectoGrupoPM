@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,7 +19,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
@@ -32,8 +32,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tituloajustes">
 
         <!--Creamos los TextView de las distintas opciones de ajuste
-        idioma,tipo de letra y tamaño de letra, así como los distintos
-        spinner que utilizaremos para mostrar las opciones-->
+       idioma,tipo de letra y tamaño de letra, así como los distintos
+       spinner que utilizaremos para mostrar las opciones-->
         <TextView
             android:id="@+id/textoidioma"
             android:layout_width="120dp"
@@ -52,7 +52,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
@@ -82,7 +82,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
@@ -122,14 +122,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <!--Este boton aplicará los ajustes en el estilo principal de nuestra aplicación-->
     <Button
         android:id="@+id/aceptarAjustes"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/forma_boton"
         android:text="@string/aceptarAjustes"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
