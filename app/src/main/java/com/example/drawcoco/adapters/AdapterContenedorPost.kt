@@ -15,9 +15,9 @@ import java.util.*
 
 class AdapterContenedorPost(val contexto:Context,val datos: ArrayList<Comentario>): BaseAdapter(){
 
-    override fun getView(position: Int, convertView: View, parent: ViewGroup?): View {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-        var li:LayoutInflater=(convertView as Activity).getLayoutInflater()
+        var li:LayoutInflater=(contexto as Activity).getLayoutInflater()
         val convertView = li.inflate(R.layout.activity_adapter_contenedor_post, null)
 
         var nombre:TextView=convertView.findViewById(R.id.nombre)

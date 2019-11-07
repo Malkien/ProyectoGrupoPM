@@ -20,13 +20,16 @@
             <TextView
                 android:id="@+id/nombre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:text="Nombre de Usuario" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imagen"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:maxWidth="42dp"
                 android:maxHeight="42dp"
                 android:src="@drawable/tomberi"
