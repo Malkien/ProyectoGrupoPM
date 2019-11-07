@@ -64,6 +64,7 @@
     <string name="gratuitas">Gratuitas</string>
     <string name="textoCategorias">Categorias:</string>
     <string name="eligeCategoria"></string>
+    <string name="btnFiltrar">Filtrar</string>
 
     <!--String de la Activity Ajustes-->
     <string name="textoIdioma">Idioma</string>
@@ -73,6 +74,7 @@
     <string name="textoTamano">Tamaño fuente</string>
     <string name="eligeTamano"></string>
     <string name="tituloAjustes">Ajustes</string>
+    <string name="aceptarAjustes">Aceptar</string>
 
     <!--String de la Activity Perfil Creador-->
     <string name="nombrePerfilCreador">Andrés</string>

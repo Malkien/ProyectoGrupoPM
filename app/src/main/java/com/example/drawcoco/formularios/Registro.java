@@ -2,11 +2,14 @@ package com.example.drawcoco.formularios;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.drawcoco.MainActivity;
 import com.example.drawcoco.R;
 import com.example.drawcoco.clases.Personas;
 
@@ -40,6 +43,11 @@ public class Registro extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, gen);
         sexo.setAdapter(adapter);
-        
+
+    }
+
+    public void registrarse(View view) {
+        Intent intentInicio=new Intent(this, MainActivity.class);
+        this.startActivity(intentInicio);
     }
 }
