@@ -96,40 +96,45 @@
 
             <Button
                 android:id="@+id/button7"
-
+                android:background="@drawable/botontag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="tag" />
 
             <Button
                 android:id="@+id/button8"
+                android:background="@drawable/botontag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="tag" />
 
             <Button
                 android:id="@+id/button4"
+                android:background="@drawable/botontag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="tag" />
 
             <Button
                 android:id="@+id/button5"
+                android:background="@drawable/botontag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="tag" />
 
             <Button
                 android:id="@+id/button6"
+                android:background="@drawable/botontag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="tag" />
 
             <Button
                 android:id="@+id/button3"
+                android:background="@drawable/botontag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="tag" />
         </com.nex3z.flowlayout.FlowLayout>
 
         <View
