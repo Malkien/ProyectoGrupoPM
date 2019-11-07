@@ -24,12 +24,6 @@ public class Filtrar extends AppCompatActivity {
         menor=findViewById(R.id.menorprecio);
         mayor=findViewById(R.id.mayorprecio);
 
-
-        if(gratuitas.isChecked()){
-            menor.setEnabled(false);
-            mayor.setEnabled(false);
-        }
-
         String[] datos = new String[] {"Paisajes", "Animales", "Personas"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, datos);

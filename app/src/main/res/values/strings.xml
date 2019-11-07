@@ -55,7 +55,7 @@
     <string name="terminos">Aceptar términos</string>
     <string name="registrarse">Registrarse</string>
 
-<!--String de la Activity Filtrar-->
+    <!--String de la Activity Filtrar-->
     <string name="textoOrdenar">Ordenar por:</string>
     <string name="ultimas">Últimas publicaciones</string>
     <string name="menorPrecio">Menor precio</string>
@@ -64,8 +64,9 @@
     <string name="gratuitas">Gratuitas</string>
     <string name="textoCategorias">Categorias:</string>
     <string name="eligeCategoria"></string>
+    <string name="btnFiltrar">Filtrar</string>
 
-<!--String de la Activity Ajustes-->
+    <!--String de la Activity Ajustes-->
     <string name="textoIdioma">Idioma</string>
     <string name="eligeIdioma"></string>
     <string name="textoFuente">Cambiar fuente</string>
@@ -73,6 +74,7 @@
     <string name="textoTamano">Tamaño fuente</string>
     <string name="eligeTamano"></string>
     <string name="tituloAjustes">Ajustes</string>
+    <string name="aceptarAjustes">Aceptar</string>
 
     <!--String de la Activity Perfil Creador-->
     <string name="nombrePerfilCreador">Andrés</string>
@@ -92,10 +94,16 @@
     <string name="tituloPostRecientesCreador">Post Recientes</string>
     <string name="tituloPostCreador">Post 1</string>
     <string name="botonVerMas">Ver más</string>
-<!--Menu Desplegable-->
+    <!--Menu Desplegable-->
     <string name="modoNocturno">Modo Nocturno</string>
     <string name="ajustes">Ajustes</string>
     <string name="cerrarSesion">Cerrar Sesión</string>
     <string name="iniciarSesion">Iniciar Sesión</string>
+    
+    <!--Creación post-->
+    <string name="hintTitulo">Título</string>
+    <string name="hintDescripcion">Descripción</string>
+    <string name="hintEtiquetas">Etiquetas</string>
+    <string name="hintPrecio">Precio</string>
 
 </resources>
