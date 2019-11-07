@@ -7,33 +7,21 @@
     tools:context=".formularios.Registro">
 
     <LinearLayout
-        android:id="@+id/barradenavegacion"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@color/colorBordes"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="399dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/nombreAplicacion"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="59dp"
             android:layout_weight="1"
-            android:text="DRAWCOCO"
-            android:textAlignment="center"
-            android:textSize="34dp" />
+            app:srcCompat="@mipmap/logoconletras" />
     </LinearLayout>
 
     <TextView
@@ -241,10 +229,10 @@
         android:id="@+id/registrarse"
         android:layout_width="113dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/forma_boton"
         android:text="Registrarse"
-        app:layout_constraintBottom_toTopOf="@+id/barradenavegacion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creadorcheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
