@@ -2,7 +2,9 @@ package com.example.drawcoco;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
@@ -34,5 +36,10 @@ public class Filtrar extends AppCompatActivity {
 
     }
 
+
+    public void filtrar(View view) {
+        Intent intentDesplegable=new Intent(this, Desplegable.class);
+        this.startActivity(intentDesplegable);
+    }
 
 }
