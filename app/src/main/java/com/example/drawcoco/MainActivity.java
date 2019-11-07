@@ -93,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonCreacionPost(View view) {
+        Intent pantallaCreacionPost = new Intent(this, CreacionPost.class);
+        this.startActivity(pantallaCreacionPost);
     }
 
     public void botonVisualizacion(View view) {
@@ -105,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonInicio(View view) {
+        Intent pantallaInicio = new Intent(this, Inicio.class);
+        this.startActivity(pantallaInicio);
     }
 
     public void botonFiltar(View view) {

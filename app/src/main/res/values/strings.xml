@@ -99,7 +99,7 @@
     <string name="ajustes">Ajustes</string>
     <string name="cerrarSesion">Cerrar Sesión</string>
     <string name="iniciarSesion">Iniciar Sesión</string>
-    
+
     <!--Creación post-->
     <string name="hintTitulo">Título</string>
     <string name="hintDescripcion">Descripción</string>

@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".CreacionPost"></activity>
+        <activity android:name=".Inicio"></activity>
+        <activity android:name=".CreacionPost" />
         <activity android:name=".AdapterContenedorPost" />
         <activity android:name=".VisualizarPost" />
         <activity android:name=".Filtrar" />
