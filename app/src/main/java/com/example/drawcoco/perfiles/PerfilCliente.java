@@ -44,7 +44,7 @@ public class PerfilCliente extends AppCompatActivity {
         Cliente cliente1  = (Cliente) getIntent().getExtras().getSerializable("cliente1");
 
         nombreCliente.setText(cliente1.getNickname());
-        descripcionCliente.setText(cliente1.getDescripcion());
+        descripcionCliente.setText(cliente1.getDescripcionCompleta());
 
         final ArrayList<Creador> arrayCreadores = new ArrayList<>();
         arrayCreadores.add(artista1);

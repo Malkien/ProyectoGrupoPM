@@ -6,6 +6,9 @@ public class Creador extends Personas{
 
     private int suscriptores;
     private ArrayList<Imagenes> imagenesArrayList;
+    private ArrayList<Suscripcion> suscripciones;
+
+
 
     public Creador(String nickname, String nombre, String apellidos, String mail, String contraseña, Genero genero, float dinero, int suscriptores) {
         super(nickname, nombre, apellidos, mail, contraseña, genero, dinero);
@@ -38,5 +41,13 @@ public class Creador extends Personas{
 
     public void setImagenesArrayList(ArrayList<Imagenes> imagenesArrayList) {
         this.imagenesArrayList = imagenesArrayList;
+    }
+
+    public ArrayList<Suscripcion> getSuscripciones() {
+        return suscripciones;
+    }
+
+    public void setSuscripciones(ArrayList<Suscripcion> suscripciones) {
+        this.suscripciones = suscripciones;
     }
 }

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.GridView;
 import android.widget.TextView;
 
-import com.example.drawcoco.adaptadores.AdapterImagenGaleria;
+import com.example.drawcoco.adapters.AdapterImagenGaleria;
 import com.example.drawcoco.clases.Creador;
 import com.example.drawcoco.clases.Imagenes;
 

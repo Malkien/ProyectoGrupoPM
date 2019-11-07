@@ -148,7 +148,7 @@
                 android:layout_height="match_parent"
                 android:fillViewport="true">
                 <!--ConstraintLayout para delimitar el espacio de los tipos de suscripción-->
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="250dp">
                     <!--LinearLayout horizontal con 3 layouts para cada tipo de suscripción-->
@@ -271,7 +271,7 @@
                                 android:text="@string/botonSuscribirseCreador" />
                         </LinearLayout>
                     </LinearLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
             </HorizontalScrollView>
             <!--ContraintLayout para organizar los componentes del apartado "Post recientes"-->
             <androidx.constraintlayout.widget.ConstraintLayout

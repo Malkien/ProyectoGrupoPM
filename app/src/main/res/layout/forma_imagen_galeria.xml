@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--LinearLayour que contiene todos los elementos-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="5dp">
-
+    <!--TextView que muestra el titulo del dibujo-->
     <TextView
         android:id="@+id/tituloGaleriaDibujo"
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@
         android:textColor="@color/negro"
         android:textSize="24sp" />
 
+    <!--ImageView que muestra la imagen-->
     <ImageView
         android:id="@+id/dibujoGaleria"
         android:layout_width="match_parent"
@@ -23,6 +25,7 @@
         android:cropToPadding="false"
         android:scaleType="centerCrop" />
 
+    <!--TextView que muestra la categoria del dibujo-->
     <TextView
         android:id="@+id/categoriaGaleriaDibujo"
         android:layout_width="match_parent"

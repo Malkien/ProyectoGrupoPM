@@ -1,4 +1,4 @@
-package com.example.drawcoco.adaptadores;
+package com.example.drawcoco.adapters;
 
 import android.app.Activity;
 import android.content.Context;
