@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,31 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".Ajustes">
 
-    <LinearLayout
-        android:id="@+id/barradenavegacion"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@color/colorBordes"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+    <!--Este es el logo de nuestra aplicación-->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/tituloajustes">
 
+        <!--Creamos los TextView de las distintas opciones de ajuste
+       idioma,tipo de letra y tamaño de letra, así como los distintos
+       spinner que utilizaremos para mostrar las opciones-->
         <TextView
             android:id="@+id/textoidioma"
             android:layout_width="120dp"
             android:layout_height="30dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:text="Idioma"
             android:textAlignment="center" />
 
@@ -38,17 +46,21 @@
             android:id="@+id/eligeidioma"
             android:layout_width="170dp"
             android:layout_height="30dp"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:background="@drawable/caja_texto" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
@@ -56,7 +68,7 @@
             android:id="@+id/textofuente"
             android:layout_width="120dp"
             android:layout_height="30dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:text="Cambiar fuente"
             android:textAlignment="center" />
 
@@ -64,16 +76,20 @@
             android:id="@+id/eligefuente"
             android:layout_width="170dp"
             android:layout_height="30dp"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:background="@drawable/caja_texto" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="400dp"
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
@@ -81,15 +97,15 @@
             android:id="@+id/textotamano"
             android:layout_width="120dp"
             android:layout_height="30dp"
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:text="Tamaño fuente" />
+            android:layout_weight="0.5"
+            android:text="Tamaño fuente"
+            android:textAlignment="center" />
 
         <Spinner
             android:id="@+id/eligetamano"
             android:layout_width="170dp"
             android:layout_height="30dp"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:background="@drawable/caja_texto" />
     </LinearLayout>
 
@@ -97,10 +113,28 @@
         android:id="@+id/tituloajustes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:text="Ajustes"
-        android:textSize="30dp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--Este boton aplicará los ajustes en el estilo principal de nuestra aplicación-->
+    <Button
+        android:id="@+id/aceptarAjustes"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/forma_boton"
+        android:text="@string/aceptarAjustes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

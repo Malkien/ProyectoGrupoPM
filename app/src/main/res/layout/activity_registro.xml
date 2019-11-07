@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,244 +7,259 @@
     tools:context=".formularios.Registro">
 
     <LinearLayout
-        android:id="@+id/barradenavegacion"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@color/colorBordes"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="399dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/nombreAplicacion"
+        <!--Esta imagen corresponde con el logo de la aplicación con el nombre de la misma-->
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="DRAWCOCO"
-            android:textAlignment="center"
-            android:textSize="34dp" />
+            app:srcCompat="@mipmap/logoconletras" />
     </LinearLayout>
 
+    <!--A partir de aquí declararemos los TextView correspondientes a los campos del registro
+    Nombre,Apellidos,nickname,email,contraseña,género-->
     <TextView
         android:id="@+id/nickname"
         android:layout_width="125dp"
         android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
         android:text="NickName"
         android:textAlignment="center"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textoNickName"
+        app:layout_constraintEnd_toStartOf="@+id/textoNickName"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toTopOf="@+id/textoNickName" />
 
     <TextView
         android:id="@+id/nombre"
         android:layout_width="125dp"
         android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="35dp"
         android:text="Nombre"
         android:textAlignment="center"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textoNombre"
+        app:layout_constraintEnd_toStartOf="@+id/textoNombre"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickname" />
+        app:layout_constraintTop_toTopOf="@+id/textoNombre" />
 
     <TextView
         android:id="@+id/apellidos"
         android:layout_width="125dp"
         android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="35dp"
         android:text="Apellidos"
         android:textAlignment="center"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textoApellidos"
+        app:layout_constraintEnd_toStartOf="@+id/textoApellidos"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        app:layout_constraintTop_toTopOf="@+id/textoApellidos" />
 
     <TextView
         android:id="@+id/email"
         android:layout_width="125dp"
         android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="33dp"
         android:text="E-mail"
         android:textAlignment="center"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textoEmail"
+        app:layout_constraintEnd_toStartOf="@+id/textoEmail"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellidos" />
+        app:layout_constraintTop_toTopOf="@+id/textoEmail" />
 
     <TextView
         android:id="@+id/password"
         android:layout_width="125dp"
         android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
         android:text="Contraseña"
         android:textAlignment="center"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textoPassword"
+        app:layout_constraintEnd_toStartOf="@+id/textoPassword"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toTopOf="@+id/textoPassword" />
 
     <TextView
         android:id="@+id/password2"
         android:layout_width="125dp"
         android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="35dp"
         android:text="Repetir Contraseña"
         android:textAlignment="center"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textoPassword2"
+        app:layout_constraintEnd_toStartOf="@+id/textoPassword2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toTopOf="@+id/textoPassword2" />
 
     <TextView
         android:id="@+id/genero"
         android:layout_width="125dp"
         android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="35dp"
         android:text="Género"
         android:textAlignment="center"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/eligegenero"
+        app:layout_constraintEnd_toStartOf="@+id/eligegenero"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2" />
+        app:layout_constraintTop_toTopOf="@+id/eligegenero" />
 
+    <!--A partir de aquí declararemos los campos de texto correspondientes a los registros
+    Nombre,Apellidos,nickname,email,contraseña, así como el spinner que contiene las opciones
+    para el género-->
     <EditText
         android:id="@+id/textoNickName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/caja_texto"
         android:ems="10"
         android:hint="NickName"
         android:inputType="textPersonName"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textoNombre"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/nickname"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <EditText
         android:id="@+id/textoNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/caja_texto"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textoApellidos"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/nombre"
         app:layout_constraintTop_toBottomOf="@+id/textoNickName" />
 
     <EditText
         android:id="@+id/textoApellidos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/caja_texto"
         android:ems="10"
         android:hint="Apellidos"
         android:inputType="textPersonName"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textoEmail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/apellidos"
         app:layout_constraintTop_toBottomOf="@+id/textoNombre" />
 
     <EditText
         android:id="@+id/textoEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/caja_texto"
         android:ems="10"
         android:hint="E-mail"
-        android:textAlignment="center"
         android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textoPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/email"
         app:layout_constraintTop_toBottomOf="@+id/textoApellidos" />
 
     <EditText
         android:id="@+id/textoPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/caja_texto"
         android:ems="10"
         android:hint="Contraseña"
-        android:textAlignment="center"
         android:inputType="textPassword"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textoPassword2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/textoEmail" />
 
     <EditText
         android:id="@+id/textoPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/caja_texto"
         android:ems="10"
         android:hint="Repite Contraseña"
-        android:textAlignment="center"
         android:inputType="textPassword"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/eligegenero"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/password2"
         app:layout_constraintTop_toBottomOf="@+id/textoPassword" />
 
     <Spinner
         android:id="@+id/eligegenero"
         android:layout_width="213dp"
         android:layout_height="27dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
-        android:textAlignment="center"
         android:background="@drawable/caja_texto"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/terminos"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/genero"
         app:layout_constraintTop_toBottomOf="@+id/textoPassword2" />
 
+    <!--En este punto crearemos los check box para que nuestros clientes acepten los terminos
+    y para que se declaren como creadores o no-->
     <CheckBox
         android:id="@+id/creadorcheck"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="26dp"
         android:background="@drawable/caja_texto"
         android:text="¿Eres creador?"
+        app:layout_constraintBottom_toBottomOf="@+id/terminos"
+        app:layout_constraintEnd_toStartOf="@+id/terminos"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eligegenero" />
+        app:layout_constraintTop_toTopOf="@+id/terminos" />
 
     <CheckBox
         android:id="@+id/terminos"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
         android:background="@drawable/caja_texto"
         android:text="Aceptar términos"
+        app:layout_constraintBottom_toTopOf="@+id/registrarse"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/creadorcheck"
         app:layout_constraintTop_toBottomOf="@+id/eligegenero" />
 
+    <!--Con este boton aceptaremos los datos del registro y nos dirigiremos a la pantalla de inicio-->
     <Button
         android:id="@+id/registrarse"
         android:layout_width="113dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="50dp"
         android:background="@drawable/forma_boton"
+        android:onClick="registrarse"
         android:text="Registrarse"
-        app:layout_constraintBottom_toTopOf="@+id/barradenavegacion"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/terminos" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
