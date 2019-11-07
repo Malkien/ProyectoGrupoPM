@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.drawcoco.Inicio;
 import com.example.drawcoco.MainActivity;
 import com.example.drawcoco.R;
 import com.example.drawcoco.clases.Personas;
@@ -53,7 +54,7 @@ public class Registro extends AppCompatActivity {
     // registro del nuevo usuario
 
     public void registrarse(View view) {
-        Intent intentInicio=new Intent(this, MainActivity.class);
+        Intent intentInicio=new Intent(this, Inicio.class);
         this.startActivity(intentInicio);
     }
 }
