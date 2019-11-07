@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Creador artista1, artista2;
     private Cliente cliente1;
     private ArrayList<Imagenes> galeria1, galeria2;
-    private Imagenes imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
+    private Imagenes imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8;
 
     private Intent pantallaLogin, pantallaVisualizacion, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar, pantallaCreador;
     private Bundle bundle;
@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         galeria1.add(imagen1 = new Imagenes("Pollo Dorado", "Un pollo doradito", 20, "Infantil", "android.resource://" + getPackageName() + "/" + R.drawable.pollodorado));
         galeria1.add(imagen2 = new Imagenes("Poring", "QUE BLANDITOOO", 10,"Infatil", "android.resource://" + getPackageName() + "/" + R.drawable.poi));
         galeria1.add(imagen5 = new Imagenes("Pulpoi", "Violento",0, "Infantil", "android.resource://" + getPackageName() + "/" + R.drawable.pulpoi));
+        galeria1.add(imagen7 = new Imagenes("Tomberi", "Soy un tomberi especial", 50, "Infantil", "android.resource://" + getPackageName() + "/" + R.drawable.tomberi));
+        galeria1.add(imagen8 = new Imagenes("Bunny","FFXIV Bunny",0, "Hot", "android.resource://" + getPackageName() + "/" + R.drawable.bunny));
 
         artista1 = new Creador("Mystra77", "Ana","Belen","mystra77@gmail.com", "Estoy cansada de dibujar Futanari",
                 "xxxx", MUJER,50f,23, galeria1);
