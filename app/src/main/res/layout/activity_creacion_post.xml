@@ -43,7 +43,7 @@
         android:ems="10"
         android:hint="@string/hintEtiquetas"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerSuscripcion"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,16 +65,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/precio"
-        app:layout_constraintTop_toBottomOf="@+id/etiquetas"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
         tools:layout_editor_absoluteX="-9dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/forma_boton"
+        android:text="@string/textoImagen"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerSuscripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etiquetas" />
 
     <Button
         android:id="@+id/publicar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/textoPublicar"
         android:background="@drawable/forma_boton"
+        android:text="@string/textoPublicar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

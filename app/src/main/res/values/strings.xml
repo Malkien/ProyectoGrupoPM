@@ -106,5 +106,6 @@
     <string name="hintEtiquetas">Etiquetas</string>
     <string name="hintPrecio">Precio</string>
     <string name="textoPublicar">Publicar</string>
+    <string name="textoImagen">Añadir Imagen</string>
 
 </resources>
