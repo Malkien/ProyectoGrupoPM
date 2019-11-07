@@ -16,6 +16,8 @@ import com.example.drawcoco.clases.Personas;
 //Este Activity recopilará los datos de nuestros nuevos clientes y los alojará en una base de datos.
 
 public class Registro extends AppCompatActivity {
+    //Declaramos todas las variables que utilizaremos posteriormente para
+    //cargar los valores en nuestra base de datos de clientes.
     Spinner sexo;
     String nickname;
     String nombre;
@@ -38,6 +40,8 @@ public class Registro extends AppCompatActivity {
         setContentView(R.layout.activity_registro);
 
         sexo=findViewById(R.id.eligegenero);
+        //Aquí se cargan los valores del spinner que nos dará las opciones para
+        //el valor del campo género.
 
         String[] gen = new String[] {"Mujer", "Hombre"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -45,6 +49,8 @@ public class Registro extends AppCompatActivity {
         sexo.setAdapter(adapter);
 
     }
+    //Esta activity redireccionará a la pantalla de inicio una vez concluya el
+    // registro del nuevo usuario
 
     public void registrarse(View view) {
         Intent intentInicio=new Intent(this, MainActivity.class);

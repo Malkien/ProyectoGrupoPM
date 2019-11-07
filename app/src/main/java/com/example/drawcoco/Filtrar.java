@@ -9,6 +9,7 @@ import android.widget.Spinner;
 
 //En este Activity filtraremos las busquedas de nuestros usuarios, por categoria y precio.
 public class Filtrar extends AppCompatActivity {
+
     Spinner eligecategoria ;
     CheckBox gratuitas;
     CheckBox menor;
@@ -24,6 +25,7 @@ public class Filtrar extends AppCompatActivity {
         menor=findViewById(R.id.menorprecio);
         mayor=findViewById(R.id.mayorprecio);
 
+        //Cargamos el spinner con las categorias por las que buscaremos las obras
         String[] datos = new String[] {"Paisajes", "Animales", "Personas"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, datos);

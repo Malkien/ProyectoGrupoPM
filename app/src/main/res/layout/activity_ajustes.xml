@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Ajustes">
 
+    <!--Este es el logo de nuestra aplicación-->
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="50dp"
@@ -30,6 +31,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloajustes">
 
+        <!--Creamos los TextView de las distintas opciones de ajuste
+        idioma,tipo de letra y tamaño de letra, así como los distintos
+        spinner que utilizaremos para mostrar las opciones-->
         <TextView
             android:id="@+id/textoidioma"
             android:layout_width="120dp"
@@ -118,6 +122,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--Este boton aplicará los ajustes en el estilo principal de nuestra aplicación-->
     <Button
         android:id="@+id/aceptarAjustes"
         android:layout_width="200dp"

@@ -19,6 +19,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--Aquí crearemos los check box necesarios para poder filtrar las imagenes
+    por precio,últimas imagenes o gratuitas o mejor valoradas-->
     <CheckBox
         android:id="@+id/ultimas"
         android:layout_width="200dp"
@@ -98,6 +100,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gratuitas" />
 
+    <!--En este punto crearemos un spinner que contiene las distintas categorias de nuestras imágenes-->
     <Spinner
         android:id="@+id/eligecategoria"
         android:layout_width="200dp"
@@ -109,6 +112,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textocategorias" />
 
+    <!--Con este botón aplicaremos los filtros y volveremos al menú desplegable-->
     <Button
         android:id="@+id/btnFiltrar"
         android:layout_width="200dp"
@@ -120,6 +124,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eligecategoria" />
 
+    <!--Este es el logo de nuestra aplicación-->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="50dp"

@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
+    <!--Esta imagen corresponde con el logo de la aplicación con el nombre de la misma-->
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
@@ -23,7 +23,8 @@
             android:layout_weight="1"
             app:srcCompat="@mipmap/logoconletras" />
     </LinearLayout>
-
+    <!--A partir de aquí declararemos los TextView correspondientes a los campos del registro
+    Nombre,Apellidos,nickname,email,contraseña,género-->
     <TextView
         android:id="@+id/nickname"
         android:layout_width="125dp"
@@ -108,6 +109,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password2" />
 
+    <!--A partir de aquí declararemos los campos de texto correspondientes a los registros
+    Nombre,Apellidos,nickname,email,contraseña, así como el spinner que contiene las opciones
+    para el género-->
     <EditText
         android:id="@+id/textoNickName"
         android:layout_width="wrap_content"
@@ -203,6 +207,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoPassword2" />
 
+    <!--En este punto crearemos los check box para que nuestros clientes acepten los terminos
+    y para que se declaren como creadores o no-->
     <CheckBox
         android:id="@+id/creadorcheck"
         android:layout_width="150dp"
@@ -225,6 +231,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eligegenero" />
 
+    <!--Con este boton aceptaremos los datos del registro y nos dirigiremos a la pantalla de inicio-->
     <Button
         android:id="@+id/registrarse"
         android:layout_width="113dp"
