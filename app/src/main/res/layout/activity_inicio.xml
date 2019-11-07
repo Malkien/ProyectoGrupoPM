@@ -10,51 +10,40 @@
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3">
+        android:fillViewport="true"
+        android:layout_weight="2.7">
 
-        <LinearLayout
+        <GridView
+            android:id="@+id/imagenesIconos"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:numColumns="5"
+            android:scrollbars="horizontal">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imagen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tomberi"
-                app:civ_border_color="#0D2687"
-                app:civ_border_width="2dp" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imagen2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tomberi"
-                app:civ_border_color="#0D2687"
-                app:civ_border_width="2dp" />
-        </LinearLayout>
+        </GridView>
     </HorizontalScrollView>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3">
+        android:fillViewport="true"
+        android:layout_weight="2">
 
-        <LinearLayout
+        <GridView
+            android:id="@+id/imagenesRecomendadas"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:numColumns="5"
+            android:scrollbars="horizontal">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"/>
-        </LinearLayout>
+
+        </GridView>
     </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_weight="1.5" />
 
 </LinearLayout>
