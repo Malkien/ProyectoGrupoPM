@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import com.example.drawcoco.R;
 import com.example.drawcoco.clases.Creador;
-import com.example.drawcoco.clases.Suscripcion;
-
-import java.util.ArrayList;
 
 public class PerfilCreador extends AppCompatActivity {
     private TextView nickCreador, descripcionBreve, descripcionCompleta, tituloPost;
@@ -31,7 +28,7 @@ public class PerfilCreador extends AppCompatActivity {
         nickCreador.setText(artista1.getNickname());
         descripcionCompleta.setText(artista1.getDescripcionCompleta());
         descripcionBreve.setText(artista1.getDescripcionCompleta());
-        tituloPost.setText(artista1.getImagenesArrayList().get(0).getNombre());
-        imagenPost.setImageURI(Uri.parse(artista1.getImagenesArrayList().get(0).getRuta()));
+        tituloPost.setText(artista1.getImagenArrayList().get(0).getNombre());
+        imagenPost.setImageURI(Uri.parse(artista1.getImagenArrayList().get(0).getRuta()));
     }
 }

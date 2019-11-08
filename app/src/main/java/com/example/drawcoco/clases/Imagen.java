@@ -2,14 +2,14 @@ package com.example.drawcoco.clases;
 
 import java.io.Serializable;
 
-public class Imagenes implements Serializable {
+public class Imagen implements Serializable {
     private String nombre;
     private String descripcion;
     private int precio;
     private String categoria;
     private String ruta;
 
-    public Imagenes(String nombre, String descripcion, int precio, String categoria, String ruta) {
+    public Imagen(String nombre, String descripcion, int precio, String categoria, String ruta) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;

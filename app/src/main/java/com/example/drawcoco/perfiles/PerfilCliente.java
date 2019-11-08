@@ -2,13 +2,10 @@ package com.example.drawcoco.perfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -16,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.drawcoco.R;
-import com.example.drawcoco.adapters.AdapterImagenGaleria;
 import com.example.drawcoco.adapters.AdapterImagenesPerfilCliente;
 import com.example.drawcoco.clases.Creador;
 import com.example.drawcoco.clases.Cliente;
@@ -73,7 +69,7 @@ public class PerfilCliente extends AppCompatActivity {
 
                         for (int j = 0; j < arrayCreadores.size(); j++){
                             if(arrayCreadores.get(j).getNickname().equals(comparador)){
-                                AdapterImagenesPerfilCliente adapterImagenesPerfilCliente = new AdapterImagenesPerfilCliente(PerfilCliente.this, arrayCreadores.get(j).getImagenesArrayList());
+                                AdapterImagenesPerfilCliente adapterImagenesPerfilCliente = new AdapterImagenesPerfilCliente(PerfilCliente.this, arrayCreadores.get(j).getImagenArrayList());
                                 ListView listViewPago = findViewById(R.id.contedorAdapterPerfilCliente);
                                 listViewPago.setAdapter(adapterImagenesPerfilCliente);
                             }

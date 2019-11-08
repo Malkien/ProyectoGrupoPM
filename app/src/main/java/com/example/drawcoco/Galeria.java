@@ -9,14 +9,14 @@ import android.widget.TextView;
 
 import com.example.drawcoco.adapters.AdapterImagenGaleria;
 import com.example.drawcoco.clases.Creador;
-import com.example.drawcoco.clases.Imagenes;
+import com.example.drawcoco.clases.Imagen;
 
 import java.util.ArrayList;
 
 public class Galeria extends AppCompatActivity {
 
     TextView nombreArtista;
-    ArrayList<Imagenes> arrayListImagenes;
+    ArrayList<Imagen> arrayListImagenes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class Galeria extends AppCompatActivity {
         nombreArtista.setText(artista1.getNickname());
 
 
-        AdapterImagenGaleria adapterGaleria = new AdapterImagenGaleria(this, artista1.getImagenesArrayList());
+        AdapterImagenGaleria adapterGaleria = new AdapterImagenGaleria(this, artista1.getImagenArrayList());
         GridView grid = findViewById(R.id.gridViewGaleriaImagenes);
         grid.setAdapter(adapterGaleria);
 
