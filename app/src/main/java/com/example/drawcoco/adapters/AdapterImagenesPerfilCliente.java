@@ -43,7 +43,7 @@ public class AdapterImagenesPerfilCliente extends BaseAdapter {
         }
 
         TextView titulo = convertView.findViewById(R.id.tituloDibujoPerfilCliente);
-        titulo.setText(arrayListaImagenes.get(position).getNombre());
+        titulo.setText(arrayListaImagenes.get(position).getTitulo());
         ImageView imagen = convertView.findViewById(R.id.dibujoPerfilCliente);
         imagen.setImageURI(Uri.parse(arrayListaImagenes.get(position).getRuta()));
 

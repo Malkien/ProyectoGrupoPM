@@ -43,9 +43,9 @@ public class AdapterImagenGaleria extends BaseAdapter {
         }
 
         TextView titulo = convertView.findViewById(R.id.tituloGaleriaDibujo);
-        titulo.setText(arrayListaImagenes.get(position).getNombre());
+        titulo.setText(arrayListaImagenes.get(position).getTitulo());
         TextView tag = convertView.findViewById(R.id.categoriaGaleriaDibujo);
-        tag.setText(arrayListaImagenes.get(position).getCategoria());
+        tag.setText(arrayListaImagenes.get(position).getArrayTags().get(0));
         ImageView imagen = convertView.findViewById(R.id.dibujoGaleria);
         imagen.setImageURI(Uri.parse(arrayListaImagenes.get(position).getRuta()));
 

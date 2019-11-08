@@ -3,7 +3,7 @@ package com.example.drawcoco.clases;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Suscripcion extends ElementosAComprar implements Serializable {
+public class Suscripcion extends ElementosAComprar {
     private LocalDateTime fechaInicio;
     private LocalDateTime fechaFin;
 

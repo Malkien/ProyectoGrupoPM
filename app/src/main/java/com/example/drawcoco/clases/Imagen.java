@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Imagen extends ElementosAComprar implements Serializable {
+public class Imagen extends ElementosAComprar {
 
     private LocalDateTime fechaSubida;
     private String ruta;
@@ -34,6 +34,14 @@ public class Imagen extends ElementosAComprar implements Serializable {
         this.creador = creador;
         this.gratis = gratis;
         this.suscripcionAsignada = suscripcionAsignada;
+    }
+
+    /**
+     * Constructor solo para la creacion de la imagen de perfil y cabecera.
+     * @param ruta Ruta de archivo de la imagen
+     */
+    public Imagen(String ruta){
+        this.ruta = ruta;
     }
 
     /**

@@ -28,12 +28,12 @@ class AdapterContenedorPost(val contexto:Context,val datos: ArrayList<Comentario
         var estrellas:RatingBar=convertView.findViewById(R.id.estrellas)
 
         Toast.makeText(contexto,"posicion: "+position,Toast.LENGTH_LONG).show()
-        nombre.text=datos.get(position).nombre
+        nombre.text=datos.get(position).usuario.nickname
         //Aprender como poner ImageView de database
         //icono.setImageResource()
-        comentario.text=datos.get(position).comentario
+        comentario.text=datos.get(position).contenido
         fecha.text=datos.get(position).fecha.toString()
-        estrellas.numStars=datos.get(position).estrellas
+        estrellas.numStars=datos.get(position).puntuacion
         return convertView
 
     }

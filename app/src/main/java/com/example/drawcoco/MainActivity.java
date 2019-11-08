@@ -3,6 +3,7 @@ package com.example.drawcoco;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,20 +15,18 @@ import com.example.drawcoco.clases.Cliente;
 import com.example.drawcoco.clases.Imagen;
 import com.example.drawcoco.perfiles.PerfilCreador;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static com.example.drawcoco.clases.Personas.Genero.HOMBRE;
 import static com.example.drawcoco.clases.Personas.Genero.MUJER;
 
 public class MainActivity extends AppCompatActivity {
-
+    //Inicializo unos cuantas variables que serviran para crear unos perfiles de cliente y creador de pruebas.
+    private Imagen imagenPerfil, imagenCabecera;
+    private ArrayList<Imagen> galeriaArtista1, galeriaArtista2;
     private Creador artista1, artista2;
     private Cliente cliente1;
-    private ArrayList<Imagen> galeria1, galeria2;
-    private Imagen imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8;
-
-    private Intent pantallaLogin, pantallaVisualizacion, pantallaGaleria, pantallaCliente, pantallaEstadisticas,pantallaRegistro, pantallaAjustes,pantallaFiltrar, pantallaCreador, menuDesplegable;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,39 +34,60 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Bundle bundle = new Bundle();
 
-        cliente1 = new Cliente("Furro","Jose","Feliz","jaja@gmail.com","Me encanta el furry","xxxx",HOMBRE,200);
+        //Creacion de dos imagenes usando el constructor pequeño de Imagen.
+        imagenPerfil = new Imagen("\"android.resource://\" + getPackageName() + \"/\" + R.drawable.polloDorado");
+        imagenCabecera = new Imagen("\"android.resource://\" + getPackageName() + \"/\" + R.drawable.pulpoi");
 
-        ArrayList<Imagen> galeria1= new ArrayList<Imagen>();
-        galeria1.add(imagen1 = new Imagen("Pollo Dorado", "Un pollo doradito", 20, "Infantil", "android.resource://" + getPackageName() + "/" + R.drawable.pollodorado));
-        galeria1.add(imagen2 = new Imagen("Poring", "QUE BLANDITOOO", 10,"Infatil", "android.resource://" + getPackageName() + "/" + R.drawable.poi));
-        galeria1.add(imagen5 = new Imagen("Pulpoi", "Violento",0, "Infantil", "android.resource://" + getPackageName() + "/" + R.drawable.pulpoi));
-        galeria1.add(imagen7 = new Imagen("Tomberi", "Soy un tomberi especial", 50, "Infantil", "android.resource://" + getPackageName() + "/" + R.drawable.tomberi));
-        galeria1.add(imagen8 = new Imagen("Bunny","FFXIV Bunny",0, "Hot", "android.resource://" + getPackageName() + "/" + R.drawable.bunny));
 
-        artista1 = new Creador("Mystra77", "Ana","Belen","mystra77@gmail.com", "Estoy cansada de dibujar Futanari",
-                "xxxx", MUJER,50f,23, galeria1);
+        //Creacion de un cliente, utilizando el constructor completo
+        cliente1 = new Cliente("Pervert", "Jose", "Gallardo","perver@gmail.com",
+                "Me gustan los dibujitos chinos","xxxxx", HOMBRE, 500, imagenPerfil, imagenCabecera, null);
 
-        ArrayList<Imagen> galeria2= new ArrayList<Imagen>();
-        galeria2.add(imagen1 = new Imagen("Pollo Blanco", "Es blanco", 5, "Infantil", "android.resource://" + getPackageName() + "/" + R.drawable.polloblanco));
-        galeria2.add(imagen2 = new Imagen("Tomberi", "Soy un tomberi especial", 50, "Infantil", "android.resource://" + getPackageName() + "/" + R.drawable.tomberi));
-        galeria2.add(imagen6 = new Imagen("Bunny","FFXIV Bunny",0, "Hot", "android.resource://" + getPackageName() + "/" + R.drawable.bunny));
+        //Creacion de dos ArrayList de String para incluir unos cuantos tags en las imagenes
+        ArrayList<String> arrayTags1 = new ArrayList<>();
+        arrayTags1.add("Infantil");
+        arrayTags1.add("Bonito");
 
-        artista2 = new Creador("Malito", "Ivan","Diaz","idvera77@gmail.com", "Que bien me lo paso en clase",
-                "xxxx", HOMBRE,120f,50, galeria2);
+        ArrayList<String> arrayTags2 = new ArrayList<>();
+        arrayTags2.add("Sexy");
+        arrayTags2.add("Hot");
 
-        bundle.putSerializable("artista1", artista1);
-        bundle.putSerializable("artista2", artista2);
-        bundle.putSerializable("cliente1", cliente1);
+        //Con este if podemos utilizar LocalDateTime.now() que no es soportado en la version 23
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //Creacion de dos ArrayList de imagenes para utilizarlos en los artistas.
+            galeriaArtista1 = new ArrayList<Imagen>();
+            galeriaArtista1.add(new Imagen("Pollo Dorado", "Un pollo bonito", 50, LocalDateTime.now(), "android.resource://" + getPackageName() + "/" + R.drawable.pollodorado, arrayTags1, null, true, null));
+            galeriaArtista1.add(new Imagen("Poring", "Esta blandito", 12, LocalDateTime.now(), "android.resource://" + getPackageName() + "/" + R.drawable.poi, arrayTags1, null, true, null));
+            galeriaArtista1.add(new Imagen("Bunny", "Conejita Sexy", 100, LocalDateTime.now(), "android.resource://" + getPackageName() + "/" + R.drawable.bunny, arrayTags2, null, true, null));
 
+            galeriaArtista2 = new ArrayList<Imagen>();
+            galeriaArtista2.add(new Imagen("Pollo Blanco", "Un pollo gordito", 50, LocalDateTime.now(), "android.resource://" + getPackageName() + "/" + R.drawable.polloblanco, arrayTags1, null, true, null));
+            galeriaArtista2.add(new Imagen("Tomberi", "Soy verde", 12, LocalDateTime.now(), "android.resource://" + getPackageName() + "/" + R.drawable.tomberi, arrayTags1, null, true, null));
+
+            //Creacion de los artistas para uso de pruebas
+            artista1 = new Creador("Mystra77", "Ana","Belen","mystra77@gmail.com", "Estoy cansada de dibujar Futanari",
+                    "xxxx", MUJER,50, imagenPerfil, imagenCabecera, 23, galeriaArtista1,
+                    null, "Hola soy Mystra77 y me encanta dibujar desde hace muchos años...");
+
+            artista2 = new Creador("Malito", "Ivan","Diaz","idvera77@gmail.com", "Que bien me lo paso en clase",
+                    "xxxx", HOMBRE,120f,imagenPerfil, imagenCabecera, 10, galeriaArtista2,
+                    null, "Hola soy un excelente programador y me encanta cargarme repositorios ^_^");
+
+            //Serializacion de artistas y cliente
+            bundle.putSerializable("artista1", artista1);
+            bundle.putSerializable("artista2", artista2);
+            bundle.putSerializable("cliente1", cliente1);
+        }
     }
 
+    //Botones para ir a cada Activity, todos tienen el nombre al cual se dirigen.
     public void botonLogin(View view) {
-        pantallaLogin = new Intent(this, Login.class);
+        Intent pantallaLogin = new Intent(this, Login.class);
         this.startActivity(pantallaLogin);
     }
 
     public void botonGaleria(View view) {
-        pantallaGaleria = new Intent(this, Galeria.class);
+        Intent pantallaGaleria = new Intent(this, Galeria.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("artista1", artista1);
         bundle.putSerializable("artista2", artista2);
@@ -77,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonCliente(View view) {
-        pantallaCliente = new Intent(this, PerfilCliente.class);
+        Intent pantallaCliente = new Intent(this, PerfilCliente.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("artista1", artista1);
         bundle.putSerializable("artista2", artista2);
@@ -87,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonEstadisticas(View view) {
-        pantallaEstadisticas= new Intent(this, Estadisticas.class);
+        Intent pantallaEstadisticas= new Intent(this, Estadisticas.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("artista1", artista1);
         pantallaEstadisticas.putExtras(bundle);
@@ -100,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonVisualizacion(View view) {
-        pantallaVisualizacion = new Intent(this, VisualizarPost.class);
+        Intent pantallaVisualizacion = new Intent(this, VisualizarPost.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("cliente1", cliente1);
         pantallaVisualizacion.putExtras(bundle);
@@ -114,22 +134,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonFiltar(View view) {
-        pantallaFiltrar = new Intent(this, Filtrar.class);
+        Intent pantallaFiltrar = new Intent(this, Filtrar.class);
         this.startActivity(pantallaFiltrar);
     }
 
     public void botonAjustes(View view) {
-        pantallaAjustes = new Intent(this, Ajustes.class);
+        Intent pantallaAjustes = new Intent(this, Ajustes.class);
         this.startActivity(pantallaAjustes);
     }
 
     public void botonRegistro(View view) {
-        pantallaRegistro = new Intent(this, Registro.class);
+        Intent pantallaRegistro = new Intent(this, Registro.class);
         this.startActivity(pantallaRegistro);
     }
 
     public void botonMenuDesplegable(View view) {
-        menuDesplegable=new Intent(this, Desplegable.class);
+        Intent menuDesplegable=new Intent(this, Desplegable.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("artista1", artista1);
         menuDesplegable.putExtras(bundle);
@@ -137,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonModoDiseño(View view) {
-        pantallaCreador = new Intent(this, PerfilCreador.class);
+        Intent pantallaCreador = new Intent(this, PerfilCreador.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("artista1", artista1);
         pantallaCreador.putExtras(bundle);
@@ -145,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonCreador(View view) {
-        pantallaCreador = new Intent(this, PerfilCreador.class);
+        Intent pantallaCreador = new Intent(this, PerfilCreador.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("artista1", artista1);
         pantallaCreador.putExtras(bundle);

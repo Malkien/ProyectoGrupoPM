@@ -1,6 +1,8 @@
 package com.example.drawcoco.clases;
 
-public abstract class ElementosAComprar {
+import java.io.Serializable;
+
+public abstract class ElementosAComprar implements Serializable {
     private String titulo;
     private String descripcion;
     private float precio;
@@ -15,6 +17,13 @@ public abstract class ElementosAComprar {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.precio = precio;
+    }
+
+    /**
+     * Constructor vacio, principalmente para crear imagen de cabecera o de perfil.
+     *
+     */
+    public ElementosAComprar(){
     }
 
     /**

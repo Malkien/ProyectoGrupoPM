@@ -27,8 +27,8 @@ public class PerfilCreador extends AppCompatActivity {
         Creador artista1 = (Creador) getIntent().getExtras().getSerializable("artista1");
         nickCreador.setText(artista1.getNickname());
         descripcionCompleta.setText(artista1.getDescripcionCompleta());
-        descripcionBreve.setText(artista1.getDescripcionCompleta());
-        tituloPost.setText(artista1.getImagenArrayList().get(0).getNombre());
+        descripcionBreve.setText(artista1.getDescripcionBreve());
+        tituloPost.setText(artista1.getImagenArrayList().get(0).getTitulo());
         imagenPost.setImageURI(Uri.parse(artista1.getImagenArrayList().get(0).getRuta()));
     }
 }
