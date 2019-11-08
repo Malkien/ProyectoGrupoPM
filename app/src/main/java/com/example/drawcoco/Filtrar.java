@@ -38,8 +38,8 @@ public class Filtrar extends AppCompatActivity {
 
 
     public void filtrar(View view) {
-        Intent intentDesplegable=new Intent(this, Desplegable.class);
-        this.startActivity(intentDesplegable);
+        Intent intentGaleria=new Intent(this, MainActivity.class);
+        this.startActivity(intentGaleria);
     }
 
 }
