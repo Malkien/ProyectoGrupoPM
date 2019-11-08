@@ -9,15 +9,30 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Inicio"></activity>
-        <activity android:name=".CreacionPost" />
-        <activity android:name=".AdapterContenedorPost" />
-        <activity android:name=".VisualizarPost" />
-        <activity android:name=".Filtrar" />
-        <activity android:name=".Ajustes" />
-        <activity android:name=".formularios.Registro" />
-        <activity android:name=".perfiles.PerfilCreador" />
-        <activity android:name=".Desplegable"/>
+        <activity
+            android:name=".Inicio"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".CreacionPost"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".VisualizarPost"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Filtrar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Ajustes"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".formularios.Registro"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".perfiles.PerfilCreador"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Desplegable"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Estadisticas"
             android:screenOrientation="portrait" />
