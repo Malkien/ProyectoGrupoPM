@@ -11,15 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.drawcoco.R;
-import com.example.drawcoco.clases.Imagenes;
+import com.example.drawcoco.clases.Imagen;
 
 import java.util.ArrayList;
 
 public class AdapterImagenGaleria extends BaseAdapter {
     private Context contexto;
-    private ArrayList<Imagenes> arrayListaImagenes;
+    private ArrayList<Imagen> arrayListaImagenes;
 
-    public AdapterImagenGaleria (Context contexto, ArrayList<Imagenes> arrayListaImagenes) {
+    public AdapterImagenGaleria (Context contexto, ArrayList<Imagen> arrayListaImagenes) {
         this.contexto = contexto;
         this.arrayListaImagenes= arrayListaImagenes;
     }

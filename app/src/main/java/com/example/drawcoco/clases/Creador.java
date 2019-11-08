@@ -5,10 +5,8 @@ import java.util.ArrayList;
 public class Creador extends Personas{
 
     private int suscriptores;
-    private ArrayList<Imagenes> imagenesArrayList;
+    private ArrayList<Imagen> imagenArrayList;
     private ArrayList<Suscripcion> suscripciones;
-
-
 
     public Creador(String nickname, String nombre, String apellidos, String mail, String contraseña, Genero genero, float dinero, int suscriptores) {
         super(nickname, nombre, apellidos, mail, contraseña, genero, dinero);
@@ -18,13 +16,13 @@ public class Creador extends Personas{
     public Creador(String nickname, String nombre, String apellidos, String mail, String descripcion, String contraseña, Genero genero, float dinero, int suscriptores) {
         super(nickname, nombre, apellidos, mail, descripcion, contraseña, genero, dinero);
         this.suscriptores = suscriptores;
-        this.imagenesArrayList = imagenesArrayList;
+        this.imagenArrayList = imagenArrayList;
     }
 
-    public Creador(String nickname, String nombre, String apellidos, String mail, String descripcion, String contraseña, Genero genero, float dinero, int suscriptores, ArrayList<Imagenes> imagenesArrayList) {
+    public Creador(String nickname, String nombre, String apellidos, String mail, String descripcion, String contraseña, Genero genero, float dinero, int suscriptores, ArrayList<Imagen> imagenArrayList) {
         super(nickname, nombre, apellidos, mail, descripcion, contraseña, genero, dinero);
         this.suscriptores = suscriptores;
-        this.imagenesArrayList = imagenesArrayList;
+        this.imagenArrayList = imagenArrayList;
     }
 
     public int getSuscriptores() {
@@ -35,12 +33,12 @@ public class Creador extends Personas{
         this.suscriptores = suscriptores;
     }
 
-    public ArrayList<Imagenes> getImagenesArrayList() {
-        return imagenesArrayList;
+    public ArrayList<Imagen> getImagenArrayList() {
+        return imagenArrayList;
     }
 
-    public void setImagenesArrayList(ArrayList<Imagenes> imagenesArrayList) {
-        this.imagenesArrayList = imagenesArrayList;
+    public void setImagenArrayList(ArrayList<Imagen> imagenArrayList) {
+        this.imagenArrayList = imagenArrayList;
     }
 
     public ArrayList<Suscripcion> getSuscripciones() {
