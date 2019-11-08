@@ -1,67 +1,55 @@
 package com.example.drawcoco.clases;
 
-public class Suscripcion {
-    private String titulo;
-    private float precio;
-    private String descripcion;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+public class Suscripcion extends ElementosAComprar implements Serializable {
+    private LocalDateTime fechaInicio;
+    private LocalDateTime fechaFin;
 
     /**
-     * Constructor de la clase Suscripcion
-     * @param titulo //Titulo de la suscripción
-     * @param precio //Precio de la suscripción
-     * @param descripcion //Descripción de la suscripcion
+     * Constructor completo de la clase Suscripcion
+     * @param titulo Titulo de la suscripción, hereda de elementoAComprar
+     * @param descripcion Descripción de la suscripción, hereda de elementoAComprar
+     * @param precio Precio de la suscripción, hereda de elementoAComprar
+     * @param fechaInicio Fecha de inicio de la suscripción
+     * @param fechaFin Fecha de fin de la suscripción
      */
-    public Suscripcion(String titulo, float precio, String descripcion) {
-        this.titulo = titulo;
-        this.precio = precio;
-        this.descripcion = descripcion;
+    public Suscripcion(String titulo, String descripcion, float precio, LocalDateTime fechaInicio, LocalDateTime fechaFin) {
+        super(titulo, descripcion, precio);
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
     }
 
     /**
-     * Getter del titulo de la suscripcion
-     * @return un objeto de tipo String
+     * Getter fecha de inicio de la suscripción
+     * @return un objeto de tipo LocalDateTime
      */
-    public String getTitulo() {
-        return titulo;
+    public LocalDateTime getFechaInicio() {
+        return fechaInicio;
     }
 
     /**
-     * Setter del titulo de la suscripcion
-     * @param titulo String con el valor del titulo
+     * Setter fecha de inicio de la suscripción
+     * @param fechaInicio LocalDateTime con el nuevo valor de la fecha de inicio
      */
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setFechaInicio(LocalDateTime fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
 
     /**
-     * Getter del precio de la suscripcion
-     * @return objeto de tipo float
+     * Getter fecha de fin de la suscripción
+     * @return un objeto de tipo LocalDateTime
      */
-    public float getPrecio() {
-        return precio;
+    public LocalDateTime getFechaFin() {
+        return fechaFin;
     }
 
     /**
-     * Setter del precio de la suscripcion
-     * @param precio Float con el nuevo valor del precio
+     * Setter fecha de fin de la suscripción
+     * @param fechaFin  LocalDateTime con el nuevo valor de la fecha de fin
      */
-    public void setPrecio(float precio) {
-        this.precio = precio;
-    }
-
-    /**
-     * Getter de la descripcion de la suscripcion
-     * @return objeto de tipo String
-     */
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    /**
-     * Setter de la descripcion de la suscripcion
-     * @param descripcion String con el nuevo valor de la descripcion
-     */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setFechaFin(LocalDateTime fechaFin) {
+        this.fechaFin = fechaFin;
     }
 }

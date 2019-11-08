@@ -20,9 +20,9 @@ import com.example.drawcoco.clases.Cliente;
 import java.util.ArrayList;
 
 public class PerfilCliente extends AppCompatActivity {
-    TextView nombreCliente, descripcionCliente, tituloDibujo, tituloDibujo2, tituloDibujoGratuito;
+    TextView nombreCliente, descripcionCliente, tituloDibujo;
     Spinner spinnerArtista;
-    ImageView dibujo1, dibujo2, dibujo1Gratuito;
+    ImageView dibujo1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
