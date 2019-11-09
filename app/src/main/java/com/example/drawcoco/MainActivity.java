@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.drawcoco.clases.Suscripcion;
 import com.example.drawcoco.formularios.Login;
 import com.example.drawcoco.formularios.Registro;
 import com.example.drawcoco.perfiles.PerfilCliente;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Imagen> galeriaArtista1, galeriaArtista2;
     private Creador artista1, artista2;
     private Cliente cliente1;
+    private ArrayList<Suscripcion>listaSuscripciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +66,14 @@ public class MainActivity extends AppCompatActivity {
             galeriaArtista2.add(new Imagen("Pollo Blanco", "Un pollo gordito", 50, LocalDateTime.now(), "android.resource://" + getPackageName() + "/" + R.drawable.polloblanco, arrayTags1, null, true, null));
             galeriaArtista2.add(new Imagen("Tomberi", "Soy verde", 12, LocalDateTime.now(), "android.resource://" + getPackageName() + "/" + R.drawable.tomberi, arrayTags1, null, true, null));
 
+            //ArrayList con los tipos de suscripciones para un usuario creador
+            listaSuscripciones=new ArrayList<Suscripcion>();
+            Suscripcion suscripcionBronce=new Suscripcion("Bronce", "Suscripcion de bronce", 5f, LocalDateTime.now(), LocalDateTime.now());
+            listaSuscripciones.add(suscripcionBronce);
             //Creacion de los artistas para uso de pruebas
             artista1 = new Creador("Mystra77", "Ana","Belen","mystra77@gmail.com", "Estoy cansada de dibujar Futanari",
                     "xxxx", MUJER,50, imagenPerfil, imagenCabecera, 23, galeriaArtista1,
-                    null, "Hola soy Mystra77 y me encanta dibujar desde hace muchos años...");
+                    listaSuscripciones, "Hola soy Mystra77 y me encanta dibujar desde hace muchos años...");
 
             artista2 = new Creador("Malito", "Ivan","Diaz","idvera77@gmail.com", "Que bien me lo paso en clase",
                     "xxxx", HOMBRE,120f,imagenPerfil, imagenCabecera, 10, galeriaArtista2,

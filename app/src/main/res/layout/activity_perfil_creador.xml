@@ -1,344 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Scroll vertical para toda la pantalla-->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!--LinearLayout para apilar los layout hijos en vertical-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-    <!--LinearLayout para apilar los layout hijos en vertical-->
+    android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:id="@+id/linearLayout6"
+        android:layout_height="wrap_content"
+        android:background="@color/colorFondo"
+        android:orientation="vertical">
+        <!--ConstraintLayout para delimitar el espacio de la imagen de cabecera-->
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorFondo"
-            android:orientation="vertical">
-            <!--ConstraintLayout para delimitar el espacio de la imagen de cabecera-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp">
-                <!--Boton "editar perfil" para cambiar al modo customización-->
-                <Button
-                    android:id="@+id/buttonEditar"
-                    android:layout_width="113dp"
-                    android:layout_height="49dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/forma_boton"
-                    android:text="@string/botonEditar"
+            android:layout_height="150dp">
+            <!--Boton "editar perfil" para cambiar al modo customización-->
+            <Button
+                android:id="@+id/buttonEditar"
+                android:layout_width="113dp"
+                android:layout_height="49dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/forma_boton"
+                android:text="@string/botonEditar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewCabecera"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.841" />
+            <!--Imagen de la cabecera del perfil del creador-->
+            <ImageView
+                android:id="@+id/imageViewCabecera"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@color/colorCabecera" />
+            <!--RelativeLayout con el espacio para la imagen de perfil del creador-->
+            <RelativeLayout
+                android:layout_width="130dp"
+                android:layout_height="105dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+                <!--Imagen de perfil del creador-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imagenPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/tomberi"
+                    app:civ_border_color="#0D2687"
+                    app:civ_border_width="2dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/imageViewCabecera"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.841" />
-                <!--Imagen de la cabecera del perfil del creador-->
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--ConstraintLayout para delimitar el espacio para la presentación breve del Usuario-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--TextView con el nombre del Usuario-->
+            <TextView
+                android:id="@+id/textViewNombrePerfil"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/caja_texto"
+                android:text="@string/nombrePerfilCreador"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--TextView con la descripción breve del usuario-->
+            <TextView
+                android:id="@+id/textViewDescripcionBreve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/caja_texto"
+                android:text="@string/descripcionBreveCreador"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNombrePerfil" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--ConstraintLayout para delimitar el espacio de la presentación completa del usuario-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--TextView con el titulo del apartado de la presentación completa-->
+            <TextView
+                android:id="@+id/textViewTituloSobreMi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/caja_texto"
+                android:text="@string/sobreMiCreador"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--TextView con la descripción completa del usuario-->
+            <TextView
+                android:id="@+id/textViewDescripcionCompleta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/caja_texto"
+                android:text="@string/descripcionCompletaCreador"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTituloSobreMi" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Scroll horizontal para visualizar los tipos de suscripción que establece el usuario-->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <!--ConstraintLayout para delimitar el espacio de los tipos de suscripción-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="250dp">
+                <!--LinearLayout horizontal con 3 layouts para cada tipo de suscripción-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:paddingTop="5dp">
+
+                    <GridView
+                        android:id="@+id/espacioSuscripciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </HorizontalScrollView>
+        <!--ContraintLayout para organizar los componentes del apartado "Post recientes"-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--TextView con el titulo del aparatado "Post Recientes-->
+            <TextView
+                android:id="@+id/textViewTituloRecientes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/caja_texto"
+                android:text="@string/tituloPostRecientesCreador"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--Button para cargar mas Post recientes-->
+            <Button
+                android:id="@+id/buttonVerMas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/forma_boton"
+                android:text="@string/botonVerMas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+            <!--ConstraintLayout que organiza los componente de un solo post-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/borde_layout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--TextView con el titulo del post-->
+                <TextView
+                    android:id="@+id/textViewTituloPost1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/caja_texto"
+                    android:text="@string/tituloPostCreador"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--ImageView con la previsualización de la imagen del post-->
                 <ImageView
-                    android:id="@+id/imageViewCabecera"
+                    android:id="@+id/imageViewPost1"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:src="@drawable/pollodorado"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@color/colorCabecera" />
-                <!--RelativeLayout con el espacio para la imagen de perfil del creador-->
-                <RelativeLayout
-                    android:layout_width="130dp"
-                    android:layout_height="105dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-                    <!--Imagen de perfil del creador-->
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/imagenPerfil"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="0dp"
-                        android:src="@drawable/tomberi"
-                        app:civ_border_color="#0D2687"
-                        app:civ_border_width="2dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </RelativeLayout>
-
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTituloPost1" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <!--ConstraintLayout para delimitar el espacio para la presentación breve del Usuario-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-                <!--TextView con el nombre del Usuario-->
-                <TextView
-                    android:id="@+id/textViewNombrePerfil"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/caja_texto"
-                    android:text="@string/nombrePerfilCreador"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <!--TextView con la descripción breve del usuario-->
-                <TextView
-                    android:id="@+id/textViewDescripcionBreve"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/caja_texto"
-                    android:text="@string/descripcionBreveCreador"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewNombrePerfil" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <!--ConstraintLayout para delimitar el espacio de la presentación completa del usuario-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="400dp">
-                <!--TextView con el titulo del apartado de la presentación completa-->
-                <TextView
-                    android:id="@+id/textViewTituloSobreMi"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/caja_texto"
-                    android:text="@string/sobreMiCreador"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <!--TextView con la descripción completa del usuario-->
-                <TextView
-                    android:id="@+id/textViewDescripcionCompleta"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/caja_texto"
-                    android:text="@string/descripcionCompletaCreador"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewTituloSobreMi" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <!--Scroll horizontal para visualizar los tipos de suscripción que establece el usuario-->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fillViewport="true">
-                <!--ConstraintLayout para delimitar el espacio de los tipos de suscripción-->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp">
-                    <!--LinearLayout horizontal con 3 layouts para cada tipo de suscripción-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingTop="5dp">
-                        <!--LinearLayout vertical para organizar los textView y el boton-->
-                        <LinearLayout
-                            android:layout_width="220dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="1dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/borde_layout"
-                            android:orientation="vertical">
-                            <!--TextView con el titulo de la suscripción 1-->
-                            <TextView
-                                android:id="@+id/textViewTituloSuscripcion1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/tituloSuscripcion1Creador"
-                                android:textAlignment="center"
-                                android:textSize="30sp"
-                                android:textStyle="bold" />
-                            <!--Textview con el precio de la suscripción 1-->
-                            <TextView
-                                android:id="@+id/textViewPrecioSuscripcion1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/precioSuscripcion1Creador"
-                                android:textAlignment="center" />
-                            <!--TextView con la descripción de la suscripción 1-->
-                            <TextView
-                                android:id="@+id/textViewDescripcionSuscripcion1"
-                                android:layout_width="match_parent"
-                                android:layout_height="130dp"
-                                android:text="@string/descripcionSuscripcion1Creador" />
-                            <!--Button para suscribirse a la suscripción 1-->
-                            <Button
-                                android:id="@+id/buttonSuscribirse1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/forma_boton"
-                                android:text="@string/botonSuscribirseCreador" />
-                        </LinearLayout>
-                        <!--LinearLayout vertical para organizar los textView y el boton-->
-                        <LinearLayout
-                            android:layout_width="220dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="5dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/borde_layout"
-                            android:orientation="vertical">
-                            <!--TextView con el titulo de la suscripción 2-->
-                            <TextView
-                                android:id="@+id/textViewTituloSuscripcion2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/tituloSuscripcion2Creador"
-                                android:textAlignment="center"
-                                android:textSize="30sp"
-                                android:textStyle="bold" />
-                            <!--TextView con el precio de la suscripción 2-->
-                            <TextView
-                                android:id="@+id/textViewPrecioSuscripcion2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/precioSuscripcion2Creador"
-                                android:textAlignment="center" />
-                            <!--TextView con la descripción de la suscripción 2-->
-                            <TextView
-                                android:id="@+id/textViewDescripcionSuscripcion2"
-                                android:layout_width="match_parent"
-                                android:layout_height="130dp"
-                                android:text="TextView" />
-                            <!--Button para suscribirse a la suscripción 2-->
-                            <Button
-                                android:id="@+id/buttonSuscribirse2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/forma_boton"
-                                android:text="@string/botonSuscribirseCreador" />
-                        </LinearLayout>
-                        <!--LinearLayout vertical para organizar los textView y el boton-->
-                        <LinearLayout
-                            android:layout_width="220dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/borde_layout"
-                            android:orientation="vertical">
-                            <!--TextView con el titulo de la suscripción 3-->
-                            <TextView
-                                android:id="@+id/textViewTituloSuscripcion3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/tituloSuscripcion3Creador"
-                                android:textAlignment="center"
-                                android:textSize="30sp"
-                                android:textStyle="bold" />
-                            <!--TextView con el precio de la suscripción 3-->
-                            <TextView
-                                android:id="@+id/textViewPrecioSuscripcion3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/precioSuscripcion3Creador"
-                                android:textAlignment="center" />
-                            <!--TextView con la descripción de la suscripción 3-->
-                            <TextView
-                                android:id="@+id/textViewDescripcionSuscripcion3"
-                                android:layout_width="match_parent"
-                                android:layout_height="130dp"
-                                android:text="@string/descripcionSuscripcion3Creador" />
-                            <!--Button para suscribirse a la suscripción 3-->
-                            <Button
-                                android:id="@+id/buttonSuscribirse3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/forma_boton"
-                                android:text="@string/botonSuscribirseCreador" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </HorizontalScrollView>
-            <!--ContraintLayout para organizar los componentes del apartado "Post recientes"-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <!--TextView con el titulo del aparatado "Post Recientes-->
-                <TextView
-                    android:id="@+id/textViewTituloRecientes"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/caja_texto"
-                    android:text="@string/tituloPostRecientesCreador"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <!--Button para cargar mas Post recientes-->
-                <Button
-                    android:id="@+id/buttonVerMas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/forma_boton"
-                    android:text="@string/botonVerMas"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-                <!--ConstraintLayout que organiza los componente de un solo post-->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="500dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/borde_layout"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-                    <!--TextView con el titulo del post-->
-                    <TextView
-                        android:id="@+id/textViewTituloPost1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/caja_texto"
-                        android:text="@string/tituloPostCreador"
-                        android:textAlignment="center"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                    <!--ImageView con la previsualización de la imagen del post-->
-                    <ImageView
-                        android:id="@+id/imageViewPost1"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:src="@drawable/pollodorado"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewTituloPost1" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
 
