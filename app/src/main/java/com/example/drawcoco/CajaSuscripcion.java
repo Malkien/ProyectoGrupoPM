@@ -14,44 +14,36 @@ import android.widget.TextView;
 
 import com.example.drawcoco.clases.Creador;
 
-public class CajaSuscripcion extends BaseAdapter {
-    private Context contexto;
-    private Creador creador;
+public class CajaSuscripcion{
+    String titulo, precio, descripcion;
 
-    public CajaSuscripcion(Context contexto, Creador creador) {
-        this.contexto = contexto;
-        this.creador = creador;
+    public CajaSuscripcion(String titulo, String precio, String descripcion) {
+        this.titulo=titulo;
+        this.descripcion=descripcion;
+        this.precio=precio;
     }
 
-    @Override
-    public int getCount() {
-        return creador.getSuscripciones().size();
+    public String getTitulo() {
+        return titulo;
     }
 
-    @Override
-    public Object getItem(int i) {
-        return null;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    @Override
-    public long getItemId(int i) {
-        return 0;
+    public String getPrecio() {
+        return precio;
     }
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        LayoutInflater inflater=((Activity)contexto).getLayoutInflater();
-        if(view==null){
-            view=inflater.inflate(R.layout.activity_caja_suscripcion, null);
-        }
-        TextView titulo=view.findViewById(R.id.textViewTituloSuscripcion);
-        titulo.setText(creador.getSuscripciones().get(i).getTitulo());
-        TextView precio=view.findViewById(R.id.textViewPrecioSuscripcion);
-        precio.setText(creador.getSuscripciones().get(i).getPrecio()+"€");
-        TextView descripcion=view.findViewById(R.id.textViewDescripcionSuscripcion);
-        descripcion.setText(creador.getSuscripciones().get(i).getDescripcion());
-        Button boton=view.findViewById(R.id.buttonSuscribirse);
-        //El boton de suscribirse aun no hace nada
-        return view;
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }

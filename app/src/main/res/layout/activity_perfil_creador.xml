@@ -131,29 +131,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewTituloSobreMi" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!--Scroll horizontal para visualizar los tipos de suscripción que establece el usuario-->
-        <HorizontalScrollView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:fillViewport="true">
-            <!--ConstraintLayout para delimitar el espacio de los tipos de suscripción-->
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="250dp">
-                <!--LinearLayout horizontal con 3 layouts para cada tipo de suscripción-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:baselineAligned="false"
-                    android:paddingTop="5dp">
 
-                    <GridView
-                        android:id="@+id/espacioSuscripciones"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </HorizontalScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleViewSuscripciones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:scrollbars="horizontal" />
+        </RelativeLayout>
         <!--ContraintLayout para organizar los componentes del apartado "Post recientes"-->
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

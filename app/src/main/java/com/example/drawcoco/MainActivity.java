@@ -69,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
             //ArrayList con los tipos de suscripciones para un usuario creador
             listaSuscripciones=new ArrayList<Suscripcion>();
             Suscripcion suscripcionBronce=new Suscripcion("Bronce", "Suscripcion de bronce", 5f, LocalDateTime.now(), LocalDateTime.now());
+            Suscripcion suscripcionPlata=new Suscripcion("Plata", "Suscripcion de plata", 10f, LocalDateTime.now(), LocalDateTime.now());
             listaSuscripciones.add(suscripcionBronce);
+            listaSuscripciones.add(suscripcionPlata);
             //Creacion de los artistas para uso de pruebas
             artista1 = new Creador("Mystra77", "Ana","Belen","mystra77@gmail.com", "Estoy cansada de dibujar Futanari",
                     "xxxx", MUJER,50, imagenPerfil, imagenCabecera, 23, galeriaArtista1,
