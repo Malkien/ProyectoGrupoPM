@@ -24,12 +24,13 @@ public class PerfilCreador extends AppCompatActivity {
     private RecyclerView recyclerViewSuscripcion;
     private RecyclerView.Adapter adapterSuscripcion;
     private RecyclerView.LayoutManager managerSuscripcion;
+    private Creador artista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_creador);
-        Creador artista = (Creador) getIntent().getExtras().getSerializable("artista1");
+        artista = (Creador) getIntent().getExtras().getSerializable("artista1");
 
         //Enlace de los componentes de la activity con las variables java
         nickCreador=findViewById(R.id.textViewNombrePerfil);
@@ -44,13 +45,16 @@ public class PerfilCreador extends AppCompatActivity {
         descripcionBreve.setText(artista.getDescripcionBreve());
         tituloPost.setText(artista.getImagenArrayList().get(0).getTitulo());
         imagenPost.setImageURI(Uri.parse(artista.getImagenArrayList().get(0).getRuta()));
-        //declarar el adapter de las cajas de suscripcion
+        //declarar el RecyclerView, Manager, y adapter para las caja de suscripción
         recyclerViewSuscripcion=findViewById(R.id.recycleViewSuscripciones);
         recyclerViewSuscripcion.setHasFixedSize(true);//Con esto se autoAjusta
-        managerSuscripcion=new LinearLayoutManager(this);
+        managerSuscripcion=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);//LinearLayoutManager.HORIZONTAL ¡SCROLL HORIZONTAL!
+        //Añadimos al arrayList los objetos que queremos meter en el RecyclerView
         ArrayList<CajaSuscripcion> tipoSuscripcion=new ArrayList<>();
-        CajaSuscripcion cajaSuscripcion=new CajaSuscripcion("Bronce", "5€", "Suscripcion de bronce");
-        tipoSuscripcion.add(cajaSuscripcion);
+        for(int i=0; i<artista.getSuscripciones().size();i++){
+            CajaSuscripcion cajaSuscripcion1=new CajaSuscripcion(artista.getSuscripciones().get(i).getTitulo(), artista.getSuscripciones().get(i).getPrecio()+"€", artista.getSuscripciones().get(i).getDescripcion());
+            tipoSuscripcion.add(cajaSuscripcion1);
+        }
         adapterSuscripcion=new AdapterSuscripcion(tipoSuscripcion);
         recyclerViewSuscripcion.setLayoutManager(managerSuscripcion);
         recyclerViewSuscripcion.setAdapter(adapterSuscripcion);
