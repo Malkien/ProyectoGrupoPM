@@ -30,8 +30,9 @@ public class Registro extends AppCompatActivity {
     String nombre;
     String apellidos;
     String email;
-    String descripcion;
     String contraseña;
+    String contraseña2;
+    String generospinner;
 
     Personas.Genero genero;
     float dinero;
@@ -40,6 +41,7 @@ public class Registro extends AppCompatActivity {
     TextView txtapellidos;
     TextView txtmail;
     TextView txtcontraseña;
+    TextView txtcontraseña2;
     TextView txtgenero;
     CheckBox creadorCheck;
     CheckBox terminos;
@@ -59,15 +61,19 @@ public class Registro extends AppCompatActivity {
         terminos=findViewById(R.id.terminos);
         creadorCheck=findViewById(R.id.creadorcheck);
 
+        generospinner=sexo.getAdapter().toString();
+
         txtnickname=findViewById(R.id.textoNickName);
         txtnombre=findViewById(R.id.textoNombre);
         txtapellidos=findViewById(R.id.textoApellidos);
         txtcontraseña=findViewById(R.id.textoPassword);
+        txtcontraseña2=findViewById(R.id.textoPassword2);
         txtmail=findViewById(R.id.textoEmail);
         nickname=txtnickname.getText().toString();
         nombre=txtnombre.getText().toString();
         apellidos=txtapellidos.getText().toString();
         contraseña=txtcontraseña.getText().toString();
+        contraseña2=txtcontraseña2.getText().toString();
         email=txtmail.getText().toString();
 
     }
@@ -75,21 +81,31 @@ public class Registro extends AppCompatActivity {
     // registro del nuevo usuario
 
     public void registrarse(View view) {
-        if(terminos.isChecked()) {
-            Intent intentInicio = new Intent(this, Inicio.class);
-            this.startActivity(intentInicio);
-        }else{
-            Toast.makeText(this,"Debe de aceptar los términos para continuar con el registro", Toast.LENGTH_LONG).show();
-        }
 
-    //Al seleccionar en el checkBox la opción creador, crearemos un nuevo objeto de la clase creador que hereda de personas,
-    //si no lo seleccionamos crearemos un nuevo objeto de la clase cliente.
-    //Todos estos datos serán almacenados despues en nuestra base de datos.
-        if(creadorCheck.isChecked()) {
-            Creador usuario = new Creador(nickname,nombre,apellidos,email,null,contraseña,genero,dinero,null,null,0, null, null, null);
-        }else{
-            Cliente usuario=new Cliente(nickname,nombre,apellidos,email,null,contraseña,genero,dinero, null, null,null);
-        }
+
+            //Aqui ponemos la condición de que si los términos del acuerdo no son aceptados, no se podrá continuar con el registro.
+            if (terminos.isChecked()) {
+                Intent intentInicio = new Intent(this, Inicio.class);
+                this.startActivity(intentInicio);
+            } else {
+                Toast.makeText(this, "Debe de aceptar los términos para registrar sus datos", Toast.LENGTH_LONG).show();
+            }
+
+            if(generospinner.equalsIgnoreCase("hombre")){
+                 genero= Personas.Genero.HOMBRE;
+                 
+            }else{
+                 genero=Personas.Genero.MUJER;
+            }
+
+            //Al seleccionar en el checkBox la opción creador, crearemos un nuevo objeto de la clase creador que hereda de personas,
+            //si no lo seleccionamos crearemos un nuevo objeto de la clase cliente.
+            //Todos estos datos serán almacenados despues en nuestra base de datos.
+            if (creadorCheck.isChecked()) {
+                Creador usuario = new Creador(nickname, nombre, apellidos, email, null, contraseña, genero, dinero, null, null, 0, null, null, null);
+            } else {
+                Cliente usuario = new Cliente(nickname, nombre, apellidos, email, null, contraseña, genero, dinero, null, null, null);
+            }
 
     }
 }
