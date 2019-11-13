@@ -43,8 +43,9 @@ public class Ajustes extends AppCompatActivity {
         tamanoFuente.setAdapter(adapter3);
     }
 
+
     public void aceptarAjustes(View view) {
-        Intent intentDesplegable=new Intent(this, MainActivity.class);
+        Intent intentDesplegable=new Intent(this, Desplegable.class);
         this.startActivity(intentDesplegable);
     }
 }
