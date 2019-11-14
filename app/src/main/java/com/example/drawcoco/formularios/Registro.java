@@ -93,7 +93,7 @@ public class Registro extends AppCompatActivity {
 
             if(generospinner.equalsIgnoreCase("hombre")){
                  genero= Personas.Genero.HOMBRE;
-                 
+
             }else{
                  genero=Personas.Genero.MUJER;
             }
