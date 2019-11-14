@@ -2,6 +2,7 @@ package com.example.drawcoco;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,13 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private Creador artista1, artista2;
     private Cliente cliente1;
     private ArrayList<Suscripcion>listaSuscripciones;
+    Context contexto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Bundle bundle = new Bundle();
-
+        contexto=getApplicationContext();//obtener el contexto de la pantalla
         //Creacion de dos imagenes usando el constructor pequeño de Imagen.
         imagenPerfil = new Imagen("\"android.resource://\" + getPackageName() + \"/\" + R.drawable.polloDorado");
         imagenCabecera = new Imagen("\"android.resource://\" + getPackageName() + \"/\" + R.drawable.pulpoi");

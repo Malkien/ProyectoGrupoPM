@@ -1,5 +1,7 @@
 package com.example.drawcoco.clases;
 
+import android.content.Context;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ public class Imagen extends ElementosAComprar {
     private Creador creador;
     private Boolean gratis;
     private Suscripcion suscripcionAsignada;
+    private Context contexto;
 
     /**
      * Constructor completo de la clase Imagen

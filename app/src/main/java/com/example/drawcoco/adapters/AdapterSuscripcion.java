@@ -42,10 +42,17 @@ public class AdapterSuscripcion extends RecyclerView.Adapter<AdapterSuscripcion.
         return arrayItems.size();
     }
 
+    /**
+     * Clase del View Holder
+     */
     public static class SuscripcionViewHolder extends RecyclerView.ViewHolder{
         public TextView titulo, precio, descripcion;
         public Button botonSuscribirse;
 
+        /**
+         * Contructor del ViewHolder
+         * @param itemView
+         */
         public SuscripcionViewHolder(@NonNull View itemView) {
             super(itemView);
             titulo= itemView.findViewById(R.id.textViewTituloSuscripcion);
@@ -54,6 +61,4 @@ public class AdapterSuscripcion extends RecyclerView.Adapter<AdapterSuscripcion.
             botonSuscribirse=itemView.findViewById(R.id.buttonSuscribirse);
         }
     }
-
-
 }
