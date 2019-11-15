@@ -84,7 +84,7 @@ public class Registro extends AppCompatActivity {
         contraseña2Registro=txtcontraseña2.getText().toString();
         emailRegistro=txtmail.getText().toString();
 
-        
+
         //Preferencias en spinner genero del registro
         SharedPreferences preferencias=this.getPreferences(Context.MODE_PRIVATE);
         generoSpinnerRegistro = preferencias.getString("spinnerEligeGenero","Hombre");

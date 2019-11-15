@@ -4,7 +4,7 @@ import android.widget.Spinner
 
 object ValoresPreferencias {
 
-    val spinnerEligeGenero:String = "spinnerEligeGenero"
+    val spinnerEligeGenero= "spinnerEligeGenero"
     val spinnerEligeFuente="spinnerEligeFuente"
     val spinnerEligeTamano="spinnerEligeTamano"
     val spinnerEligeIdioma="spinnerEligeIdioma"
