@@ -16,21 +16,24 @@
         android:layout_weight="1.8">
 
         <!--Imagen del logotipo de cabecera-->
+
+        <!--Imagen circular del avatar del cliente-->
         <ImageView
-            android:id="@+id/imagenClienteCabecera"
+            android:id="@+id/imagenCabeceraPerfilCliente"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:cropToPadding="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@color/colorCabecera" />
 
-        <!--Imagen circular del avatar del cliente-->
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imagenPerfil"
+            android:id="@+id/imagenPerfilCliente"
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_marginLeft="32dp"
@@ -45,7 +48,7 @@
 
         <!--Boton de edicion del Perfil-->
         <Button
-            android:id="@+id/botonEditar"
+            android:id="@+id/botonEditarPerfilCliente"
             android:layout_width="119dp"
             android:layout_height="44dp"
             android:layout_marginEnd="16dp"
@@ -53,7 +56,7 @@
             android:background="@drawable/forma_boton"
             android:text="@string/botonEditar"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imagenClienteCabecera" />
+            app:layout_constraintEnd_toEndOf="@+id/imagenCabeceraPerfilCliente" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -65,7 +68,7 @@
 
         <!--TextView con el nombre del Cliente-->
         <TextView
-            android:id="@+id/nombreCliente"
+            android:id="@+id/nombreClienteLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
@@ -76,7 +79,7 @@
 
         <!--TextView con la descripcionCompleta del Cliente-->
         <TextView
-            android:id="@+id/descripcionCliente"
+            android:id="@+id/descripcionPerfilCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
@@ -94,7 +97,7 @@
 
         <!--TextView que precede al Spinner-->
         <TextView
-            android:id="@+id/seleccionPorArtista"
+            android:id="@+id/textoSeleccionPerfilCliente"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -105,7 +108,7 @@
 
         <!--Spinner seleccionador-->
         <Spinner
-            android:id="@+id/spinnerArtista"
+            android:id="@+id/spinnerArtistaPerfilCliente"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"

@@ -24,11 +24,11 @@
                 android:textSize="40sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imagenPerfil"
+                app:layout_constraintStart_toEndOf="@+id/imagenPerfilCliente"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imagenPerfil"
+                android:id="@+id/imagenPerfilCliente"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:src="@drawable/tomberi"

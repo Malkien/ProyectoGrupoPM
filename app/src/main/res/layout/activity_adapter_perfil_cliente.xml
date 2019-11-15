@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--LinearLayour que contiene todos los elementos-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -6,6 +8,7 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <!--TextView que muestra el titulo del dibujo-->
     <TextView
         android:id="@+id/tituloDibujoPerfilCliente"
         android:layout_width="match_parent"
@@ -18,6 +21,7 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <!--ImageView que muestra la imagen-->
     <ImageView
         android:id="@+id/dibujoPerfilCliente"
         android:layout_width="match_parent"

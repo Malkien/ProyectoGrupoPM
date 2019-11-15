@@ -17,9 +17,9 @@ public class Estadisticas extends AppCompatActivity {
 
         Creador artista1 = (Creador) getIntent().getExtras().getSerializable("artista1");
 
-        cabeceraEstadistica = this.findViewById(R.id.textoCabeceraEstadisticas);
-        datosDinero = this.findViewById(R.id.datosDinero);
-        datosNumeroUsuarios = this.findViewById(R.id.datosNumerosUsuario);
+        cabeceraEstadistica = this.findViewById(R.id.cabeceraEstadisticas);
+        datosDinero = this.findViewById(R.id.dineroEstadisticas);
+        datosNumeroUsuarios = this.findViewById(R.id.usuariosEstadisticas);
 
         cabeceraEstadistica.setText(getString(R.string.cabeceraEstadisticas) + " " + artista1.getNombre());
         datosDinero.setText(artista1.getDinero() + " €");

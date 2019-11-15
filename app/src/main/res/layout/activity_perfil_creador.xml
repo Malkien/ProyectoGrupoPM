@@ -46,7 +46,7 @@
                 app:layout_constraintStart_toStartOf="parent">
                 <!--Imagen de perfil del creador-->
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imagenPerfil"
+                    android:id="@+id/imagenPerfilCliente"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"

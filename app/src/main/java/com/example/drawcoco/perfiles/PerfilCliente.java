@@ -29,12 +29,12 @@ public class PerfilCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_cliente);
 
-        nombreCliente = this.findViewById(R.id.nombreCliente);
-        descripcionCliente = this.findViewById(R.id.descripcionCliente);
+        nombreCliente = this.findViewById(R.id.nombreClienteLogin);
+        descripcionCliente = this.findViewById(R.id.descripcionPerfilCliente);
         tituloDibujo = this.findViewById(R.id.tituloDibujoPerfilCliente);
         dibujo1 = this.findViewById(R.id.dibujoPerfilCliente);
 
-        spinnerArtista = this.findViewById(R.id.spinnerArtista);
+        spinnerArtista = this.findViewById(R.id.spinnerArtistaPerfilCliente);
 
         Creador artista1 = (Creador) getIntent().getExtras().getSerializable("artista1");
         Creador artista2 = (Creador) getIntent().getExtras().getSerializable("artista2");

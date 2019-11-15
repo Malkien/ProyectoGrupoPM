@@ -20,7 +20,7 @@
 
         <!--TextView para mostar el nombre del Artista-->
         <TextView
-            android:id="@+id/textoCabeceraEstadisticas"
+            android:id="@+id/cabeceraEstadisticas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorCabecera"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
         <!--TextView de la etiqueta DineroGanado-->
         <TextView
-            android:id="@+id/textoDineroGanado"
+            android:id="@+id/textoDineroEstadisticas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -62,7 +62,7 @@
             android:textStyle="bold" />
         <!--TextView donde muestra el dinero-->
         <TextView
-            android:id="@+id/datosDinero"
+            android:id="@+id/dineroEstadisticas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -72,7 +72,7 @@
             android:textSize="26sp" />
         <!--TextView de la etiqueta NumeroUsuarios-->
         <TextView
-            android:id="@+id/textoNumeroUsuarios"
+            android:id="@+id/textoUsuariosEstadisticas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -85,7 +85,7 @@
             android:textStyle="bold" />
         <!--TextView donde muestra el numero de usuarios suscritos-->
         <TextView
-            android:id="@+id/datosNumerosUsuario"
+            android:id="@+id/usuariosEstadisticas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -19,8 +19,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Registrar = this.findViewById(R.id.textoRegistrate);
-        Recuperar = this.findViewById(R.id.textoRecuperar);
+        Registrar = this.findViewById(R.id.clickRegistrateLogin);
+        Recuperar = this.findViewById(R.id.clickRecuperarLogin);
 
 //      Evento para ir a la Activity Registro
         Registrar.setOnClickListener(new View.OnClickListener() {
@@ -55,5 +55,10 @@ public class Login extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void clickRegistrate(View view) {
+        Intent clickRegistrate = new Intent(this, Registro.class);
+        startActivity(clickRegistrate);
     }
 }

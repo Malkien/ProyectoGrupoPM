@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/selectorAndres" />
 
     <Button
-        android:id="@+id/botonLogin"
+        android:id="@+id/botonInicioLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="botonLogin"
@@ -114,7 +114,7 @@
         android:text="@string/botonCliente"
         app:layout_constraintEnd_toStartOf="@+id/botonGaleria"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/botonLogin"
+        app:layout_constraintStart_toEndOf="@+id/botonInicioLogin"
         app:layout_constraintTop_toBottomOf="@+id/selectorIvan" />
 
     <Button
@@ -145,13 +145,13 @@
         android:layout_height="wrap_content"
         android:onClick="botonAjustes"
         android:text="@string/botonAjustes"
-        app:layout_constraintEnd_toStartOf="@+id/botonFiltrar"
+        app:layout_constraintEnd_toStartOf="@+id/botonFiltrarGaleria"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/botonRegistro"
         app:layout_constraintTop_toBottomOf="@+id/selectorJose" />
 
     <Button
-        android:id="@+id/botonFiltrar"
+        android:id="@+id/botonFiltrarGaleria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="botonFiltar"
