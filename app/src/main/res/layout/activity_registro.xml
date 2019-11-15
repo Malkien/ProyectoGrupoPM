@@ -205,14 +205,14 @@
         android:hint="Repite Contraseña"
         android:inputType="textPassword"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/eligegenero"
+        app:layout_constraintBottom_toTopOf="@+id/eligeGenero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/password2"
         app:layout_constraintTop_toBottomOf="@+id/textoPassword" />
 
     <Spinner
-        android:id="@+id/eligegenero"
+        android:id="@+id/eligeGenero"
         android:layout_width="213dp"
         android:layout_height="27dp"
         android:background="@drawable/caja_texto"
@@ -226,7 +226,7 @@
     <!--En este punto crearemos los check box para que nuestros clientes acepten los terminos
     y para que se declaren como creadores o no-->
     <CheckBox
-        android:id="@+id/creadorcheck"
+        android:id="@+id/creadorCheck"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@drawable/caja_texto"
@@ -246,8 +246,8 @@
         app:layout_constraintBottom_toTopOf="@+id/registrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/creadorcheck"
-        app:layout_constraintTop_toBottomOf="@+id/eligegenero" />
+        app:layout_constraintStart_toEndOf="@+id/creadorCheck"
+        app:layout_constraintTop_toBottomOf="@+id/eligeGenero" />
 
     <!--Con este boton aceptaremos los datos del registro y nos dirigiremos a la pantalla de inicio-->
     <Button

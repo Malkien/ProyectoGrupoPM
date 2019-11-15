@@ -35,7 +35,7 @@
        idioma,tipo de letra y tamaño de letra, así como los distintos
        spinner que utilizaremos para mostrar las opciones-->
         <TextView
-            android:id="@+id/textoidioma"
+            android:id="@+id/textoIdioma"
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_weight="0.5"
@@ -43,7 +43,7 @@
             android:textAlignment="center" />
 
         <Spinner
-            android:id="@+id/eligeidioma"
+            android:id="@+id/eligeIdioma"
             android:layout_width="170dp"
             android:layout_height="30dp"
             android:layout_weight="1.5"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <TextView
-            android:id="@+id/textofuente"
+            android:id="@+id/textoFuente"
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_weight="0.5"
@@ -73,7 +73,7 @@
             android:textAlignment="center" />
 
         <Spinner
-            android:id="@+id/eligefuente"
+            android:id="@+id/eligeFuente"
             android:layout_width="170dp"
             android:layout_height="30dp"
             android:layout_weight="1.5"
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
         <TextView
-            android:id="@+id/textotamano"
+            android:id="@+id/textoTamano"
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_weight="0.5"
