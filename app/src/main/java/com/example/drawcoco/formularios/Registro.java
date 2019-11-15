@@ -48,8 +48,13 @@ public class Registro extends AppCompatActivity {
     TextView txtgenero;
     CheckBox creadorCheck;
     CheckBox terminos;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
@@ -57,14 +62,14 @@ public class Registro extends AppCompatActivity {
         //Aquí se cargan los valores del spinner que nos dará las opciones para
         //el valor del campo género.
 
-        String[] gen = new String[] {"Mujer", "Hombre"};
+        String[] gen = new String[] {"Mujer","Hombre"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, gen);
         sexoRegistro.setAdapter(adapter);
 
         terminos=findViewById(R.id.terminos);
         creadorCheck=findViewById(R.id.creadorCheck);
 
-        generoSpinnerRegistro=sexoRegistro.getAdapter().toString();
+
 
         txtnickname=findViewById(R.id.textoNickName);
         txtnombre=findViewById(R.id.textoNombre);
@@ -79,8 +84,10 @@ public class Registro extends AppCompatActivity {
         contraseña2Registro=txtcontraseña2.getText().toString();
         emailRegistro=txtmail.getText().toString();
 
-        /*SharedPreferences preferencias=this.getPreferences(Context.MODE_PRIVATE);
-        generoSpinnerRegistro = preferencias.getString(ValoresPreferencias.spinnerEligeGenero,"Mujer");*/
+        
+        //Preferencias en spinner genero del registro
+        SharedPreferences preferencias=this.getPreferences(Context.MODE_PRIVATE);
+        generoSpinnerRegistro = preferencias.getString("spinnerEligeGenero","Hombre");
 
 
     }
@@ -88,7 +95,6 @@ public class Registro extends AppCompatActivity {
     // registro del nuevo usuario
 
     public void registrarse(View view) {
-
 
             //Aqui ponemos la condición de que si los términos del acuerdo no son aceptados, no se podrá continuar con el registro.
             if (terminos.isChecked()) {
@@ -98,12 +104,8 @@ public class Registro extends AppCompatActivity {
                 Toast.makeText(this, "Debe de aceptar los términos para registrar sus datos", Toast.LENGTH_LONG).show();
             }
 
-            if(generoSpinnerRegistro.equalsIgnoreCase("hombre")){
-                 genero= Personas.Genero.HOMBRE;
 
-            }else{
-                 genero=Personas.Genero.MUJER;
-            }
+
 
             //Al seleccionar en el checkBox la opción creador, crearemos un nuevo objeto de la clase creador que hereda de personas,
             //si no lo seleccionamos crearemos un nuevo objeto de la clase cliente.
@@ -115,4 +117,5 @@ public class Registro extends AppCompatActivity {
             }
 
     }
+
 }
