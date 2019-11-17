@@ -47,7 +47,7 @@ public class Ajustes extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, letras);
         fuenteAjustes.setAdapter(adapter);
 
-        String[] pais = new String[] {"Español","Inglés","Frances"};
+        String[] pais = new String[] {"Español","Inglés","Frances","Italiano"};
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, pais);
         idiomaAjustes.setAdapter(adapter2);
 
