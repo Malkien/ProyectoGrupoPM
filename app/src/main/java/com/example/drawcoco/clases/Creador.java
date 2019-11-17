@@ -33,9 +33,7 @@ public class Creador extends Personas{
         this.suscripciones = suscripciones;
         this.descripcionCompleta = descripcionCompleta;
     }
-    public Creador(String nickname,String nombrem,String apellidos,String email,String contraseña,Genero genero){
-        
-    }
+
     /**
      * Getter de la variable suscriptores
      * @return objeto de la clase Integer con el numero de suscriptores actuales

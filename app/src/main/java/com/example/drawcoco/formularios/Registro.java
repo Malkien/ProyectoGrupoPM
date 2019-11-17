@@ -80,7 +80,7 @@ public class Registro extends AppCompatActivity {
         contraseña2Registro=txtcontraseña2.getText().toString();
         emailRegistro=txtmail.getText().toString();
 
-        generoSpinnerRegistro=sexoRegistro.getSelectedItem().toString();
+
 
 
 
@@ -98,7 +98,8 @@ public class Registro extends AppCompatActivity {
                 Toast.makeText(this, "Debe de aceptar los términos para registrar sus datos", Toast.LENGTH_LONG).show();
             }
 
-            genero=elegirGenero(view,generoSpinnerRegistro);
+            genero=elegirGenero(view);
+            Toast.makeText(this,genero.toString(),Toast.LENGTH_LONG).show();
 
 
             //Al seleccionar en el checkBox la opción creador, crearemos un nuevo objeto de la clase creador que hereda de personas,
@@ -106,17 +107,21 @@ public class Registro extends AppCompatActivity {
             //Todos estos datos serán almacenados despues en nuestra base de datos.
             if (creadorCheck.isChecked()) {
                 Creador usuario = new Creador(nicknameRegistro, nombreRegistro, apellidosRegistro, emailRegistro, null, contraseñaRegistro, genero, dineroRegistro, null, null, 0, null, null, null);
-            } else {
+            } else{
                 Cliente usuario = new Cliente(nicknameRegistro, nombreRegistro, apellidosRegistro, emailRegistro, null, contraseñaRegistro, genero, dineroRegistro, null, null, null);
             }
 
     }
 
 
-    public Personas.Genero elegirGenero(View view , String generoSpinner){
+    public Personas.Genero elegirGenero(View vie){
+         String generoSpinner=sexoRegistro.getSelectedItem().toString();
            if(generoSpinner.equals("Mujer")){
                genero= Personas.Genero.MUJER;
-           }else{
+
+           }else if(generoSpinner.equals(("Hombre"))){
+
+
                genero= Personas.Genero.HOMBRE;
            }
            return genero;

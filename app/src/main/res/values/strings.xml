@@ -47,7 +47,7 @@
     <string name="nickname">NickName</string>
     <string name="nombre">Nombre</string>
     <string name="apellidos">Apellidos</string>
-    <string name="email">E-email</string>
+    <string name="email">Email</string>
     <string name="password">Contraseña</string>
     <string name="password2">Repetir Contraseña</string>
     <string name="genero">Género</string>
