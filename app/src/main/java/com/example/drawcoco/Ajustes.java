@@ -45,7 +45,7 @@ public class Ajustes extends AppCompatActivity {
 
 
     public void aceptarAjustes(View view) {
-        Intent intentDesplegable=new Intent(this, Desplegable.class);
-        this.startActivity(intentDesplegable);
+        Intent intent=new Intent(this, Desplegable.class);
+        this.startActivity(intent);
     }
 }

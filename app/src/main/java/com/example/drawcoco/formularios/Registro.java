@@ -45,16 +45,12 @@ public class Registro extends AppCompatActivity {
     TextView txtmail;
     TextView txtcontraseña;
     TextView txtcontraseña2;
-    TextView txtgenero;
     CheckBox creadorCheck;
     CheckBox terminos;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
@@ -84,10 +80,8 @@ public class Registro extends AppCompatActivity {
         contraseña2Registro=txtcontraseña2.getText().toString();
         emailRegistro=txtmail.getText().toString();
 
+        generoSpinnerRegistro=sexoRegistro.getSelectedItem().toString();
 
-        //Preferencias en spinner genero del registro
-        SharedPreferences preferencias=this.getPreferences(Context.MODE_PRIVATE);
-        generoSpinnerRegistro = preferencias.getString("spinnerEligeGenero","Hombre");
 
 
     }
@@ -104,7 +98,7 @@ public class Registro extends AppCompatActivity {
                 Toast.makeText(this, "Debe de aceptar los términos para registrar sus datos", Toast.LENGTH_LONG).show();
             }
 
-
+            genero=elegirGenero(view,generoSpinnerRegistro);
 
 
             //Al seleccionar en el checkBox la opción creador, crearemos un nuevo objeto de la clase creador que hereda de personas,
@@ -116,6 +110,16 @@ public class Registro extends AppCompatActivity {
                 Cliente usuario = new Cliente(nicknameRegistro, nombreRegistro, apellidosRegistro, emailRegistro, null, contraseñaRegistro, genero, dineroRegistro, null, null, null);
             }
 
+    }
+
+
+    public Personas.Genero elegirGenero(View view , String generoSpinner){
+           if(generoSpinner.equals("Mujer")){
+               genero= Personas.Genero.MUJER;
+           }else{
+               genero= Personas.Genero.HOMBRE;
+           }
+           return genero;
     }
 
 }

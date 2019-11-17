@@ -112,11 +112,11 @@
         android:text="Género"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/eligegenero"
-        app:layout_constraintEnd_toStartOf="@+id/eligegenero"
+        app:layout_constraintBottom_toBottomOf="@+id/eligeGenero"
+        app:layout_constraintEnd_toStartOf="@+id/eligeGenero"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/eligegenero" />
+        app:layout_constraintTop_toTopOf="@+id/eligeGenero" />
 
     <!--A partir de aquí declararemos los campos de texto correspondientes a los registros
     Nombre,Apellidos,nickname,email,contraseña, así como el spinner que contiene las opciones
