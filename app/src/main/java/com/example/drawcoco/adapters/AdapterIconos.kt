@@ -1,6 +1,7 @@
 package com.example.drawcoco.adapters
 
 import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.net.Uri
 import android.text.Layout
@@ -15,7 +16,7 @@ class AdapterIconos(val contexto: Context, val datos: ArrayList<String>): BaseAd
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-        var li: LayoutInflater =(contexto as Activity).getLayoutInflater()
+        var li: LayoutInflater = LayoutInflater.from(contexto)
         val convertView = li.inflate(R.layout.adapter_contenedor_inicio_iconos, null)
 
         var icono: CircleImageView =convertView.findViewById(R.id.imagen)

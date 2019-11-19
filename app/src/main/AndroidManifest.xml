@@ -11,6 +11,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".CajaSuscripcion"></activity>
         <activity
+            android:name=".Coordinador"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Inicio"
             android:screenOrientation="portrait" />
         <activity

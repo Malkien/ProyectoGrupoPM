@@ -6,20 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Coordinador">
 
-    <fragment
-        android:id="@+id/coordinador_menu"
-        android:name="com.example.drawcoco.Menu"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout="@layout/fragment_menu"/>
+        app:layout_constraintBottom_toBottomOf="parent" >
 
-    <FrameLayout
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/contenedorFragment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/coordinador_menu"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

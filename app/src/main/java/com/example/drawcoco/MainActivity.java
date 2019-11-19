@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botonInicio(View view) {
-        Intent pantallaInicio = new Intent(this, Inicio.class);
+        Intent pantallaInicio = new Intent(this, Coordinador.class);
         this.startActivity(pantallaInicio);
     }
 

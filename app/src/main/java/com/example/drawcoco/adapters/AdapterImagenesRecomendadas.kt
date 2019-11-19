@@ -1,7 +1,9 @@
 package com.example.drawcoco.adapters
 
 import android.app.Activity
+import android.app.Application
 import android.content.Context
+import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.net.Uri
 import android.text.Layout
 import android.view.LayoutInflater
@@ -16,7 +18,7 @@ class AdapterImagenesRecomendadas(val contexto: Context, val datos: ArrayList<St
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-        var li: LayoutInflater =(contexto as Activity).getLayoutInflater()
+        var li: LayoutInflater =contexto!!.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater;
         val convertView = li.inflate(R.layout.adapter_contenedor_inicio_imagenes, null)
 
         var icono: ImageView =convertView.findViewById(R.id.imagen)
