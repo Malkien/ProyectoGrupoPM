@@ -15,10 +15,17 @@ import com.example.drawcoco.R;
 import java.util.ArrayList;
 
 public class AdapterPostRecientesCreador extends RecyclerView.Adapter<AdapterPostRecientesCreador.PostRecientesViewHolder> {
-    private ArrayList<ItemPostRecientesCreador>itemList;
+    private ArrayList<ItemPostRecientesCreador>itemList; //ArrayList con los items totales a cargar
     public AdapterPostRecientesCreador(ArrayList<ItemPostRecientesCreador>itemsPost){
         this.itemList=itemsPost;
     };
+
+    /**
+     * Constructor del viewHolder al crearse por primera vez
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public PostRecientesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,6 +34,11 @@ public class AdapterPostRecientesCreador extends RecyclerView.Adapter<AdapterPos
         return pvh;
     }
 
+    /**
+     * Constructor del viewHolder
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull PostRecientesViewHolder holder, int position) {
         ItemPostRecientesCreador objetoActual=itemList.get(position);
@@ -34,6 +46,10 @@ public class AdapterPostRecientesCreador extends RecyclerView.Adapter<AdapterPos
         holder.titulo.setText(objetoActual.getTitulo());
     }
 
+    /**
+     * Getter con el numero de items totales a cargar
+     * @return
+     */
     @Override
     public int getItemCount() {
         return itemList.size();

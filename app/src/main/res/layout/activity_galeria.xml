@@ -39,6 +39,7 @@
             <!--Boton para filtrar-->
             <Button
                 android:id="@+id/botonFiltrarGaleria"
+                android:onClick="botonGaleriaFiltrar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"

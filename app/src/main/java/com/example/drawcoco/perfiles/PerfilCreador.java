@@ -54,19 +54,23 @@ public class PerfilCreador extends AppCompatActivity {
             tipoSuscripcion.add(cajaSuscripcion1);
         }
         adapterSuscripcion=new AdapterSuscripcion(tipoSuscripcion);
+        //Enlazamos el manager y el adapter con el recyclerView
         recyclerViewSuscripcion.setLayoutManager(managerSuscripcion);
         recyclerViewSuscripcion.setAdapter(adapterSuscripcion);
 
         //Recycler Post Recientes
-        ArrayList<ItemPostRecientesCreador> postRecientes=new ArrayList<>();
+        ArrayList<ItemPostRecientesCreador> postRecientes=new ArrayList<>();//declaramos el ArrayList en el que meteremos los items a cargar
+        //Cargamos todos los postRecientes en el arrayList que tenga el creador
         for (int i=0;i<artista.getImagenArrayList().size()||i<1;i++){
             ItemPostRecientesCreador item=new ItemPostRecientesCreador(artista.getImagenArrayList().get(i).getRuta(),artista.getImagenArrayList().get(i).getTitulo());
             postRecientes.add(item);
         }
+        //declaramos el recyclerView, manager y adapter
         recyclerViewPostRecientes=findViewById(R.id.recyclerPostRecientes);
         recyclerViewPostRecientes.setHasFixedSize(true);//Con esto se autoAjusta
         managerPostRecientes=new LinearLayoutManager(this);
         adapterPostRecientes=new AdapterPostRecientesCreador(postRecientes);
+        //enlazamos el manager y el adapter con el recyclerView
         recyclerViewPostRecientes.setLayoutManager(managerPostRecientes);
         recyclerViewPostRecientes.setAdapter(adapterPostRecientes);
     }
