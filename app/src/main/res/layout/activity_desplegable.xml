@@ -24,7 +24,7 @@
         android:layout_height="39dp"
         android:background="@drawable/forma_boton"
         android:text="@string/registrarse"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNocturno"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,35 +57,29 @@
         app:layout_constraintStart_toEndOf="@+id/imagen"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/buttonNocturno"
         android:layout_width="169dp"
         android:layout_height="32dp"
-        android:background="@drawable/caja_texto"
+        android:background="@drawable/forma_boton"
         android:text="@string/modoNocturno"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAjustes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegistro" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <Button
+        android:id="@+id/buttonAjustes"
         android:layout_width="103dp"
         android:layout_height="35dp"
-        android:background="@drawable/caja_texto"
+        android:background="@drawable/forma_boton"
         android:text="@string/ajustes"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonCerrarSesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonNocturno" />
 
     <Button
         android:id="@+id/buttonCerrarSesion"
@@ -97,5 +91,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAjustes" />
 </androidx.constraintlayout.widget.ConstraintLayout>

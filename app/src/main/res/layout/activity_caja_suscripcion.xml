@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
+<!--        Titulo de la suscripcion-->
         <TextView
             android:id="@+id/textViewTituloSuscripcion"
             android:layout_width="match_parent"
@@ -16,19 +16,19 @@
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold" />
-
+<!--        precio Suscripcion-->
         <TextView
             android:id="@+id/textViewPrecioSuscripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center" />
-
+<!--        Descripcion suscripcion-->
         <TextView
             android:id="@+id/textViewDescripcionSuscripcion"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:textAlignment="center"/>
-
+<!--        Boton de comprar-->
         <Button
             android:id="@+id/buttonSuscribirse"
             android:layout_width="match_parent"

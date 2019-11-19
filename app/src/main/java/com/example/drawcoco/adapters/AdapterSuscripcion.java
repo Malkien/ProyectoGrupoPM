@@ -5,17 +5,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.drawcoco.CajaSuscripcion;
 import com.example.drawcoco.R;
-
 import java.util.ArrayList;
 
 public class AdapterSuscripcion extends RecyclerView.Adapter<AdapterSuscripcion.SuscripcionViewHolder> {
-    private ArrayList<CajaSuscripcion>arrayItems;
+    private ArrayList<CajaSuscripcion>arrayItems; //ArrayList que contiene los tipos de suscripcion totales del usuario
+
+    /**
+     * Constructor para el viewHolder al crearlo por primera vez
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public SuscripcionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -24,9 +28,19 @@ public class AdapterSuscripcion extends RecyclerView.Adapter<AdapterSuscripcion.
         return svh;
     }
 
+    /**
+     * Constructor para el adapter
+     * @param listCajas
+     */
     public AdapterSuscripcion(ArrayList<CajaSuscripcion>listCajas){
         arrayItems=listCajas;
     }
+
+    /**
+     * Constructor del ViewHolder
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull SuscripcionViewHolder holder, int position) {
         CajaSuscripcion objetoActual=arrayItems.get(position);
@@ -37,6 +51,10 @@ public class AdapterSuscripcion extends RecyclerView.Adapter<AdapterSuscripcion.
 
     }
 
+    /**
+     * Getter con el numero de suscripciones que tiene que cargar
+     * @return
+     */
     @Override
     public int getItemCount() {
         return arrayItems.size();
