@@ -2,8 +2,10 @@ package com.example.drawcoco;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -29,5 +31,10 @@ public class Galeria extends AppCompatActivity {
         GridView grid = findViewById(R.id.gridViewGaleria);
         grid.setAdapter(adapterGaleria);
 
+    }
+
+    public void botonGaleriaFiltrar(View view) {
+        Intent irAFiltrar = new Intent(this, Filtrar.class);
+        startActivity(irAFiltrar);
     }
 }
