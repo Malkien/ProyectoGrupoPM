@@ -33,6 +33,7 @@ public class Galeria extends AppCompatActivity {
 
     }
 
+    //Boton que nos lleva a la activity_filtrar.
     public void botonGaleriaFiltrar(View view) {
         Intent irAFiltrar = new Intent(this, Filtrar.class);
         startActivity(irAFiltrar);
