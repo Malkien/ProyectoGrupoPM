@@ -27,6 +27,7 @@ public class Galeria extends AppCompatActivity {
 
         nombreArtista.setText(artista1.getNickname());
 
+        //Llamamos al adapter de galeria para rellenar el GridView con las imagenes del artista seleccionado.
         AdapterImagenGaleria adapterGaleria = new AdapterImagenGaleria(this,artista1.getImagenArrayList());
         GridView grid = findViewById(R.id.gridViewGaleria);
         grid.setAdapter(adapterGaleria);
