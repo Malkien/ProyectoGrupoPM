@@ -34,7 +34,7 @@ public class Coordinador extends AppCompatActivity{
     }
 
 
-    public void setupViewPager() {
+    private void setupViewPager() {
 
         adapterPaginas.addFragment(new Inicio());
         adapterPaginas.addFragment(new Inicio());

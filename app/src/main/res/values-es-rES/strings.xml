@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DrawCoco</string>
 
@@ -94,6 +95,7 @@
     <string name="tituloPostRecientesCreador">Post Recientes</string>
     <string name="tituloPostCreador">Post 1</string>
     <string name="botonVerMas">Ver más</string>
+
     <!--Menu Desplegable-->
     <string name="modoNocturno">Modo Nocturno</string>
     <string name="ajustes">Ajustes</string>
@@ -107,5 +109,4 @@
     <string name="hintPrecio">Precio</string>
     <string name="textoPublicar">Publicar</string>
     <string name="textoImagen">Añadir Imagen</string>
-
 </resources>

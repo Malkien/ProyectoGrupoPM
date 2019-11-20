@@ -37,8 +37,8 @@ public class Filtrar extends AppCompatActivity {
     }
 
     public void filtrar(View view) {
-        Intent intent=new Intent(this, Galeria.class);
-        this.startActivity(intent);
+        Intent intentGaleria=new Intent(this,MainActivity.class);
+        this.startActivity(intentGaleria);
     }
 
 }
