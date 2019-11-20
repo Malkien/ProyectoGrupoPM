@@ -78,4 +78,10 @@
     <string name="tituloSuscripcion3Creador">Abonnement 3</string>
     <string name="ultimas">Publications récentes</string>
     <string name="valoradas">Plus évaluées</string>
+    <string name="eligeIdioma">Langue</string>
+    <string name="eligeTamano">Redimensionner</string>
+    <string name="eligeCategoria">Catégorie</string>
+    <string name="eligeFuente">Changer la source</string>
+    <string name="nombrePerfilCreador">Andre</string>
+    <string name="sobreMiCreador">Sur moi</string>
 </resources>

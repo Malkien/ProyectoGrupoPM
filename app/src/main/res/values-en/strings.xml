@@ -78,4 +78,10 @@
     <string name="tituloSuscripcion3Creador">Suscribe 3</string>
     <string name="ultimas">Latest post</string>
     <string name="valoradas">Evaluated higher</string>
+    <string name="eligeIdioma">Language</string>
+    <string name="eligeTamano">Change size</string>
+    <string name="eligeCategoria">Category</string>
+    <string name="eligeFuente">Change font</string>
+    <string name="nombrePerfilCreador">Andrew</string>
+    <string name="sobreMiCreador">About me</string>
 </resources>

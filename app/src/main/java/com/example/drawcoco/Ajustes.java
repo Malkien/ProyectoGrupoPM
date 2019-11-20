@@ -35,7 +35,6 @@ public class Ajustes extends AppCompatActivity {
     Spinner fuenteAjustes ;
     Spinner idiomaAjustes ;
     Spinner tamanoFuenteAjustes;
-
     private Locale idioma;
     private Configuration config = new Configuration();
 
@@ -47,9 +46,8 @@ public class Ajustes extends AppCompatActivity {
         fuenteAjustes= findViewById(R.id.eligeFuente);
         idiomaAjustes=findViewById(R.id.eligeIdioma);
         tamanoFuenteAjustes=findViewById(R.id.eligetamano);
-
-
-
+        Locale spanish=new Locale("es","ES");
+        Locale.setDefault(spanish);
         //Aquí hemos cargado los spinner con los valores que les queremos ofrecer a nuestros usuarios,
         //utilizando los adaptadores.
         String[] letras = new String[] {"Sans", "Serif", "Monospace"};
@@ -110,7 +108,7 @@ public class Ajustes extends AppCompatActivity {
                 config.locale =idioma;
         }
         getResources().updateConfiguration(config, null);
-        Intent refresh = new Intent(Ajustes.this, MainActivity.class);
+        Intent refresh = new Intent(this, Ajustes.class);
         startActivity(refresh);
         finish();
 
@@ -160,10 +158,10 @@ public class Ajustes extends AppCompatActivity {
 
 
     public void aceptarAjustes(View view) {
-        elegirFuente(view);
+        //elegirFuente(view);
         elegirIdioma(view);
-        elegirTamano(view);
-        Intent intentInicio=new Intent(this, Inicio.class);
+        //elegirTamano(view);
+        Intent intentInicio=new Intent(this, MainActivity.class);
         this.startActivity(intentInicio);
     }
 }
