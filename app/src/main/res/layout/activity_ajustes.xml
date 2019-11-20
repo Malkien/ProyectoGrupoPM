@@ -39,7 +39,7 @@
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_weight="0.5"
-            android:text="Idioma"
+            android:text="@string/textoIdioma"
             android:textAlignment="center" />
 
         <Spinner
@@ -69,7 +69,7 @@
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_weight="0.5"
-            android:text="Cambiar fuente"
+            android:text="@string/textoFuente"
             android:textAlignment="center" />
 
         <Spinner
@@ -98,7 +98,7 @@
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_weight="0.5"
-            android:text="Tamaño fuente"
+            android:text="@string/textoTamano"
             android:textAlignment="center" />
 
         <Spinner
@@ -114,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Ajustes"
+        android:text="@string/tituloAjustes"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"

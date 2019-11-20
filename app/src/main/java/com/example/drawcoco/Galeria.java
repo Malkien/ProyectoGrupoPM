@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class Galeria extends Fragment {
 
     TextView nombreArtista;
-
+    AdapterImagenGaleria adapterGaleria;
     @Override
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
