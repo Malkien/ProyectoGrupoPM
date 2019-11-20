@@ -168,7 +168,7 @@ public class Ajustes extends AppCompatActivity {
         //elegirFuente(view);
         elegirIdioma(view);
         //elegirTamano(view);
-        Intent intentInicio=new Intent(this, MainActivity.class);
+        Intent intentInicio=new Intent(this, Desplegable.class);
         this.startActivity(intentInicio);
     }
 }

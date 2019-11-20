@@ -92,7 +92,7 @@ public class Registro extends AppCompatActivity {
 
             //Aqui ponemos la condición de que si los términos del acuerdo no son aceptados, no se podrá continuar con el registro.
             if (terminos.isChecked()) {
-                Intent intentInicio = new Intent(this, MainActivity.class);
+                Intent intentInicio = new Intent(this, Inicio.class);
                 this.startActivity(intentInicio);
             } else {
                 Toast.makeText(this, "Debe de aceptar los términos para registrar sus datos", Toast.LENGTH_LONG).show();
