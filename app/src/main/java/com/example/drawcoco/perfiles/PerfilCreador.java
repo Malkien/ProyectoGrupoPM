@@ -1,6 +1,7 @@
 package com.example.drawcoco.perfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,6 +9,9 @@ import android.content.ClipData;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +25,7 @@ import com.example.drawcoco.clases.Creador;
 
 import java.util.ArrayList;
 
-public class PerfilCreador extends AppCompatActivity {
+public class PerfilCreador extends Fragment {
     private TextView nickCreador, descripcionBreve, descripcionCompleta;
     private RecyclerView recyclerViewSuscripcion, recyclerViewPostRecientes;
     private RecyclerView.Adapter adapterSuscripcion, adapterPostRecientes;
@@ -29,24 +33,24 @@ public class PerfilCreador extends AppCompatActivity {
     private Creador artista;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_creador);
-        artista = (Creador) getIntent().getExtras().getSerializable("artista1");//cargamos el creador que hay en el main
+    public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.activity_perfil_creador, container, false);
+        //artista = (Creador) getIntent().getExtras().getSerializable("artista1");//cargamos el creador que hay en el main
 
         //Enlace de los componentes de la activity con las variables java
-        nickCreador=findViewById(R.id.textViewNombrePerfil);
-        descripcionBreve=findViewById(R.id.textViewDescripcionBreve);
-        descripcionCompleta=findViewById(R.id.textViewDescripcionCompleta);
+        nickCreador=getActivity().findViewById(R.id.textViewNombrePerfil);
+        descripcionBreve=getActivity().findViewById(R.id.textViewDescripcionBreve);
+        descripcionCompleta=getActivity().findViewById(R.id.textViewDescripcionCompleta);
 
         //aplicar valores a los componentes de la activity
         nickCreador.setText(artista.getNickname());
         descripcionCompleta.setText(artista.getDescripcionCompleta());
         descripcionBreve.setText(artista.getDescripcionBreve());
         //declarar el RecyclerView, Manager, y adapter para las caja de suscripción
-        recyclerViewSuscripcion=findViewById(R.id.recycleViewSuscripciones);
+        recyclerViewSuscripcion=getActivity().findViewById(R.id.recycleViewSuscripciones);
         recyclerViewSuscripcion.setHasFixedSize(true);//Con esto se autoAjusta
-        managerSuscripcion=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);//LinearLayoutManager.HORIZONTAL ¡SCROLL HORIZONTAL!
+        managerSuscripcion=new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);//LinearLayoutManager.HORIZONTAL ¡SCROLL HORIZONTAL!
         //Añadimos al arrayList los objetos que queremos meter en el RecyclerView
         ArrayList<CajaSuscripcion> tipoSuscripcion=new ArrayList<>();
         for(int i=0; i<artista.getSuscripciones().size();i++){//nos carga todos los tipos de suscripcion declarados en la variable artista
@@ -66,12 +70,13 @@ public class PerfilCreador extends AppCompatActivity {
             postRecientes.add(item);
         }
         //declaramos el recyclerView, manager y adapter
-        recyclerViewPostRecientes=findViewById(R.id.recyclerPostRecientes);
+        recyclerViewPostRecientes=getActivity().findViewById(R.id.recyclerPostRecientes);
         recyclerViewPostRecientes.setHasFixedSize(true);//Con esto se autoAjusta
-        managerPostRecientes=new LinearLayoutManager(this);
+        managerPostRecientes=new LinearLayoutManager(getActivity().getApplicationContext());
         adapterPostRecientes=new AdapterPostRecientesCreador(postRecientes);
         //enlazamos el manager y el adapter con el recyclerView
         recyclerViewPostRecientes.setLayoutManager(managerPostRecientes);
         recyclerViewPostRecientes.setAdapter(adapterPostRecientes);
+        return view;
     }
 }

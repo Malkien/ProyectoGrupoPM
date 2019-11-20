@@ -2,6 +2,7 @@ package com.example.drawcoco;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -11,7 +12,9 @@ import android.graphics.fonts.Font;
 import android.graphics.fonts.FontStyle;
 import android.os.Bundle;
 import android.support.v4.media.RatingCompat;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.TextSize;
 import android.webkit.WebView;
@@ -29,7 +32,7 @@ import java.util.Locale;
 //En este Activity controlaremos el aspecto de nuestra aplicación, el tamaño de la fuente y su tipo,
 //y el idioma utilizado eligiendolo entre el Inglés y el Español.
 
-public class Ajustes extends AppCompatActivity {
+public class Ajustes extends Fragment {
 
     //Declaramos las variables de tipo Spinner
     Spinner fuenteAjustes ;
@@ -39,31 +42,31 @@ public class Ajustes extends AppCompatActivity {
     private Configuration config = new Configuration();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajustes);
+    public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.activity_ajustes, container, false);
 
-        fuenteAjustes= findViewById(R.id.eligeFuente);
-        idiomaAjustes=findViewById(R.id.eligeIdioma);
-        tamanoFuenteAjustes=findViewById(R.id.eligetamano);
+        fuenteAjustes= getActivity().findViewById(R.id.eligeFuente);
+        idiomaAjustes=getActivity().findViewById(R.id.eligeIdioma);
+        tamanoFuenteAjustes=getActivity().findViewById(R.id.eligetamano);
         Locale spanish=new Locale("es","ES");
         Locale.setDefault(spanish);
 
         //Aquí hemos cargado los spinner con los valores que les queremos ofrecer a nuestros usuarios,
         //utilizando los adaptadores.
         String[] letras = new String[] {"Sans", "Serif", "Monospace"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, letras);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, letras);
         fuenteAjustes.setAdapter(adapter);
 
         String[] pais = new String[] {"Español","Inglés","Frances","Italiano"};
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, pais);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity().getApplicationContext(),android.R.layout.simple_spinner_item, pais);
         idiomaAjustes.setAdapter(adapter2);
 
         String[] tamano = new String[] {"8","10","12","14","16","18","20","22"};
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, tamano);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getActivity().getApplicationContext(),android.R.layout.simple_spinner_item, tamano);
         tamanoFuenteAjustes.setAdapter(adapter3);
 
-
+        return view;
     }
 
     //Con esta función cambiaremos de fuente todos los componentes de nuestra aplicación.
@@ -84,9 +87,9 @@ public class Ajustes extends AppCompatActivity {
 
         }
         getResources().updateConfiguration(config, null);
-        Intent refresh = new Intent(this, Ajustes.class);
+        Intent refresh = new Intent(getActivity().getApplicationContext(), Ajustes.class);
         startActivity(refresh);
-        finish();
+        getActivity().finish();
 
 
     }
@@ -114,9 +117,9 @@ public class Ajustes extends AppCompatActivity {
                 config.locale =idioma;
         }
         getResources().updateConfiguration(config, null);
-        Intent refresh = new Intent(this, Ajustes.class);
+        Intent refresh = new Intent(getActivity().getApplicationContext(), Ajustes.class);
         startActivity(refresh);
-        finish();
+        getActivity().finish();
 
     }
 
@@ -168,7 +171,7 @@ public class Ajustes extends AppCompatActivity {
         //elegirFuente(view);
         elegirIdioma(view);
         //elegirTamano(view);
-        Intent intentInicio=new Intent(this, MainActivity.class);
+        Intent intentInicio=new Intent(getActivity().getApplicationContext(), MainActivity.class);
         this.startActivity(intentInicio);
     }
 }
