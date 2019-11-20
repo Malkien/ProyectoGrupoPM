@@ -15,7 +15,7 @@ import com.example.drawcoco.clases.Creador;
 public class Galeria extends AppCompatActivity {
 
     TextView nombreArtista;
-
+    AdapterImagenGaleria adapterGaleria;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class Galeria extends AppCompatActivity {
         nombreArtista.setText(artista1.getNickname());
 
         //Llamamos al adapter de galeria para rellenar el GridView con las imagenes del artista seleccionado.
-        AdapterImagenGaleria adapterGaleria = new AdapterImagenGaleria(this,artista1.getImagenArrayList());
+        adapterGaleria = new AdapterImagenGaleria(this,artista1.getImagenArrayList());
         GridView grid = findViewById(R.id.gridViewGaleria);
         grid.setAdapter(adapterGaleria);
 
