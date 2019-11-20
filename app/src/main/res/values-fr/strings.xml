@@ -17,7 +17,6 @@
     <string name="botonFiltar">Filtrer</string>
     <string name="btnFiltrar">Filtrer</string>
     <string name="botonGaleria">Galerie</string>
-    <string name="botonInicio">Début</string>
     <string name="botonLogin">Login</string>
     <string name="botonMenuDesplegable">Menu déroulant</string>
     <string name="botonModoDiseño">Mode Conception</string>
@@ -84,4 +83,5 @@
     <string name="eligeFuente">Changer la source</string>
     <string name="nombrePerfilCreador">Andre</string>
     <string name="sobreMiCreador">Sur moi</string>
+    <string name="botonInicio">Écran de démarrage</string>
 </resources>

@@ -15,7 +15,6 @@
     <string name="botonEstadisticas">Statistics</string>
     <string name="botonFiltar">Filter</string>
     <string name="botonGaleria">Gallery</string>
-    <string name="botonInicio">Start</string>
     <string name="botonLogin">Login</string>
     <string name="botonMenuDesplegable">Drop-down menu</string>
     <string name="botonModoDiseño">Desing mode</string>
@@ -84,4 +83,5 @@
     <string name="eligeFuente">Change font</string>
     <string name="nombrePerfilCreador">Andrew</string>
     <string name="sobreMiCreador">About me</string>
+    <string name="botonInicio">Home</string>
 </resources>

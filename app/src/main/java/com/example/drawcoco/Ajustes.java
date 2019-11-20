@@ -48,6 +48,7 @@ public class Ajustes extends AppCompatActivity {
         tamanoFuenteAjustes=findViewById(R.id.eligetamano);
         Locale spanish=new Locale("es","ES");
         Locale.setDefault(spanish);
+
         //Aquí hemos cargado los spinner con los valores que les queremos ofrecer a nuestros usuarios,
         //utilizando los adaptadores.
         String[] letras = new String[] {"Sans", "Serif", "Monospace"};
@@ -72,6 +73,7 @@ public class Ajustes extends AppCompatActivity {
         switch(spinnerTipoLetra){
             case "Sans":
                   nuevaFuente= Typeface.SANS_SERIF;
+
                 break;
             case "Serif":
                    nuevaFuente=Typeface.SERIF;
@@ -81,6 +83,10 @@ public class Ajustes extends AppCompatActivity {
                 break;
 
         }
+        getResources().updateConfiguration(config, null);
+        Intent refresh = new Intent(this, Ajustes.class);
+        startActivity(refresh);
+        finish();
 
 
     }
@@ -118,6 +124,7 @@ public class Ajustes extends AppCompatActivity {
     public void elegirTamano(View view){
         String spinnerTamanoLetra=tamanoFuenteAjustes.getSelectedItem().toString();
         TextSize nuevoTamano=null;
+
         switch(spinnerTamanoLetra){
             case "6":
                 nuevoTamano=TextSize.valueOf("6");
