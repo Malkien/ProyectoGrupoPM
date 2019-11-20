@@ -1,9 +1,12 @@
 package com.example.drawcoco.perfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -19,40 +22,41 @@ import com.example.drawcoco.clases.Cliente;
 
 import java.util.ArrayList;
 
-public class PerfilCliente extends AppCompatActivity {
+public class PerfilCliente extends Fragment {
     TextView nombreCliente, descripcionCliente, tituloDibujo;
     Spinner spinnerArtista;
     ImageView dibujo1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_cliente);
+    public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.activity_perfil_cliente, container, false);
 
-        nombreCliente = this.findViewById(R.id.nombreClienteLogin);
-        descripcionCliente = this.findViewById(R.id.descripcionPerfilCliente);
-        tituloDibujo = this.findViewById(R.id.tituloDibujoPerfilCliente);
-        dibujo1 = this.findViewById(R.id.dibujoPerfilCliente);
+        nombreCliente = getActivity().findViewById(R.id.nombreClienteLogin);
+        descripcionCliente = getActivity().findViewById(R.id.descripcionPerfilCliente);
+        tituloDibujo = getActivity().findViewById(R.id.tituloDibujoPerfilCliente);
+        dibujo1 = getActivity().findViewById(R.id.dibujoPerfilCliente);
 
-        spinnerArtista = this.findViewById(R.id.spinnerArtistaPerfilCliente);
+        spinnerArtista = getActivity().findViewById(R.id.spinnerArtistaPerfilCliente);
 
-        Creador artista1 = (Creador) getIntent().getExtras().getSerializable("artista1");
-        Creador artista2 = (Creador) getIntent().getExtras().getSerializable("artista2");
-        Cliente cliente1  = (Cliente) getIntent().getExtras().getSerializable("cliente1");
+        //Creador artista1 = (Creador) getIntent().getExtras().getSerializable("artista1");
+        //Creador artista2 = (Creador) getIntent().getExtras().getSerializable("artista2");
+        //Cliente cliente1  = (Cliente) getIntent().getExtras().getSerializable("cliente1");
 
-        nombreCliente.setText(cliente1.getNickname());
-        descripcionCliente.setText(cliente1.getDescripcionBreve());
+        //nombreCliente.setText(cliente1.getNickname());
+        //descripcionCliente.setText(cliente1.getDescripcionBreve());
 
         final ArrayList<Creador> arrayCreadores = new ArrayList<>();
-        arrayCreadores.add(artista1);
-        arrayCreadores.add(artista2);
+        //arrayCreadores.add(artista1);
+        //arrayCreadores.add(artista2);
 
         final ArrayList<String> arrayListNombres = new ArrayList<>();
         for (int i = 0; i < arrayCreadores.size(); i++){
             arrayListNombres.add(arrayCreadores.get(i).getNickname());
         }
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrayListNombres);
+        ArrayAdapter<String> arrayAdapter =
+                new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_spinner_item, arrayListNombres);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerArtista.setAdapter(arrayAdapter);
 
@@ -69,8 +73,9 @@ public class PerfilCliente extends AppCompatActivity {
 
                         for (int j = 0; j < arrayCreadores.size(); j++){
                             if(arrayCreadores.get(j).getNickname().equals(comparador)){
-                                AdapterImagenesPerfilCliente adapterImagenesPerfilCliente = new AdapterImagenesPerfilCliente(PerfilCliente.this, arrayCreadores.get(j).getImagenArrayList());
-                                ListView listViewPago = findViewById(R.id.contedorAdapterPerfilCliente);
+                                AdapterImagenesPerfilCliente adapterImagenesPerfilCliente =
+                                        new AdapterImagenesPerfilCliente(getActivity().getApplicationContext(), arrayCreadores.get(j).getImagenArrayList());
+                                ListView listViewPago = getActivity().findViewById(R.id.contedorAdapterPerfilCliente);
                                 listViewPago.setAdapter(adapterImagenesPerfilCliente);
                             }
                         }
@@ -81,9 +86,10 @@ public class PerfilCliente extends AppCompatActivity {
             public void onNothingSelected(AdapterView <?> parent) {
             }
         });
+        return view;
     }
 
     public void botonImagen(View view) {
-        Toast.makeText(this, "Hola Pollo", Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity().getApplicationContext(), "Hola Pollo", Toast.LENGTH_LONG).show();
     }
 }

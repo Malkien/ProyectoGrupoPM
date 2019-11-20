@@ -16,6 +16,7 @@ import com.example.drawcoco.clases.Cliente;
 import com.example.drawcoco.clases.Creador;
 import com.example.drawcoco.clases.Imagen;
 import com.example.drawcoco.clases.Suscripcion;
+import com.example.drawcoco.perfiles.PerfilCliente;
 import com.google.android.material.tabs.TabLayout;
 
 import java.time.LocalDateTime;
@@ -55,9 +56,10 @@ public class Coordinador extends AppCompatActivity{
 
         adapterPaginas.addFragment(new Inicio());
         adapterPaginas.addFragment(new Galeria());
-        adapterPaginas.addFragment(new Inicio());
-        adapterPaginas.addFragment(new Inicio());
-        adapterPaginas.addFragment(new Inicio());
+
+        adapterPaginas.addFragment(new Inicio());//Sin fragment de momento
+        adapterPaginas.addFragment(new Inicio());//Sin fragment de momento
+        adapterPaginas.addFragment(new PerfilCliente());//tener variable para con un switch elegir el fragment.
         adapterPaginas.addFragment(new Inicio());
 
         viewPager.setAdapter(adapterPaginas);
