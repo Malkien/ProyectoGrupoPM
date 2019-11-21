@@ -60,7 +60,7 @@ public class Coordinador extends AppCompatActivity{
 
         adapterPaginas.addFragment(new Inicio());//Sin fragment de momento
         adapterPaginas.addFragment(new Inicio());//Sin fragment de momento
-        String quePantalla="CLIENTE";
+        String quePantalla="CREADOR";
         switch (quePantalla){
             case "CLIENTE":
                 adapterPaginas.addFragment(new PerfilCliente());//tener variable para con un switch elegir el fragment.
