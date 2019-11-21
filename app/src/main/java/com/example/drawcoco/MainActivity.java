@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         contexto=getApplicationContext();//obtener el contexto de la pantalla
         //Creacion de dos imagenes usando el constructor pequeño de Imagen.
+
         imagenPerfil = new Imagen("\"android.resource://\" + getPackageName() + \"/\" + R.drawable.polloDorado");
         imagenCabecera = new Imagen("\"android.resource://\" + getPackageName() + \"/\" + R.drawable.pulpoi");
 

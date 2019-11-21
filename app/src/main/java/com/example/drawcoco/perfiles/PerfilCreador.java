@@ -1,20 +1,13 @@
 package com.example.drawcoco.perfiles;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.content.ClipData;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.drawcoco.CajaSuscripcion;
@@ -22,8 +15,6 @@ import com.example.drawcoco.ItemPostRecientesCreador;
 import com.example.drawcoco.R;
 import com.example.drawcoco.adapters.AdapterPostRecientesCreador;
 import com.example.drawcoco.adapters.AdapterSuscripcion;
-import com.example.drawcoco.clases.Creador;
-import com.example.drawcoco.constantes.VariablesPruebas;
 
 import java.util.ArrayList;
 
@@ -41,14 +32,15 @@ public class PerfilCreador extends Fragment {
         View view = inflater.inflate(R.layout.activity_perfil_creador, container, false);
 
         //artista = (Creador) getIntent().getExtras().getSerializable("artista1");//cargamos el creador que hay en el main
-        VariablesPruebas variablesPruebas=new VariablesPruebas();
+
+        /*
         //Enlace de los componentes de la activity con las variables java
         nickCreador=view.findViewById(R.id.textViewNombrePerfil);
         descripcionBreve=view.findViewById(R.id.textViewDescripcionBreve);
         descripcionCompleta=view.findViewById(R.id.textViewDescripcionCompleta);
 
         //aplicar valores a los componentes de la activity
-        nickCreador.setText(variablesPruebas.artista1.getNickname());
+        nickCreador.setText(artista.getNickname());
         descripcionCompleta.setText(variablesPruebas.artista1.getDescripcionCompleta());
         descripcionBreve.setText(variablesPruebas.artista1.getDescripcionBreve());
         //declarar el RecyclerView, Manager, y adapter para las caja de suscripción
@@ -81,6 +73,8 @@ public class PerfilCreador extends Fragment {
         //enlazamos el manager y el adapter con el recyclerView
         recyclerViewPostRecientes.setLayoutManager(managerPostRecientes);
         recyclerViewPostRecientes.setAdapter(adapterPostRecientes);
+
+        */
         return view;
     }
 }

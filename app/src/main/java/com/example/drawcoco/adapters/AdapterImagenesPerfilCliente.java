@@ -37,7 +37,7 @@ public class AdapterImagenesPerfilCliente extends BaseAdapter {
     }
 
     public View getView(final int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater=((Activity) contexto).getLayoutInflater();
+        LayoutInflater inflater=(LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if(convertView==null){
             convertView = inflater.inflate(R.layout.activity_adapter_perfil_cliente, null);
         }

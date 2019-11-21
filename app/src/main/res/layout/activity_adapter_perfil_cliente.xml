@@ -29,7 +29,6 @@
         android:layout_margin="5dp"
         android:adjustViewBounds="true"
         android:clickable="false"
-        android:cropToPadding="false"
-        android:onClick="botonImagen" />
+        android:cropToPadding="false" />
 
 </LinearLayout>
