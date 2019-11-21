@@ -55,15 +55,15 @@ public class Ajustes extends Fragment {
         //Aquí hemos cargado los spinner con los valores que les queremos ofrecer a nuestros usuarios,
         //utilizando los adaptadores.
         String[] letras = new String[] {"Sans", "Serif", "Monospace"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, letras);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(),android.R.layout.simple_spinner_item, letras);
         fuenteAjustes.setAdapter(adapter);
 
         String[] pais = new String[] {"Español","Inglés","Frances","Italiano"};
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity().getApplicationContext(),android.R.layout.simple_spinner_item, pais);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(view.getContext(),android.R.layout.simple_spinner_item, pais);
         idiomaAjustes.setAdapter(adapter2);
 
         String[] tamano = new String[] {"8","10","12","14","16","18","20","22"};
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getActivity().getApplicationContext(),android.R.layout.simple_spinner_item, tamano);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(view.getContext(),android.R.layout.simple_spinner_item, tamano);
         tamanoFuenteAjustes.setAdapter(adapter3);
 
         return view;

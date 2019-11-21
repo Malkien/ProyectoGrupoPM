@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,7 +31,8 @@ public class PerfilCreador extends Fragment {
     private RecyclerView recyclerViewSuscripcion, recyclerViewPostRecientes;
     private RecyclerView.Adapter adapterSuscripcion, adapterPostRecientes;
     private RecyclerView.LayoutManager managerSuscripcion, managerPostRecientes;
-    private Creador artista;
+    //private Creador artista;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
@@ -39,9 +41,9 @@ public class PerfilCreador extends Fragment {
         //artista = (Creador) getIntent().getExtras().getSerializable("artista1");//cargamos el creador que hay en el main
 
         //Enlace de los componentes de la activity con las variables java
-        nickCreador=getActivity().findViewById(R.id.textViewNombrePerfil);
-        descripcionBreve=getActivity().findViewById(R.id.textViewDescripcionBreve);
-        descripcionCompleta=getActivity().findViewById(R.id.textViewDescripcionCompleta);
+        nickCreador=view.findViewById(R.id.textViewNombrePerfil);
+        descripcionBreve=view.findViewById(R.id.textViewDescripcionBreve);
+        descripcionCompleta=view.findViewById(R.id.textViewDescripcionCompleta);
 
         //aplicar valores a los componentes de la activity
         nickCreador.setText(artista.getNickname());
