@@ -24,7 +24,7 @@ public class VariablesPruebas {
     public void VariablesPruebas(){
         //Creacion de dos imagenes usando el constructor pequeño de Imagen.
         imagenPerfil = new Imagen("\"android.resource://\" + getPackageName() + \"/\" + R.drawable.polloDorado");
-        imagenCabecera = new Imagen("\"android.resource://\" + getPackageName() + \"/\" + R.drawable.pulpoi");
+        imagenCabecera = new Imagen("\"android.resource://" + getPackageName() + "/\" + R.drawable.pulpoi");
 
 
         //Creacion de un cliente, utilizando el constructor completo
@@ -67,7 +67,6 @@ public class VariablesPruebas {
                     "xxxx", HOMBRE,120f,imagenPerfil, imagenCabecera, 10, galeriaArtista2,
                     null, "Hola soy un excelente programador y me encanta cargarme repositorios ^_^");
 
-            //Serializacion de artistas y cliente
         }
     }
 }

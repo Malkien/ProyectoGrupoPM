@@ -46,9 +46,9 @@ public class Ajustes extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.activity_ajustes, container, false);
 
-        fuenteAjustes= getActivity().findViewById(R.id.eligeFuente);
-        idiomaAjustes=getActivity().findViewById(R.id.eligeIdioma);
-        tamanoFuenteAjustes=getActivity().findViewById(R.id.eligetamano);
+        fuenteAjustes= view.findViewById(R.id.eligeFuente);
+        idiomaAjustes=view.findViewById(R.id.eligeIdioma);
+        tamanoFuenteAjustes=view.findViewById(R.id.eligetamano);
         Locale spanish=new Locale("es","ES");
         Locale.setDefault(spanish);
 
