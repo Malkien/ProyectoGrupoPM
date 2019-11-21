@@ -28,7 +28,8 @@
         android:layout_height="200dp"
         android:layout_margin="5dp"
         android:adjustViewBounds="true"
-        android:clickable="false"
-        android:cropToPadding="false" />
+        android:clickable="true"
+        android:cropToPadding="false"
+        android:onClick="imagenEnGrandePerfilCliente" />
 
 </LinearLayout>

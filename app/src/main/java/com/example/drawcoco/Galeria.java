@@ -14,7 +14,6 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.example.drawcoco.adapters.AdapterImagenGaleria;
-import com.example.drawcoco.clases.Creador;
 import com.example.drawcoco.clases.Imagen;
 
 import java.time.LocalDateTime;
@@ -23,7 +22,7 @@ import java.util.ArrayList;
 public class Galeria extends Fragment {
 
     TextView nombreArtista;
-    AdapterImagenGaleria adapterGaleria;
+
     @Override
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -45,11 +44,12 @@ public class Galeria extends Fragment {
         ArrayList<Imagen> galeriaArtista1=new ArrayList<Imagen>();
         galeriaArtista1 = new ArrayList<Imagen>();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            galeriaArtista1.add(new Imagen("Pollo Dorado", "Un pollo bonito", 50, LocalDateTime.now(), "android.resource://" + getActivity().getPackageName() + "/" + R.drawable.pollodorado, arrayTags1, null, true, null));
-            galeriaArtista1.add(new Imagen("Poring", "Esta blandito", 12, LocalDateTime.now(), "android.resource://" + getActivity().getPackageName() + "/" + R.drawable.poi, arrayTags1, null, true, null));
-            galeriaArtista1.add(new Imagen("Bunny", "Conejita Sexy", 100, LocalDateTime.now(), "android.resource://" + getActivity().getPackageName() + "/" + R.drawable.bunny, arrayTags2, null, true, null));
-
+            galeriaArtista1.add(new Imagen("Pollo Dorado", "Un pollo bonito", 50, LocalDateTime.now(), "android.resource://" + view.getContext().getPackageName() + "/" + R.drawable.pollodorado, arrayTags1, null, true, null));
+            galeriaArtista1.add(new Imagen("Poring", "Esta blandito", 12, LocalDateTime.now(), "android.resource://" + view.getContext().getPackageName() + "/" + R.drawable.poi, arrayTags1, null, true, null));
+            galeriaArtista1.add(new Imagen("Bunny", "Conejita Sexy", 100, LocalDateTime.now(), "android.resource://" + view.getContext().getPackageName() + "/" + R.drawable.bunny, arrayTags2, null, true, null));
         }
+
+        nombreArtista.setText(galeriaArtista1.get(0).getTitulo());
         ////////////////////////////////////////////////////
         ////////////////////////////////////////////////////
 

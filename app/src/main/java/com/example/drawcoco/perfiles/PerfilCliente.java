@@ -111,7 +111,7 @@ public class PerfilCliente extends Fragment {
         }
 
         ArrayAdapter<String> arrayAdapter =
-                new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_spinner_item, arrayListNombres);
+                new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_item, arrayListNombres);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerArtista.setAdapter(arrayAdapter);
 
@@ -129,7 +129,7 @@ public class PerfilCliente extends Fragment {
                         for (int j = 0; j < arrayCreadores.size(); j++){
                             if(arrayCreadores.get(j).getNickname().equals(comparador)){
                                 AdapterImagenesPerfilCliente adapterImagenesPerfilCliente =
-                                        new AdapterImagenesPerfilCliente(getActivity().getApplicationContext(), arrayCreadores.get(j).getImagenArrayList());
+                                        new AdapterImagenesPerfilCliente(view.getContext(), arrayCreadores.get(j).getImagenArrayList());
                                 ListView listViewPago = getActivity().findViewById(R.id.contedorAdapterPerfilCliente);
                                 listViewPago.setAdapter(adapterImagenesPerfilCliente);
                             }
@@ -143,5 +143,4 @@ public class PerfilCliente extends Fragment {
         });
         return view;
     }
-
 }

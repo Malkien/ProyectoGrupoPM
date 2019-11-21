@@ -54,15 +54,16 @@ public class AdapterImagenGaleria extends BaseAdapter {
         imagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Creamos un AlertDialog e incluimos dentro de este un ImageView con algunas propiedades para que al
-                //pulsar en la imagen aparezca esta a mayor tamaño.
-                AlertDialog.Builder builder = new AlertDialog.Builder(contexto);
-                ImageView imageView = new ImageView(contexto);
-                imageView.setImageURI(Uri.parse(arrayListaImagenes.get(position).getRuta()));
-                imageView.setAdjustViewBounds(true);
-                builder.setView(imageView);
-                AlertDialog alert = builder.create();
-                alert.show();
+            //Creamos un AlertDialog e incluimos dentro de este un ImageView con algunas propiedades para que al
+            //pulsar en la imagen aparezca esta a mayor tamaño.
+            AlertDialog.Builder builder = new AlertDialog.Builder(contexto);
+            ImageView imageView = new ImageView(contexto);
+            imageView.setImageURI(Uri.parse(arrayListaImagenes.get(position).getRuta()));
+
+            imageView.setAdjustViewBounds(true);
+            builder.setView(imageView);
+            AlertDialog alert = builder.create();
+            alert.show();
             }
         });
 
