@@ -1,6 +1,6 @@
 package com.example.drawcoco.adapters;
 
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.drawcoco.R;
 import com.example.drawcoco.clases.Imagen;
+import com.example.drawcoco.perfiles.PerfilCliente;
 
 import java.util.ArrayList;
 
@@ -46,6 +46,21 @@ public class AdapterImagenesPerfilCliente extends BaseAdapter {
         titulo.setText(arrayListaImagenes.get(position).getTitulo());
         ImageView imagen = convertView.findViewById(R.id.dibujoPerfilCliente);
         imagen.setImageURI(Uri.parse(arrayListaImagenes.get(position).getRuta()));
+
+        imagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            //Creamos un AlertDialog e incluimos dentro de este un ImageView con algunas propiedades para que al
+            //pulsar en la imagen aparezca esta a mayor tamaño.
+            AlertDialog.Builder builder = new AlertDialog.Builder(contexto);
+            ImageView imageView = new ImageView(contexto);
+            imageView.setImageURI(Uri.parse(arrayListaImagenes.get(position).getRuta()));
+            imageView.setAdjustViewBounds(true);
+            builder.setView(imageView);
+            AlertDialog alert = builder.create();
+            alert.show();
+            }
+        });
 
         return convertView;
     }
