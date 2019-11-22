@@ -180,11 +180,6 @@ public class Ajustes extends Fragment {
     }
 
 
-    public void aceptarAjustes(View view) {
-        //elegirFuente(view);
-        //elegirIdioma(view);
-        //elegirTamano(view);
-        //Intent intentInicio=new Intent(view.getContext() , MainActivity.class);
-        //this.startActivity(intentInicio);
-    }
+
+
 }
