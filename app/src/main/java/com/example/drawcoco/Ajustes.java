@@ -1,34 +1,27 @@
 package com.example.drawcoco;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.TypefaceCompat;
 import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Typeface;
-import android.graphics.fonts.Font;
-import android.graphics.fonts.FontStyle;
+import android.graphics.fonts.FontFamily;
 import android.os.Bundle;
-import android.support.v4.media.RatingCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.webkit.WebSettings.TextSize;
-import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
-
-import com.example.drawcoco.clases.Personas;
-import com.example.drawcoco.formularios.Login;
-import com.example.drawcoco.formularios.Registro;
 
 import java.util.Locale;
+
+import static android.graphics.Typeface.MONOSPACE;
+import static android.graphics.Typeface.SANS_SERIF;
+import static android.graphics.Typeface.SERIF;
 
 //En este Activity controlaremos el aspecto de nuestra aplicación, el tamaño de la fuente y su tipo,
 //y el idioma utilizado eligiendolo entre el Inglés y el Español.
@@ -42,6 +35,10 @@ public class Ajustes extends Fragment {
     private Locale idioma;
     private Configuration config = new Configuration();
     private Button botonAceptar;
+    Typeface nuevaFuente;
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
@@ -71,7 +68,8 @@ public class Ajustes extends Fragment {
         botonAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //elegirFuente(view);
+                nuevaFuente=elegirFuente(view);
+                FontFamily.Builder.class.getResource(nuevaFuente.toString());
                 elegirIdioma(view);
                 //elegirTamano(view);
                 Intent intentInicio=new Intent(view.getContext() , MainActivity.class);
@@ -83,19 +81,23 @@ public class Ajustes extends Fragment {
     }
 
     //Con esta función cambiaremos de fuente todos los componentes de nuestra aplicación.
-    public void elegirFuente(View vie){
+    public Typeface elegirFuente(View vie){
         String spinnerTipoLetra=fuenteAjustes.getSelectedItem().toString();
         Typeface nuevaFuente=null;
         switch(spinnerTipoLetra){
             case "Sans":
-                  nuevaFuente= Typeface.SANS_SERIF;
+                  //nuevaFuente= Typeface.SANS_SERIF;
+                nuevaFuente=TypefaceCompat.create(getContext(),SANS_SERIF,Typeface.NORMAL);
 
-                break;
+
+            break;
             case "Serif":
-                   nuevaFuente=Typeface.SERIF;
+                   //nuevaFuente=Typeface.SERIF;
+                nuevaFuente=TypefaceCompat.create(getContext(),SERIF,Typeface.NORMAL);
                 break;
             case "Monospace":
-                   nuevaFuente=Typeface.MONOSPACE;
+                   //nuevaFuente=Typeface.MONOSPACE;
+                nuevaFuente=TypefaceCompat.create(getContext(),MONOSPACE,Typeface.NORMAL);
                 break;
 
         }
@@ -105,6 +107,7 @@ public class Ajustes extends Fragment {
         getActivity().finish();
 
 
+        return nuevaFuente;
     }
 
     //COn esta función cambiaremos el idioma de todos los componentes de nuestra aplicación
