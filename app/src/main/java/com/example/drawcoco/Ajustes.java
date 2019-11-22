@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -40,12 +41,13 @@ public class Ajustes extends Fragment {
     Spinner tamanoFuenteAjustes;
     private Locale idioma;
     private Configuration config = new Configuration();
+    private Button botonAceptar;
 
     @Override
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.activity_ajustes, container, false);
-
+        final View view = inflater.inflate(R.layout.activity_ajustes, container, false);
+        botonAceptar=view.findViewById(R.id.aceptarAjustes);
         fuenteAjustes= view.findViewById(R.id.eligeFuente);
         idiomaAjustes=view.findViewById(R.id.eligeIdioma);
         tamanoFuenteAjustes=view.findViewById(R.id.eligetamano);
@@ -65,6 +67,17 @@ public class Ajustes extends Fragment {
         String[] tamano = new String[] {"8","10","12","14","16","18","20","22"};
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(view.getContext(),android.R.layout.simple_spinner_item, tamano);
         tamanoFuenteAjustes.setAdapter(adapter3);
+
+        botonAceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //elegirFuente(view);
+                elegirIdioma(view);
+                //elegirTamano(view);
+                Intent intentInicio=new Intent(view.getContext() , MainActivity.class);
+                ((Activity)(view.getContext())).startActivity(intentInicio);
+            }
+        });
 
         return view;
     }
@@ -169,9 +182,9 @@ public class Ajustes extends Fragment {
 
     public void aceptarAjustes(View view) {
         //elegirFuente(view);
-        elegirIdioma(view);
+        //elegirIdioma(view);
         //elegirTamano(view);
-        Intent intentInicio=new Intent(getActivity().getApplicationContext(), MainActivity.class);
-        this.startActivity(intentInicio);
+        //Intent intentInicio=new Intent(view.getContext() , MainActivity.class);
+        //this.startActivity(intentInicio);
     }
 }

@@ -2,6 +2,7 @@ package com.example.drawcoco.perfiles;
 
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,7 +38,11 @@ public class PerfilCliente extends Fragment {
     private Creador artista1, artista2;
     private Cliente cliente1;
     private ArrayList<Suscripcion>listaSuscripciones;
+    private Activity activity;
 
+    public PerfilCliente(Activity act){
+        activity=act;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
@@ -129,7 +134,7 @@ public class PerfilCliente extends Fragment {
                         for (int j = 0; j < arrayCreadores.size(); j++){
                             if(arrayCreadores.get(j).getNickname().equals(comparador)){
                                 AdapterImagenesPerfilCliente adapterImagenesPerfilCliente =
-                                        new AdapterImagenesPerfilCliente(view.getContext(), arrayCreadores.get(j).getImagenArrayList());
+                                        new AdapterImagenesPerfilCliente(activity, arrayCreadores.get(j).getImagenArrayList());
                                 ListView listViewPago = getActivity().findViewById(R.id.contedorAdapterPerfilCliente);
                                 listViewPago.setAdapter(adapterImagenesPerfilCliente);
                             }
