@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "214037742523",
+    "firebase_url": "https://drawcoco-1f8c9.firebaseio.com",
+    "project_id": "drawcoco-1f8c9",
+    "storage_bucket": "drawcoco-1f8c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214037742523:android:0e35d821dc41019066fa9e",
+        "android_client_info": {
+          "package_name": "com.example.drawcoco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214037742523-drisk9p6ca8h8ivve63csbmrldfdij15.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.drawcoco",
+            "certificate_hash": "21e08778ad505705975f1068d5704347e7970705"
+          }
+        },
+        {
+          "client_id": "214037742523-3vd0aaci94bs1tccjmc1ogqoi3i1uv8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgftgV_HroVK3c-kiiQGDbGVsBs73W_3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214037742523-3vd0aaci94bs1tccjmc1ogqoi3i1uv8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
