@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
@@ -92,6 +94,25 @@ public class Login extends AppCompatActivity {
         if(mailLogin.isEmpty()&&contraseñaLogin.isEmpty()){
             Toast.makeText(Login.this, "Por favor rellene los campos",Toast.LENGTH_SHORT).show();
         }else{
+            //Busca en la coleccion usuarios para encontrar el usuario introducido.
+            DocumentReference docRef = bd.collection("Usuarios").document(mailLogin);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            Toast.makeText(Login.this, "Usuario encontrado",Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Login.this, "Usuario no encontrado",Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(Login.this, "Fallo en la base de datos",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+        /*
             //Se conecta a la base de datos y busca algun usuario con ese mail y contraseña.
             mAuth.signInWithEmailAndPassword(mailLogin, contraseñaLogin)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -106,6 +127,8 @@ public class Login extends AppCompatActivity {
                     }
                 }
             );
+         */
+
         }
     }
 }

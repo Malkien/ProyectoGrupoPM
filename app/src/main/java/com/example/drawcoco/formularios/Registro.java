@@ -25,11 +25,17 @@ import com.example.drawcoco.clases.Personas;
 import com.example.drawcoco.clases.Suscripcion;
 import com.example.drawcoco.constantes.ValoresPreferencias;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.protobuf.Any;
+
+import java.util.HashMap;
 
 //Este Activity recopilará los datos de nuestros nuevos clientes y los alojará en una base de datos.
 
@@ -59,6 +65,7 @@ public class Registro extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore bd;
     Intent intent;
+    CollectionReference usuariosGuardados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,40 +115,56 @@ public class Registro extends AppCompatActivity {
             //Todos estos datos serán almacenados despues en nuestra base de datos.
             if (creadorCheck.isChecked()) {
                 Creador usuario = new Creador(nicknameRegistro, nombreRegistro, apellidosRegistro, emailRegistro, null, contraseñaRegistro, genero, dineroRegistro, null, null, 0, null, null, null);
+                Log.d("ExitoRegistro", "createUserWithEmail:success");
+
+                //Añadimos a la collecion usuarios un Hashmap para añadir valores a los campos.
+                usuariosGuardados = bd.collection("Usuarios");
+                HashMap<String, String> userData = new HashMap<>();
+                userData.put("nickName", nicknameRegistro);
+                userData.put("nombre", nombreRegistro);
+                userData.put("apellidos", apellidosRegistro);
+                userData.put("contraseña", contraseñaRegistro);
+                userData.put("mail", emailRegistro);
+                //Con document creamos una nueva entrada en usuarios con el mail introducido.
+                usuariosGuardados.document(emailRegistro).set(userData);
 
                 //Creamos el usuario usando Firebase, aqui añadimos el mail y la contraseña que introducimos en sus respectivos campos.
                 mAuth.createUserWithEmailAndPassword(emailRegistro,contraseñaRegistro)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Log.d("ExitoRegistro", "createUserWithEmail:success");
-                                //Nos lleva al Login para poder acceder con todas las funciones de la pagina.
-                                startActivity(intent);
-                            } else {
-                                Log.d("FalloRegistro", "Ha petado el registro");
-                            }
-                        }
-                    }
-                );
+                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                      @Override
+                      public void onComplete(@NonNull Task<AuthResult> task) {
+                         if (task.isSuccessful()) {
+                              Log.d("ExitoRegistro", "createUserWithEmail:success");
+                              //Nos lleva al Login para poder acceder con todas las funciones de la pagina.
+                             startActivity(intent);
+                          } else {
+                              Log.d("FalloRegistro", "Ha petado el registro");
+                          }
+                      }
+                 });
+                //Si el usuario no es creador simplemente guardamos sus datos.
             } else {
                 Cliente usuario = new Cliente(nicknameRegistro, nombreRegistro, apellidosRegistro, emailRegistro, null, contraseñaRegistro, genero, dineroRegistro, null, null, null);
-                //Creamos el usuario usando Firebase, aqui añadimos el mail y la contraseña que introducimos en sus respectivos campos.
-                mAuth.createUserWithEmailAndPassword(emailRegistro,contraseñaRegistro)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Log.d("ExitoRegistro", "createUserWithEmail:success");
-                                    //Directamente nos lleva a la pantalla de Login.
-                                    startActivity(intent);
-                                } else {
-                                    Log.d("FalloRegistro", "Ha petado el registro");
-                                }
-                            }
-                        }
-                    );
+                //Añadimos a la collecion usuarios un Hashmap para añadir valores a los campos.
+                usuariosGuardados = bd.collection("Usuarios");
+                HashMap<String, String> userData = new HashMap<>();
+                userData.put("nickName", nicknameRegistro);
+                userData.put("nombre", nombreRegistro);
+                userData.put("apellidos", apellidosRegistro);
+                userData.put("contraseña", contraseñaRegistro);
+                userData.put("mail", emailRegistro);
+                //Con document creamos una nueva entrada en usuarios con el mail introducido.
+                usuariosGuardados.document(emailRegistro).set(userData);
+                //Nos lleva al Login para poder acceder.
+                startActivity(intent);
             }
+
+            txtnickname.setText("");
+            txtnombre.setText("");
+            txtapellidos.setText("");
+            txtmail.setText("");
+            txtcontraseña.setText("");
+            txtcontraseña2.setText("");
         }
     }
 
