@@ -162,7 +162,15 @@ public class PerfilCliente extends Fragment {
             @Override
             public void onClick(View view) {
                 if(ActivityCompat.checkSelfPermission(view.getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISO_GALERIA);
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(
+                            activity, Manifest.permission.READ_EXTERNAL_STORAGE)) {//Se hace segunda comprobacion, para que cuando se instale la aplicacion te pida los permisos,
+                        // si no directamente te recuerda como que no y que no quieres que se muestre mas
+                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISO_GALERIA);
+
+                    } else {
+                        Toast.makeText(view.getContext(), "Subir imagen", Toast.LENGTH_LONG).show();
+                    }
+
                 }else{
                     Toast.makeText(view.getContext(), "Subir imagen", Toast.LENGTH_LONG).show();
                 }

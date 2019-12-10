@@ -66,7 +66,7 @@ public class Coordinador extends AppCompatActivity{
                 adapterPaginas.addFragment(new PerfilCliente(this));//tener variable para con un switch elegir el fragment.
                 break;
             case "CREADOR":
-                adapterPaginas.addFragment(new PerfilCreador());//tener variable para con un switch elegir el fragment.
+                adapterPaginas.addFragment(new PerfilCreador(this));//tener variable para con un switch elegir el fragment.
                 break;
             case "Invitado":
                 adapterPaginas.addFragment(new PerfilCliente(this));//Hacer que se desactive el navegation o algo
