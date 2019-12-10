@@ -44,7 +44,7 @@ public class Filtrar extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent intentGaleria=new Intent(view.getContext(),Desplegable.class);
+                Intent intentGaleria=new Intent(view.getContext(),Galeria.class);
                 ((Activity)(view.getContext())).startActivity(intentGaleria);
             }
         });
