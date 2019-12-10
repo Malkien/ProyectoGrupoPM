@@ -1,8 +1,11 @@
 package com.example.drawcoco.perfiles;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -22,6 +26,7 @@ import com.example.drawcoco.clases.Cliente;
 import com.example.drawcoco.clases.Creador;
 import com.example.drawcoco.clases.Imagen;
 import com.example.drawcoco.clases.Suscripcion;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -39,6 +44,8 @@ public class PerfilCliente extends Fragment {
     private Cliente cliente1;
     private ArrayList<Suscripcion>listaSuscripciones;
     private Activity activity;
+    private FloatingActionButton agregar;
+    private static final int PERMISO_GALERIA=1;
 
     public PerfilCliente(Activity act){
         activity=act;
@@ -53,6 +60,7 @@ public class PerfilCliente extends Fragment {
         descripcionCliente = view.findViewById(R.id.descripcionPerfilCliente);
         tituloDibujo = view.findViewById(R.id.tituloDibujoPerfilCliente);
         dibujo1 = view.findViewById(R.id.dibujoPerfilCliente);
+        agregar= view.findViewById(R.id.floatingActionButton);
 
         spinnerArtista = view.findViewById(R.id.spinnerArtistaPerfilCliente);
 
@@ -146,6 +154,21 @@ public class PerfilCliente extends Fragment {
             public void onNothingSelected(AdapterView <?> parent) {
             }
         });
+        /**
+         *
+         * Evento del boton flotante "agregar" para pedir acceso al almacenamiento externo
+         */
+        agregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ActivityCompat.checkSelfPermission(view.getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISO_GALERIA);
+                }else{
+                    Toast.makeText(view.getContext(), "Subir imagen", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         return view;
     }
+
 }

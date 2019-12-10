@@ -136,4 +136,13 @@
 
     </LinearLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:elevation="6dp"
+        android:layout_gravity="right"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/agregar1" />
 </LinearLayout>

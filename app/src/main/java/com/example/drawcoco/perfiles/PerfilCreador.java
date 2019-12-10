@@ -1,20 +1,26 @@
 package com.example.drawcoco.perfiles;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.drawcoco.CajaSuscripcion;
 import com.example.drawcoco.ItemPostRecientesCreador;
 import com.example.drawcoco.R;
 import com.example.drawcoco.adapters.AdapterPostRecientesCreador;
 import com.example.drawcoco.adapters.AdapterSuscripcion;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -23,9 +29,14 @@ public class PerfilCreador extends Fragment {
     private RecyclerView recyclerViewSuscripcion, recyclerViewPostRecientes;
     private RecyclerView.Adapter adapterSuscripcion, adapterPostRecientes;
     private RecyclerView.LayoutManager managerSuscripcion, managerPostRecientes;
-    //private Creador artista;
+    private FloatingActionButton agregar;
+    private Activity activity;
+    private static final int PERMISO_GALERIA=2;
 
-
+    public PerfilCreador(Activity act){
+        activity=act;
+    }
+    //private Creador artista
     @Override
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -37,6 +48,7 @@ public class PerfilCreador extends Fragment {
         nickCreador=view.findViewById(R.id.textViewNombrePerfil);
         descripcionBreve=view.findViewById(R.id.textViewDescripcionBreve);
         descripcionCompleta=view.findViewById(R.id.textViewDescripcionCompleta);
+        agregar=view.findViewById(R.id.floatingActionButtonCreador);
 
         //aplicar valores a los componentes de la activity
         nickCreador.setText("Nick");
@@ -80,6 +92,21 @@ public class PerfilCreador extends Fragment {
         //enlazamos el manager y el adapter con el recyclerView
         recyclerViewPostRecientes.setLayoutManager(managerPostRecientes);
         recyclerViewPostRecientes.setAdapter(adapterPostRecientes);
+
+        /**
+         *
+         * Evento del boton flotante "agregar" para pedir acceso al almacenamiento externo
+         */
+        agregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ActivityCompat.checkSelfPermission(view.getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISO_GALERIA);
+                }else{
+                    Toast.makeText(view.getContext(), "Subir imagen", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         return view;
     }

@@ -1,11 +1,13 @@
 package com.example.drawcoco.formularios;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -22,6 +24,18 @@ import com.example.drawcoco.clases.Imagen;
 import com.example.drawcoco.clases.Personas;
 import com.example.drawcoco.clases.Suscripcion;
 import com.example.drawcoco.constantes.ValoresPreferencias;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.protobuf.Any;
+
+import java.util.HashMap;
 
 //Este Activity recopilará los datos de nuestros nuevos clientes y los alojará en una base de datos.
 
@@ -48,11 +62,18 @@ public class Registro extends AppCompatActivity {
     CheckBox creadorCheck;
     CheckBox terminos;
 
+    FirebaseAuth mAuth;
+    FirebaseFirestore bd;
+    Intent intent;
+    CollectionReference usuariosGuardados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        //FirebaseAuth y FirebaseFirestore son necesarios para la conexion a una base de datos Firebase.
+        mAuth = FirebaseAuth.getInstance();
+        bd = FirebaseFirestore.getInstance();
 
         sexoRegistro=findViewById(R.id.eligeGenero);
         //Aquí se cargan los valores del spinner que nos dará las opciones para
@@ -65,14 +86,18 @@ public class Registro extends AppCompatActivity {
         terminos=findViewById(R.id.terminos);
         creadorCheck=findViewById(R.id.creadorCheck);
 
-
-
         txtnickname=findViewById(R.id.textoNickName);
         txtnombre=findViewById(R.id.textoNombre);
         txtapellidos=findViewById(R.id.textoApellidos);
         txtcontraseña=findViewById(R.id.textoPassword);
         txtcontraseña2=findViewById(R.id.textoPassword2);
         txtmail=findViewById(R.id.textoEmail);
+        intent = new Intent(this, Login.class);
+    }
+    //Esta activity redireccionará a la pantalla de inicio una vez concluya el
+    // registro del nuevo usuario
+
+    public void registrarse(View view) {
         nicknameRegistro=txtnickname.getText().toString();
         nombreRegistro=txtnombre.getText().toString();
         apellidosRegistro=txtapellidos.getText().toString();
@@ -80,37 +105,67 @@ public class Registro extends AppCompatActivity {
         contraseña2Registro=txtcontraseña2.getText().toString();
         emailRegistro=txtmail.getText().toString();
 
-
-
-
-
-    }
-    //Esta activity redireccionará a la pantalla de inicio una vez concluya el
-    // registro del nuevo usuario
-
-    public void registrarse(View view) {
-
-            //Aqui ponemos la condición de que si los términos del acuerdo no son aceptados, no se podrá continuar con el registro.
-            if (terminos.isChecked()) {
-                Intent intentInicio = new Intent(this, MainActivity.class);
-                this.startActivity(intentInicio);
-            } else {
-                Toast.makeText(this, "Debe de aceptar los términos para registrar sus datos", Toast.LENGTH_LONG).show();
-            }
-
-            genero=elegirGenero(view);
-            Toast.makeText(this,genero.toString(),Toast.LENGTH_LONG).show();
-
-
+        //Aqui ponemos la condición de que si los términos del acuerdo no son aceptados, no se podrá continuar con el registro.
+        if (!terminos.isChecked()) {
+            Toast.makeText(this, "Debe de aceptar los términos para registrar sus datos", Toast.LENGTH_LONG).show();
+        }else {
+            genero = elegirGenero(view);
             //Al seleccionar en el checkBox la opción creador, crearemos un nuevo objeto de la clase creador que hereda de personas,
             //si no lo seleccionamos crearemos un nuevo objeto de la clase cliente.
             //Todos estos datos serán almacenados despues en nuestra base de datos.
             if (creadorCheck.isChecked()) {
                 Creador usuario = new Creador(nicknameRegistro, nombreRegistro, apellidosRegistro, emailRegistro, null, contraseñaRegistro, genero, dineroRegistro, null, null, 0, null, null, null);
-            } else{
+                Log.d("ExitoRegistro", "createUserWithEmail:success");
+
+                //Añadimos a la collecion usuarios un Hashmap para añadir valores a los campos.
+                usuariosGuardados = bd.collection("Usuarios");
+                HashMap<String, String> userData = new HashMap<>();
+                userData.put("nickName", nicknameRegistro);
+                userData.put("nombre", nombreRegistro);
+                userData.put("apellidos", apellidosRegistro);
+                userData.put("contraseña", contraseñaRegistro);
+                userData.put("mail", emailRegistro);
+                //Con document creamos una nueva entrada en usuarios con el mail introducido.
+                usuariosGuardados.document(emailRegistro).set(userData);
+
+                //Creamos el usuario usando Firebase, aqui añadimos el mail y la contraseña que introducimos en sus respectivos campos.
+                mAuth.createUserWithEmailAndPassword(emailRegistro,contraseñaRegistro)
+                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                      @Override
+                      public void onComplete(@NonNull Task<AuthResult> task) {
+                         if (task.isSuccessful()) {
+                              Log.d("ExitoRegistro", "createUserWithEmail:success");
+                              //Nos lleva al Login para poder acceder con todas las funciones de la pagina.
+                             startActivity(intent);
+                          } else {
+                              Log.d("FalloRegistro", "Ha petado el registro");
+                          }
+                      }
+                 });
+                //Si el usuario no es creador simplemente guardamos sus datos.
+            } else {
                 Cliente usuario = new Cliente(nicknameRegistro, nombreRegistro, apellidosRegistro, emailRegistro, null, contraseñaRegistro, genero, dineroRegistro, null, null, null);
+                //Añadimos a la collecion usuarios un Hashmap para añadir valores a los campos.
+                usuariosGuardados = bd.collection("Usuarios");
+                HashMap<String, String> userData = new HashMap<>();
+                userData.put("nickName", nicknameRegistro);
+                userData.put("nombre", nombreRegistro);
+                userData.put("apellidos", apellidosRegistro);
+                userData.put("contraseña", contraseñaRegistro);
+                userData.put("mail", emailRegistro);
+                //Con document creamos una nueva entrada en usuarios con el mail introducido.
+                usuariosGuardados.document(emailRegistro).set(userData);
+                //Nos lleva al Login para poder acceder.
+                startActivity(intent);
             }
 
+            txtnickname.setText("");
+            txtnombre.setText("");
+            txtapellidos.setText("");
+            txtmail.setText("");
+            txtcontraseña.setText("");
+            txtcontraseña2.setText("");
+        }
     }
 
 
