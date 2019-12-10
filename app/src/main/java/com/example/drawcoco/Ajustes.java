@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebSettings.TextSize;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -68,11 +69,10 @@ public class Ajustes extends Fragment {
         botonAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nuevaFuente=elegirFuente(view);
-                FontFamily.Builder.class.getResource(nuevaFuente.toString());
+                elegirFuente(view);
                 elegirIdioma(view);
                 //elegirTamano(view);
-                Intent intentInicio=new Intent(view.getContext() , MainActivity.class);
+                Intent intentInicio=new Intent(view.getContext() , Desplegable.class);
                 ((Activity)(view.getContext())).startActivity(intentInicio);
             }
         });
@@ -81,23 +81,25 @@ public class Ajustes extends Fragment {
     }
 
     //Con esta función cambiaremos de fuente todos los componentes de nuestra aplicación.
-    public Typeface elegirFuente(View vie){
+    public void elegirFuente(View vie){
         String spinnerTipoLetra=fuenteAjustes.getSelectedItem().toString();
         Typeface nuevaFuente=null;
         switch(spinnerTipoLetra){
             case "Sans":
-                  //nuevaFuente= Typeface.SANS_SERIF;
-                nuevaFuente=TypefaceCompat.create(getContext(),SANS_SERIF,Typeface.NORMAL);
+                  nuevaFuente= Typeface.SANS_SERIF;
+                  TypefaceCompat.create(getContext(),nuevaFuente,Typeface.NORMAL);
 
 
             break;
             case "Serif":
-                   //nuevaFuente=Typeface.SERIF;
-                nuevaFuente=TypefaceCompat.create(getContext(),SERIF,Typeface.NORMAL);
+                   nuevaFuente=Typeface.SERIF;
+                   TypefaceCompat.create(getContext(),nuevaFuente,Typeface.NORMAL);
+
                 break;
             case "Monospace":
-                   //nuevaFuente=Typeface.MONOSPACE;
-                nuevaFuente=TypefaceCompat.create(getContext(),MONOSPACE,Typeface.NORMAL);
+                nuevaFuente=Typeface.MONOSPACE;
+                TypefaceCompat.create(getContext(),nuevaFuente,Typeface.NORMAL);
+
                 break;
 
         }
@@ -107,7 +109,6 @@ public class Ajustes extends Fragment {
         getActivity().finish();
 
 
-        return nuevaFuente;
     }
 
     //COn esta función cambiaremos el idioma de todos los componentes de nuestra aplicación
@@ -146,37 +147,37 @@ public class Ajustes extends Fragment {
 
         switch(spinnerTamanoLetra){
             case "6":
-                nuevoTamano=TextSize.valueOf("6");
+                nuevoTamano= WebSettings.TextSize.valueOf("6");
                 break;
             case "8":
-                nuevoTamano=TextSize.valueOf("8");
+                nuevoTamano=WebSettings.TextSize.valueOf("8");
                 break;
             case "10":
-                nuevoTamano=TextSize.valueOf("10");
+                nuevoTamano=WebSettings.TextSize.valueOf("10");
                 break;
             case "12":
-                nuevoTamano=TextSize.valueOf("12");
+                nuevoTamano=WebSettings.TextSize.valueOf("12");
                 break;
             case "14":
-                nuevoTamano=TextSize.valueOf("14");
+                nuevoTamano=WebSettings.TextSize.valueOf("14");
                 break;
             case "16":
-                nuevoTamano=TextSize.valueOf("16");
+                nuevoTamano=WebSettings.TextSize.valueOf("16");
                 break;
             case "18":
-                nuevoTamano=TextSize.valueOf("18");
+                nuevoTamano=WebSettings.TextSize.valueOf("18");
                 break;
             case "20":
-                nuevoTamano=TextSize.valueOf("20");
+                nuevoTamano=WebSettings.TextSize.valueOf("20");
                 break;
             case "22":
-                nuevoTamano=TextSize.valueOf("22");
+                nuevoTamano=WebSettings.TextSize.valueOf("22");
                 break;
             case "24":
-                nuevoTamano=TextSize.valueOf("24");
+                nuevoTamano=WebSettings.TextSize.valueOf("24");
                 break;
             case "26":
-                nuevoTamano=TextSize.valueOf("26");
+                nuevoTamano=WebSettings.TextSize.valueOf("26");
                 break;
         }
 
