@@ -12,10 +12,12 @@
         android:background="@color/colorFondo"
         android:orientation="vertical">
         <!--ConstraintLayout para delimitar el espacio de la imagen de cabecera-->
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="150dp">
             <!--Boton "editar perfil" para cambiar al modo customización-->
+
             <Button
                 android:id="@+id/buttonEditar"
                 android:layout_width="113dp"
@@ -183,6 +185,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RelativeLayoutPost" />
 <!--            RelativeLayout que contiene un RecyclerView para los postRecientes-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonCreador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:elevation="6dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buttonVerMas"
+                app:layout_constraintTop_toBottomOf="@+id/RelativeLayoutPost"
+                app:srcCompat="@drawable/agregar1" />
+
             <RelativeLayout
                 android:id="@+id/RelativeLayoutPost"
                 android:layout_width="match_parent"
