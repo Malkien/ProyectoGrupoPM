@@ -3,7 +3,9 @@ package com.example.drawcoco.adapters;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.drawcoco.R;
+import com.example.drawcoco.VisualizarPost;
 import com.example.drawcoco.clases.Imagen;
 
 import java.util.ArrayList;
@@ -57,10 +60,21 @@ public class AdapterImagenGaleria extends BaseAdapter {
             //Creamos un AlertDialog e incluimos dentro de este un ImageView con algunas propiedades para que al
             //pulsar en la imagen aparezca esta a mayor tamaño.
             AlertDialog.Builder builder = new AlertDialog.Builder(contexto);
-            ImageView imageView = new ImageView(contexto);
+            final ImageView imageView = new ImageView(contexto);
             imageView.setImageURI(Uri.parse(arrayListaImagenes.get(position).getRuta()));
 
             imageView.setAdjustViewBounds(true);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(contexto, VisualizarPost.class);
+                    Bundle b=new Bundle();
+                    b.putString("imagen",arrayListaImagenes.get(position).getRuta());
+                    intent.putExtras(b);
+                    contexto.startActivity(intent);
+                }
+            });
+            builder.setTitle(R.string.clickParaIrAlPost);
             builder.setView(imageView);
             AlertDialog alert = builder.create();
             alert.show();

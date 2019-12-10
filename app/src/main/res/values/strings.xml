@@ -21,6 +21,7 @@
 
     <!--String de la Activity Galeria-->
     <string name="busqueda">Busqueda...</string>
+    <string name="clickParaIrAlPost">Click Para Ir Al Post</string>
 
     <!--String de la Activity Estadisticas-->
     <string name="cabeceraEstadisticas">Estadisticas de</string>

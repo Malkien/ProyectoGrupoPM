@@ -84,4 +84,5 @@
     <string name="nombrePerfilCreador">Andre</string>
     <string name="sobreMiCreador">Sur moi</string>
     <string name="botonInicio">Écran de démarrage</string>
+    <string name="clickParaIrAlPost">Click Para Ir Al Post</string>
 </resources>
