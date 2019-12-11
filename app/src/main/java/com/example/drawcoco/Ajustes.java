@@ -69,10 +69,10 @@ public class Ajustes extends Fragment {
         botonAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                elegirFuente(view);
+                //elegirFuente(view);
                 elegirIdioma(view);
                 //elegirTamano(view);
-                Intent intentInicio=new Intent(view.getContext() , Desplegable.class);
+                Intent intentInicio=new Intent(view.getContext() , Inicio.class);
                 ((Activity)(view.getContext())).startActivity(intentInicio);
             }
         });
