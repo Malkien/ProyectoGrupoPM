@@ -3,6 +3,8 @@ package com.example.drawcoco;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -22,15 +25,16 @@ import java.util.ArrayList;
 public class Galeria extends Fragment {
 
     TextView nombreArtista;
+    private Context contexto;
+    private Button botonFiltrarGaleria;
 
     @Override
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.activity_galeria, container, false);
-
-
+        contexto=getContext();
         nombreArtista = view.findViewById(R.id.nombreArtistaGaleria);
-
+        botonFiltrarGaleria=view.findViewById(R.id.botonFiltrarGaleria);
         /////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////INFORMACION NECESARIA; HAZ LO QUE QUIERAS CON ELLO/////////
         /////////////////////////////////////////////////////////////////////////////////////
@@ -57,12 +61,23 @@ public class Galeria extends Fragment {
         AdapterImagenGaleria adapterGaleria = new AdapterImagenGaleria(view.getContext(),galeriaArtista1);//te he dejado el array de imagenes
         GridView grid = view.findViewById(R.id.gridViewGaleria);
         grid.setAdapter(adapterGaleria);
+
+        botonFiltrarGaleria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentGaleria=new Intent(contexto,Filtrar.class);
+                contexto.startActivity(intentGaleria);
+            }
+        });
+
         return view;
     }
 
     //Boton que nos lleva a la activity_filtrar.
-    public void botonGaleriaFiltrar(View view) {
+    /*public void botonGaleriaFiltrar(View view) {
         Intent irAFiltrar = new Intent(view.getContext(), Filtrar.class);
         startActivity(irAFiltrar);
-    }
+    }*/
+
+
 }
