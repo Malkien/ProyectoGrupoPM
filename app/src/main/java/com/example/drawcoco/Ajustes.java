@@ -72,7 +72,7 @@ public class Ajustes extends Fragment {
                 //elegirFuente(view);
                 elegirIdioma(view);
                 //elegirTamano(view);
-                Intent intentInicio=new Intent(view.getContext() , Inicio.class);
+                Intent intentInicio=new Intent(view.getContext(),Coordinador.class);
                 ((Activity)(view.getContext())).startActivity(intentInicio);
             }
         });
