@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.drawcoco.adapters.AdapterPaginas;
 import com.example.drawcoco.clases.Cliente;
@@ -76,4 +77,6 @@ public class Coordinador extends AppCompatActivity{
 
         viewPager.setAdapter(adapterPaginas);
     }
+
+
 }
