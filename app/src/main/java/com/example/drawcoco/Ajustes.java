@@ -16,7 +16,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebSettings.TextSize;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.Locale;
 

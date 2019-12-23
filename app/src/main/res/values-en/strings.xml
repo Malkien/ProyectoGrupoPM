@@ -3,7 +3,7 @@
     <string name="PostRecientes">Recent post</string>
     <string name="PostRecientesGratuitos">Free recent post</string>
     <string name="Recuperar">Recover</string>
-    <string name="Registrate">Register</string>
+    <string name="Registrate">Sing up</string>
     <string name="aceptarAjustes">Accept</string>
     <string name="apellidos">Second name</string>
     <string name="ajustes">Settings</string>
@@ -18,7 +18,7 @@
     <string name="botonLogin">Login</string>
     <string name="botonMenuDesplegable">Drop-down menu</string>
     <string name="botonModoDiseño">Desing mode</string>
-    <string name="botonRegistro">Register</string>
+    <string name="botonRegistro">Sing up</string>
     <string name="botonSuscribirseCreador">Sing up</string>
     <string name="botonVerMas">View more</string>
     <string name="botonVisualizacionPost">View post</string>
@@ -58,7 +58,7 @@
     <string name="precioSuscripcion2Creador">2€</string>
     <string name="precioSuscripcion3Creador">3€</string>
     <string name="recordarCuenta">Remind count</string>
-    <string name="registrarse">Register</string>
+    <string name="registrarse">Sing up</string>
     <string name="terminos">Accept Terms</string>
     <string name="textoCategorias">Categories:</string>
     <string name="textoDineroGanado">" Money obtained monthly"</string>
