@@ -83,24 +83,25 @@ public class Ajustes extends Fragment {
     }
 
     //Con esta función cambiaremos de fuente todos los componentes de nuestra aplicación.
-    public void elegirFuente(View vie){
+    public void elegirFuente(View view){
         String spinnerTipoLetra=fuenteAjustes.getSelectedItem().toString();
         Typeface nuevaFuente=null;
         switch(spinnerTipoLetra){
             case "Sans":
                   nuevaFuente= Typeface.SANS_SERIF;
-                  TypefaceCompat.create(getContext(),nuevaFuente,Typeface.NORMAL);
+                  TypefaceCompat.create(view.getContext(),nuevaFuente,Typeface.NORMAL);
+
 
 
             break;
             case "Serif":
                    nuevaFuente=Typeface.SERIF;
-                   TypefaceCompat.create(getContext(),nuevaFuente,Typeface.NORMAL);
+                   TypefaceCompat.create(view.getContext(),nuevaFuente,Typeface.NORMAL);
 
                 break;
             case "Monospace":
                 nuevaFuente=Typeface.MONOSPACE;
-                TypefaceCompat.create(getContext(),nuevaFuente,Typeface.NORMAL);
+                TypefaceCompat.create(view.getContext(),nuevaFuente,Typeface.NORMAL);
 
                 break;
 
